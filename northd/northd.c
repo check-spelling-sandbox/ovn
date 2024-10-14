@@ -16844,7 +16844,7 @@ build_lrouter_nat_defrag_and_lb(
                           is_v6 ? "6" : "4", nat->logical_ip,
                           l3dgw_port->json_key);
             /* Add a rule to drop traffic from a distributed NAT if
-             * the virtual port has not claimed yet becaused otherwise
+             * the virtual port has not claimed yet because otherwise
              * the traffic will be centralized misconfiguring the TOR switch.
              */
             struct ovn_port *op = ovn_port_find(ls_ports,
