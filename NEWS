@@ -12,7 +12,7 @@ OVN v24.09.0 - 13 Sep 2024
     cloned to all unknown ports connected to the same Logical Switch.
   - Added a new logical switch port option "disable_arp_nd_rsp" to
     disable adding the ARP responder flows if set to true.
-  - IGMP_Group has new "protocol" column that displays the the group
+  - IGMP_Group has new "protocol" column that displays the group
     protocol version.
   - Add ovn-debug tool containing two commands.
     "lflow-stage-to-ltable STAGE_NAME" that converts stage name into logical

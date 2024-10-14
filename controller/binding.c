@@ -1412,7 +1412,7 @@ claim_lport(const struct sbrec_port_binding *pb,
 /* Returns false if lport is not released due to 'sb_readonly'.
  * Returns true otherwise.
  *
- * This function assumes that the the 'pb' was claimed
+ * This function assumes that the 'pb' was claimed
  * earlier i.e port binding's chassis is set to this chassis.
  * Caller should make sure that this is the case.
  */

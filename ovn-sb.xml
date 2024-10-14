@@ -2639,7 +2639,7 @@ tcp.flags = RST;
             inport port security checks.  If the packet fails the port security
             checks, then <code>1</code> is stored in the destination register
             <var>R</var>.  Else 0 is stored.  The port security values to check
-            are retrieved from the the <code>inport</code> logical port.
+            are retrieved from the <code>inport</code> logical port.
           </p>
 
           <p>
@@ -2658,7 +2658,7 @@ tcp.flags = RST;
             outport port security checks.  If the packet fails the port
             security checks, then <code>1</code> is stored in the destination
             register <var>R</var>.  Else 0 is stored.  The port security
-            values to check are retrieved from the the <code>outport</code>
+            values to check are retrieved from the <code>outport</code>
             logical port.
           </p>
 
@@ -2684,7 +2684,7 @@ tcp.flags = RST;
 
           <ul>
             <li>
-              Match on the the 5-tuple and the expected next-hop mac address
+              Match on the 5-tuple and the expected next-hop mac address
               in table 76: <code>nw_src=ip0</code>, <code>nw_dst=ip1</code>,
               <code>ip_proto</code>,<code>tp_src=l4_port0</code>,
               <code>tp_dst=l4_port1</code>,<code>dl_src=ethaddr</code> and
