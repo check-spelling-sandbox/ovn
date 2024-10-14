@@ -1523,7 +1523,7 @@ ofctrl_remove_flows_for_as_ip(struct ovn_desired_flow_table *flow_table,
 }
 
 /* Remove ovn_flows for the given "sb_to_flow" node in the uuid_flow_table.
- * Optionally log the message for each flow that is acturally removed, if
+ * Optionally log the message for each flow that is actually removed, if
  * log_msg is not NULL. */
 static void
 remove_flows_from_sb_to_flow(struct ovn_desired_flow_table *flow_table,
