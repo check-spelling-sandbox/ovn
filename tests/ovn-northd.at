@@ -7531,7 +7531,7 @@ ovn-nbctl --wait=sb sync
 record_log_flows
 
 # The count should now be 2 since the allow_related ACL will not have special
-# log flows created. But since there there is an allow-related ACL present, the
+# log flows created. But since there is an allow-related ACL present, the
 # allow ACL will be stateful and have special log flows created.
 check_log_flows_count 2 out
 check_log_flows_count 0 in
@@ -7636,7 +7636,7 @@ ovn-nbctl --wait=sb sync
 record_log_flows
 
 # The count should now be 2 since the allow_related ACL will not have special
-# log flows created. But since there there is an allow-related ACL present, the
+# log flows created. But since there is an allow-related ACL present, the
 # allow ACL will be stateful and have special log flows created.
 check_log_flows_count 2 in
 check_log_flows_count 0 out
