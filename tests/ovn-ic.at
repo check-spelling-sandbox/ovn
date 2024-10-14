@@ -1514,7 +1514,7 @@ for az in `seq 1 $n_az`; do
     wait_for_ports_up
 done
 
-# Pre-populate the hypervisors' ARP tables so that we don't lose any
+# Prepopulate the hypervisors' ARP tables so that we don't lose any
 # packets for ARP resolution (native tunneling doesn't queue packets
 # for ARP resolution).
 OVN_POPULATE_ARP
@@ -1791,7 +1791,7 @@ check ovn-nbctl set logical_router_port lr3-ls3 options:mcast_flood="true"
 check ovn_as az1 ovn-nbctl --wait=hv sync
 check ovn_as az2 ovn-nbctl --wait=hv sync
 
-# Pre-populate the hypervisors' ARP tables so that we don't lose any
+# Prepopulate the hypervisors' ARP tables so that we don't lose any
 # packets for ARP resolution (native tunneling doesn't queue packets
 # for ARP resolution).
 OVN_POPULATE_ARP
@@ -2020,7 +2020,7 @@ check ovn-nbctl set logical_switch_port ts-lr3 options:mcast_flood_reports="true
 check ovn_as az1 ovn-nbctl --wait=hv sync
 check ovn_as az2 ovn-nbctl --wait=hv sync
 
-# Pre-populate the hypervisors' ARP tables so that we don't lose any
+# Prepopulate the hypervisors' ARP tables so that we don't lose any
 # packets for ARP resolution (native tunneling doesn't queue packets
 # for ARP resolution).
 OVN_POPULATE_ARP
@@ -2267,7 +2267,7 @@ check ovn-nbctl set logical_switch ts other_config:mcast_flood_unregistered="tru
 check ovn_as az1 ovn-nbctl --wait=hv sync
 check ovn_as az2 ovn-nbctl --wait=hv sync
 
-# Pre-populate the hypervisors' ARP tables so that we don't lose any
+# Prepopulate the hypervisors' ARP tables so that we don't lose any
 # packets for ARP resolution (native tunneling doesn't queue packets
 # for ARP resolution).
 OVN_POPULATE_ARP

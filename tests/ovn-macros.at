@@ -768,7 +768,7 @@ ovn_as() {
 
 # OVN_POPULATE_ARP
 #
-# This pre-populates the ARP tables of all of the OVN instances that have been
+# This prepopulates the ARP tables of all of the OVN instances that have been
 # started with ovn_attach().  That means that packets sent from one hypervisor
 # to another never get dropped or delayed by ARP resolution, which makes
 # testing easier.
