@@ -7903,7 +7903,7 @@ pinctrl_handle_bfd_msg(struct rconn *swconn, const struct flow *ip_flow,
     }
 
 out:
-    /* let's try to bacth db updates */
+    /* let's try to batch db updates */
     if (change_state) {
         entry->change_state = true;
         bfd_pending_update++;
