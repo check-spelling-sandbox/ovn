@@ -2825,7 +2825,7 @@ or
           <code>true</code> when a large number of logical routers are
           connected to the same logical switch but most of them never need to
           send traffic between each other. By default, ovn-northd does not
-          create mappings to NAT and load balancer addresess. However, for NAT
+          create mappings to NAT and load balancer addresses. However, for NAT
           and load balancer addresses that have the <code>add_route</code>
           option added, ovn-northd will create logical flows that map NAT and
           load balancer IP addresses to the appropriate MAC address. Setting
