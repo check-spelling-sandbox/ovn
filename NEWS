@@ -535,7 +535,7 @@ v2.11.0 - 19 Feb 2019
      * "mod-table" command can now change OpenFlow table names.
    - ovn:
      * OVN-SB schema changed: duplicated IP with same Encapsulation type
-       is not allowed any more.  Please refer to
+       is not allowed anymore.  Please refer to
        Documentation/intro/install/ovn-upgrades.rst for the instructions
        in case there are problems encountered when upgrading from an earlier
        version.
