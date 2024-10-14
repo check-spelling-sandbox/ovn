@@ -2288,7 +2288,7 @@ lflow_handle_flows_for_lport(const struct sbrec_port_binding *pb,
      * of the port binding.  Right now port binding 'uuid' is used in
      * the logical flow table (l_ctx_out->flow_table) only for port
      * security flows.  Later if new flows are added using the
-     * port binding'uuid', then this function should handle it properly.
+     * port binding 'uuid', then this function should handle it properly.
      */
     ofctrl_remove_flows(l_ctx_out->flow_table, &pb->header_.uuid);
     if (deleted) {
