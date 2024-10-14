@@ -33,7 +33,7 @@ How the Documentation is Organised
 The Open Virtual Network (OVN) documentation is organised into multiple sections:
 
 - :doc:`Installation guides </intro/install/index>` guide you through
-  installing Open Open Virtual Network (OVN) on a variety of different
+  installing Open Virtual Network (OVN) on a variety of different
   platforms
 - :doc:`Tutorials </tutorials/index>` take you through a series of steps to
   configure OVS and OVN in sandboxed environments
