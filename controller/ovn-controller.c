@@ -5191,7 +5191,7 @@ main(int argc, char *argv[])
      * added locally, i.e. reprocessing the lflow for the new DP only but not
      * for the other DPs in the group. If we handle en_addr_sets after this,
      * incrementally processing an updated address set for the added IPs may
-     * end up adding redundant flows/conjunctions for the lflow agaist the new
+     * end up adding redundant flows/conjunctions for the lflow against the new
      * DP because it has been processed on the DP already. */
     engine_add_input(&en_lflow_output, &en_addr_sets,
                      lflow_output_addr_sets_handler);
