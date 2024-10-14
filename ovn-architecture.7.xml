@@ -330,7 +330,7 @@
       </code> for more information).  In both cases the conventions described
       in <code>Documentation/topics/integration.rst</code> in the Open vSwitch
       source tree is followed to ensure mapping between OVN logical port and
-      VIF.  (This is pre-existing integration work that has already been done
+      VIF.  (This is preexisting integration work that has already been done
       on hypervisors that support OVS.)
     </li>
 
@@ -934,7 +934,7 @@
       source tree) adds the VIF to the OVN integration bridge and stores
       <var>vif-id</var> in <code>external_ids</code>:<code>iface-id</code> to
       indicate that the interface is an instantiation of the new VIF.  (None of
-      this code is new in OVN; this is pre-existing integration work that has
+      this code is new in OVN; this is preexisting integration work that has
       already been done on hypervisors that support OVS.)
     </li>
 
