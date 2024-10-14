@@ -318,7 +318,7 @@ def if_and_for_end_with_bracket_check(line):
 
 def pointer_whitespace_check(line):
     """Return TRUE if there is no space between a pointer name and the
-       asterisk that denotes this is a apionter type, ie: 'struct foo*'"""
+       asterisk that denotes this is a pointer type, ie: 'struct foo*'"""
     return __regex_ptr_declaration_missing_whitespace.search(line) is not None
 
 
