@@ -1057,7 +1057,7 @@ start_daemon ovn-controller
 # in 20.0.0.0/24 and fd20::/64 networks. R1 has switches foo (192.168.1.0/24
 # and fd11::/64) and bar (192.168.2.0/24 and fd12::/64) connected to it. R2
 # has alice (172.16.1.0/24 and fd30::/64) connected to it.  R3 has bob
-# (172.16.1.0/24 andfd30::/64) connected to it. Note how both alice and bob
+# (172.16.1.0/24 and fd30::/64) connected to it. Note how both alice and bob
 # have the same subnets behind them.  We are trying to simulate external network
 # via those 2 switches. In real world the switch ports of these switches will
 # have addresses set as "unknown" to make them learning switches. Or those
@@ -6187,7 +6187,7 @@ AT_CHECK([ovs-appctl dpctl/dump-flows | grep 'ct_state(-new+est+trk).*ct_label(0
 
 # Flush conntrack entries for easier output parsing of next test.
 AT_CHECK([ovs-appctl dpctl/flush-conntrack])
-# Change bob1 L2 address anche check the reply is properly updated.
+# Change bob1 L2 address and check the reply is properly updated.
 ovn-nbctl set Logical_Router_Port R2_ext mac='"00:00:10:01:02:04"'
 ovn-nbctl set Logical_Switch_Port r2-ext \
      type=router options:router-port=R2_ext addresses='"00:00:10:01:02:04"'
@@ -6423,7 +6423,7 @@ tcp,orig=(src=fd07::1,dst=fd01::2,sport=<cleared>,dport=<cleared>),reply=(src=fd
 # Flush conntrack entries for easier output parsing of next test.
 AT_CHECK([ovs-appctl dpctl/flush-conntrack])
 
-# Change bob1 L2 address anche check the reply is properly updated.
+# Change bob1 L2 address and check the reply is properly updated.
 ovn-nbctl set Logical_Router_Port R2_ext mac='"00:00:10:01:02:04"'
 ovn-nbctl --wait=hv set Logical_Switch_Port r2-ext \
      type=router options:router-port=R2_ext addresses='"00:00:10:01:02:04"'
