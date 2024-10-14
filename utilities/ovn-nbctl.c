@@ -5216,7 +5216,7 @@ nbctl_lr_nat_add(struct ctl_context *ctx)
         }
         if (num_l3dgw_ports > 1 && !dgw_port) {
             ctl_error(ctx, "logical router: %s has multiple distributed "
-                      "gateway ports and gateway_port can not be determined "
+                      "gateway ports and gateway_port cannot be determined "
                       "from external IP of NAT rule.", ctx->argv[1]);
             goto cleanup;
         }

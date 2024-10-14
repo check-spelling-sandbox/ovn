@@ -16513,7 +16513,7 @@ lrouter_check_nat_entry(const struct ovn_datapath *od,
      * satisfies the conditions for distributed NAT processing. */
     *distributed = false;
 
-    /* NAT cannnot be distributed if the DGP's peer
+    /* NAT cannot be distributed if the DGP's peer
      * has a chassisredirect port (as the routing is centralized
      * on the gateway chassis for the DGP's networks/subnets.)
      */

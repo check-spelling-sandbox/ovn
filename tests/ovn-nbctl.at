@@ -892,7 +892,7 @@ AT_CHECK([ovn-nbctl lrp-set-gateway-chassis lrp01 chassis2])
 AT_CHECK([ovn-nbctl --gateway-port=lrp00 lr-nat-add lr0 snat 172.64.0.10 20.0.0.10])
 AT_CHECK([ovn-nbctl lr-nat-add lr0 snat 172.64.1.10 20.0.0.10])
 AT_CHECK([ovn-nbctl lr-nat-add lr0 dnat 30.0.0.10 20.0.0.10], [1], [],
-[ovn-nbctl: logical router: lr0 has multiple distributed gateway ports and gateway_port can not be determined from external IP of NAT rule.
+[ovn-nbctl: logical router: lr0 has multiple distributed gateway ports and gateway_port cannot be determined from external IP of NAT rule.
 ])
 AT_CHECK([ovn-nbctl --gateway-port=lrp00 lr-nat-add lr0 dnat 30.0.0.10 20.0.0.10])
 AT_CHECK([ovn-nbctl --gateway-port=lrp01 lr-nat-add lr0 snat 172.64.1.10 20.0.0.10], [1], [],
