@@ -2778,7 +2778,7 @@ or
           gateway router (for unDNATing), the packet needs a SNAT in the first
           place. This can be achieved by setting the above option with a
           gateway specific set of IP addresses. This option may have exactly
-          one IPv4 and/or one IPv6 address on it, separated by a a space.
+          one IPv4 and/or one IPv6 address on it, separated by a space.
         </p>
       </column>
       <column name="options" key="lb_force_snat_ip">

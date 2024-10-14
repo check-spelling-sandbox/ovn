@@ -5106,8 +5106,8 @@ ADD_NAMESPACES(sw0-p2-rej)
 ADD_VETH(sw0-p2-rej, sw0-p2-rej, br-int, "10.0.0.4/24", "50:54:00:00:00:04", \
          "10.0.0.1")
 
-NS_CHECK_EXEC([sw0-p1-rej], [ip a a aef0::3/64 dev sw0-p1-rej nodad], [0])
-NS_CHECK_EXEC([sw0-p2-rej], [ip a a aef0::4/64 dev sw0-p2-rej nodad], [0])
+NS_CHECK_EXEC([sw0-p1-rej], [ip a aef0::3/64 dev sw0-p1-rej nodad], [0])
+NS_CHECK_EXEC([sw0-p2-rej], [ip a aef0::4/64 dev sw0-p2-rej nodad], [0])
 
 ADD_NAMESPACES(sw1-p1-rej)
 ADD_VETH(sw1-p1-rej, sw1-p1-rej, br-int, "20.0.0.3/24", "40:54:00:00:00:03", \
@@ -5340,8 +5340,8 @@ ADD_NAMESPACES(sw0-p2-rej)
 ADD_VETH(sw0-p2-rej, sw0-p2-rej, br-int, "10.0.0.4/24", "50:54:00:00:00:04", \
          "10.0.0.1")
 
-NS_CHECK_EXEC([sw0-p1-rej], [ip a a aef0::3/64 dev sw0-p1-rej nodad], [0])
-NS_CHECK_EXEC([sw0-p2-rej], [ip a a aef0::4/64 dev sw0-p2-rej nodad], [0])
+NS_CHECK_EXEC([sw0-p1-rej], [ip a aef0::3/64 dev sw0-p1-rej nodad], [0])
+NS_CHECK_EXEC([sw0-p2-rej], [ip a aef0::4/64 dev sw0-p2-rej nodad], [0])
 
 ADD_NAMESPACES(sw1-p1-rej)
 ADD_VETH(sw1-p1-rej, sw1-p1-rej, br-int, "20.0.0.3/24", "40:54:00:00:00:03", \

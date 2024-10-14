@@ -8840,7 +8840,7 @@ build_lswitch_rport_arp_req_flow(
                       patch_op->cr_port->json_key);
     }
 
-    /* Send a the packet to the router pipeline.  If the switch has non-router
+    /* Send a packet to the router pipeline.  If the switch has non-router
      * ports then flood it there as well.
      */
     if (od->n_router_ports != od->nbs->n_ports) {
