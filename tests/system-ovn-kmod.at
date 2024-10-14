@@ -714,7 +714,7 @@ test_fragmented_traffic
 check ovn-nbctl ls-lb-del public
 check ovn-nbctl lb-del lb1
 
-AS_BOX([LB on switch witho port and protocol])
+AS_BOX([LB on switch with port and protocol])
 check ovn-nbctl lb-add lb1 172.16.1.20:4242 172.16.1.2:4242 udp
 check ovn-nbctl ls-lb-add public lb1
 

@@ -8965,7 +8965,7 @@ check ovn-nbctl --wait=sb sync
 ovn-sbctl dump-flows | DUMP_FLOWS_SORTED > flows2
 AT_CHECK([diff flows1 flows2])
 
-# Restart with with 8 threads
+# Restart with 8 threads
 check as northd ovn-appctl -t ovn-northd parallel-build/set-n-threads 8
 delete_switch_ports 1 250
 add_switch_ports 1 250
