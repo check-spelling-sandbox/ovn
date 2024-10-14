@@ -360,7 +360,7 @@ $cluster_remote_port
         # we want to run ovsdb-server in background rather than running it in
         # foreground so that the OVN dbs are upgraded for the cluster mode.
         # Otherwise, CMS has to take the responsibility of upgrading the dbs.
-        # Note: We run only the ovsdb-server in backgroud which created the
+        # Note: We run only the ovsdb-server in background which created the
         # cluster (i.e cluster_remote_addr is not set.).
         run_ovsdb_in_bg="yes"
         "$@" &
