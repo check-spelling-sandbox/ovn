@@ -161,7 +161,7 @@ Static Analysis is a method of debugging Software by examining code rather than
 actually executing it. This can be done through 'scan-build' commandline
 utility which internally uses clang (or) gcc to compile the code and also
 invokes a static analyzer to do the code analysis. At the end of the build, the
-reports are aggregated in to a common folder and can later be analyzed using
+reports are aggregated into a common folder and can later be analyzed using
 'scan-view'.
 
 OVN includes a Makefile target to trigger static code analysis::
