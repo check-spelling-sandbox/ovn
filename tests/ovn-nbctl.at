@@ -1939,7 +1939,7 @@ Route Table <main>:
 AT_CHECK([ovn-nbctl --policy=src-ip lr-route-del lr0 20.0.0.0/24])
 AT_CHECK([ovn-nbctl lr-route-del lr0 20.0.0.0/24 discard])
 
-dnl Delete non-existent prefix
+dnl Delete nonexistent prefix
 AT_CHECK([ovn-nbctl lr-route-del lr0 10.0.2.1/24], [1], [],
   [ovn-nbctl: no matching route: policy 'any', prefix '10.0.2.0/24', nexthop 'any', output_port 'any'.
 ])
@@ -2611,14 +2611,14 @@ dnl ---------------------------------------------------------------------
 
 OVN_NBCTL_TEST([ovn_nbctl_fwd_groups], [fwd groups], [
 
-dnl Add fwd-group to a non-existent logical switch
+dnl Add fwd-group to a nonexistent logical switch
 AT_CHECK([ovn-nbctl fwd-group-add fwd_grp1 ls0 10.1.1.11 00:11:22:33:44:55 lsp1 lsp2], [1], [],
   [ovn-nbctl: ls0: switch name not found
 ])
 
 AT_CHECK([ovn-nbctl ls-add ls0])
 
-dnl Add fwd-group with non-existent logical switch ports
+dnl Add fwd-group with nonexistent logical switch ports
 AT_CHECK([ovn-nbctl fwd-group-add fwd_grp1 ls0 10.1.1.11 00:11:22:33:44:55 lsp1 lsp2], [1], [],
   [ovn-nbctl: lsp1: logical switch port does not exist
 ])
