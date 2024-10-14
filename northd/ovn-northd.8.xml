@@ -2033,7 +2033,7 @@ output;
           For any logical port that's defined as a target of routing protocol
           redirecting (via <code>routing-protocol-redirect</code> option set on
           Logical Router Port), we redirect the traffic related to protocols
-          specified in <code>routing-protocols</code> option. It's acoomplished
+          specified in <code>routing-protocols</code> option. It's accomplished
           with following priority-100 flows:
         </p>
         <ul>
