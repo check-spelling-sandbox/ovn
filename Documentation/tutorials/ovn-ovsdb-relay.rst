@@ -193,7 +193,7 @@ Group 2:
 
   ovs-vsctl set open . external_ids:ovn-remote=ssl:10.0.0.20:6642,ssl:10.0.0.21:6642
 
-And so on. It is adviced to configure at least two OVSDB Relay servers for
+And so on. It is advised to configure at least two OVSDB Relay servers for
 ovn-controller if high-avalability is important.
 
 .. _two_tier_multi_group:

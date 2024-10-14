@@ -197,7 +197,7 @@ of known impactible schema changes and how to fix when error encountered.
 
 #. Release 22.12: index [transit_switch, availability_zone, route_table,
    ip_prefix, nexthop] added for OVN Interconnection Southbound DB table Route.
-   If there are duplicated records in this table, users are adviced to upgrade
+   If there are duplicated records in this table, users are advised to upgrade
    ovn-ic daemons in all availability zones first and after that convert OVS
    schema (restart ovn-ic database daemon).
 
