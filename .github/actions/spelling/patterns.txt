@@ -1,0 +1,187 @@
+# See https://github.com/check-spelling/check-spelling/wiki/Configuration-Examples:-patterns
+
+# Automatically suggested patterns
+
+# hit-count: 2366 file-count: 69
+# version suffix <word>v#
+(?:(?<=[A-Z]{2})V|(?<=[a-z]{2}|[A-Z]{2})v)\d+(?:\b|(?=[a-zA-Z_]))
+
+# hit-count: 2055 file-count: 29
+# IPv6
+\b(?:[0-9a-fA-F]{0,4}:){3,7}[0-9a-fA-F]{0,4}\b
+
+# hit-count: 348 file-count: 26
+# C network byte conversions
+(?:\d|\bh)to(?!ken)(?=[a-z])|to(?=[adhiklpun]\()
+
+# hit-count: 181 file-count: 63
+# https/http/file urls
+(?:\b(?:https?|ftp|file)://)[-A-Za-z0-9+&@#/*%?=~_|!:,.;]+[-A-Za-z0-9+&@#/*%=~_|]
+
+# hit-count: 151 file-count: 39
+# libraries
+(?:\b|_)lib(?:re(?=office)|)(?!era[lt]|ero|erty|rar(?:i(?:an|es)|y))(?=[a-z])
+
+# hit-count: 91 file-count: 26
+# hex digits including css/html color classes:
+(?:[\\0][xX]|\\u|[uU]\+|#x?|%23)[0-9_a-fA-FgGrR]*?[a-fA-FgGrR]{2,}[0-9_a-fA-FgGrR]*(?:[uUlL]{0,3}|[iu]\d+)\b
+
+# hit-count: 60 file-count: 4
+# 7 char commit sha
+\b[0-9a-f]{7}\b
+
+# hit-count: 55 file-count: 10
+# hex runs
+\b[0-9a-fA-F]{16,}\b
+
+# hit-count: 55 file-count: 2
+# https://www.gnu.org/software/groff/manual/groff.html
+# man troff content
+\\f[BCIPR]
+
+# hit-count: 49 file-count: 13
+# Compiler flags (Unix, Java/Scala)
+# Use if you have things like `-Pdocker` and want to treat them as `docker`
+(?:^|[\t ,>"'`=(\[])-(?:(?:J-|)[DPWXY]|[Llf])(?=[A-Z]{2,}|[A-Z][a-z]|[a-z]{2,})
+
+# hit-count: 36 file-count: 4
+# uuid:
+\b[0-9a-fA-F]{8}-(?:[0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}\b
+
+# hit-count: 26 file-count: 7
+# IServiceProvider / isAThing
+(?:\b|_)(?:(?:ns|)I|isA)(?=(?:[A-Z][a-z]{2,})+(?:[A-Z\d]|\b))
+
+# hit-count: 19 file-count: 5
+# python
+\b(?i)py(?!gments|gmy|lon|ramid|ro|th)(?=[a-z]{2,})
+
+# hit-count: 16 file-count: 4
+# scala imports
+^import (?:[\w.]|\{\w*?(?:,\s*(?:\w*|\*))+\})+
+
+# hit-count: 14 file-count: 5
+# This does not cover multiline strings, if your repository has them,
+# you'll want to remove the `(?=.*?")` suffix.
+# The `(?=.*?")` suffix should limit the false positives rate
+# printf
+%(?:(?:(?:hh?|ll?|[jzt])?[diuoxn]|l?[cs]|L?[fega]|p)(?=[a-z]{2,})|(?:X|L?[FEGA])(?=[a-zA-Z]{2,}))(?!%)(?=[_a-zA-Z]+(?!%)\b)(?=.*?['"])
+
+# hit-count: 13 file-count: 3
+# Python string prefix / binary prefix
+# Note that there's a high false positive rate, remove the `?=` and search for the regex to see if the matches seem like reasonable strings
+(?<!['"])\b(?:B|BR|Br|F|FR|Fr|R|RB|RF|Rb|Rf|U|UR|Ur|b|bR|br|f|fR|fr|r|rB|rF|rb|rf|u|uR|ur)['"](?=[A-Z]{3,}|[A-Z][a-z]{2,}|[a-z]{3,})
+
+# hit-count: 12 file-count: 3
+# sed regular expressions
+sed 's/(?:[^/]*?[a-zA-Z]{3,}[^/]*?/){2}
+
+# hit-count: 6 file-count: 5
+# tar arguments
+\b(?:\\n|)g?tar(?:\.exe|)(?:(?:\s+--[-a-zA-Z]+|\s+-[a-zA-Z]+|\s[ABGJMOPRSUWZacdfh-pr-xz]+\b)(?:=[^ ]*|))+
+
+# hit-count: 5 file-count: 2
+# in check-spelling@v0.0.22+, printf markers aren't automatically consumed
+# printf markers
+(?<!\\)\\[nrt](?=[a-z]{2,})
+
+# hit-count: 3 file-count: 2
+# git index header
+index (?:[0-9a-z]{7,40},|)[0-9a-z]{7,40}\.\.[0-9a-z]{7,40}
+
+# hit-count: 2 file-count: 1
+# GitHub actions
+\buses:\s+[-\w.]+/[-\w./]+@[-\w.]+
+
+# hit-count: 2 file-count: 1
+# Docker images
+^\s*FROM\s+\S+:\S+(?:\s+AS\s+\S+|)
+
+# hit-count: 1 file-count: 1
+# ssh
+(?:ssh-\S+|-nistp256) [-a-zA-Z=;:/0-9+]{12,}
+
+# hit-count: 1 file-count: 1
+# go install
+go install(?:\s+[a-z]+\.[-@\w/.]+)+
+
+# Maintainers
+^ {5}- .*?@.*
+
+# Documentation/tutorials/ovn-openstack.rst
+F(?:inal f|)low:.*
+
+# compiler flags
+[\s`]-m(?=[a-z]{2,})
+
+# automake.mk
+TESTPKI_CNS = .*
+
+# Questionably acceptable forms of `in to`
+# Personally, I prefer `log into`, but people object
+# https://www.tprteaching.com/log-into-log-in-to-login/
+\b(?:(?:[Ll]og(?:g(?=[a-z])|)|[Ss]ign)(?:ed|ing)?) in to\b
+
+# to opt in
+\bto opt in\b
+
+# pass(ed) in to
+\bpass(?:ed|) in (?=to)
+
+# grep
+grep '.*?'
+
+# RegEx
+[ (]r'.*?'
+
+# debian changelog
+\(.*\) (?:unstable|experimental); urgency=(?:low|medium|high|emergency|critical)
+
+QoS
+outport == ".*?"
+uuid [0-9a-f]+\b
+ip\d\.src == \S+
+\bport [0-9a-f]{4,}
+.*ip_to_hex.*
+(?:router|switch) [0-9a-f]{4,}\b(?!-)
+-switch="[0-9a-f]{4,}"
+neutron-[0-9a-f]{4,}
+(?!<:)[0-9a-f]+::\d\b
+
+# search and replace
+\bs/.*?/.*?/
+
+# acceptable duplicates
+# ls directory listings
+[-bcdlpsw](?:[-r][-w][-SsTtx]){3}[\.+*]?\s+\d+\s+\S+\s+\S+\s+[.\d]+(?:[KMGT]|)\s+
+# mount
+\bmount\s+-t\s+(\w+)\s+\g{-1}\b
+# C types and repeated CSS values
+\s(auto|buffalo|center|div|inherit|long|LONG|none|normal|solid|swap|thin|transparent|very)(?: \g{-1})+\s
+# C enum and struct
+\b(?:enum|struct)\s+(\w+)\s+\g{-1}\b
+# go templates
+\s(\w+)\s+\g{-1}\s+\`(?:graphql|inject|json|yaml):
+# doxygen / javadoc / .net
+(?:[\\@](?:brief|defgroup|groupname|link|t?param|return|retval)|(?:public|private|\[Parameter(?:\(.+\)|)\])(?:\s+(?:static|override|readonly|required|virtual))*)(?:\s+\{\w+\}|)\s+(\w+)\s+\g{-1}\s
+
+# macOS file path
+(?:Contents\W+|(?!iOS)/)MacOS\b
+
+# Python package registry has incorrect spelling for macOS / Mac OS X
+"Operating System :: MacOS :: MacOS X"
+
+# "company" in Germany
+\bGmbH\b
+
+# IntelliJ
+\bIntelliJ\b
+
+# Commit message -- Signed-off-by and friends
+^\s*(?:(?:Based-on-patch|Co-authored|Helped|Mentored|Reported|Reviewed|Signed-off)-by|Thanks-to): (?:[^<]*<[^>]*>|[^<]*)\s*$
+
+# Autogenerated revert commit message
+^This reverts commit [0-9a-f]{40}\.$
+
+# ignore long runs of a single character:
+\b([A-Za-z])\g{-1}{3,}\b
