@@ -39,7 +39,7 @@ static struct shash vif_plug_classes = SHASH_INITIALIZER(&vif_plug_classes);
 /* Protects the 'vif_plug_classes' shash. */
 static struct ovs_mutex vif_plug_classes_mutex = OVS_MUTEX_INITIALIZER;
 
-/* Initialize the the VIF plug infrastructure by registering known classes */
+/* Initialize the VIF plug infrastructure by registering known classes */
 void
 vif_plug_provider_initialize(void)
 {

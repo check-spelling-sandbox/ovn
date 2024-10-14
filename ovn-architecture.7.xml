@@ -2582,7 +2582,7 @@
   <p>
     The implementation of role-based access controls (RBAC) requires the
     addition of two tables to an OVSDB schema: the <code>RBAC_Role</code>
-    table, which is indexed by role name and maps the the names of the various
+    table, which is indexed by role name and maps the names of the various
     tables that may be modifiable for a given role to individual rows in a
     permissions table containing detailed permission information for that role,
     and the permission table itself which consists of rows containing the

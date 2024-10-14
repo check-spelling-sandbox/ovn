@@ -976,7 +976,7 @@ lr_lb_address_set_name(uint32_t lr_tunnel_key, int addr_family)
     return lr_lb_address_set_name_(lr_tunnel_key, "", addr_family);
 }
 
-/* Builds a string that refers to the the router's load balancer VIP address
+/* Builds a string that refers to the router's load balancer VIP address
  * set name, that is: $<address_set_name>.
  */
 char *
