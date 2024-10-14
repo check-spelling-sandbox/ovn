@@ -2753,7 +2753,7 @@ tcp.flags = RST;
 
           <p>
             This action is applied for new connections received by a specific
-            load-balacer with affinity timeout configured.
+            load-balancer with affinity timeout configured.
           </p>
         </dd>
 
