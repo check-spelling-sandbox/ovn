@@ -14320,7 +14320,7 @@ build_lrouter_routing_protocol_redirect(
     if (!lsp_in_peer) {
         static struct vlog_rate_limit rl = VLOG_RATE_LIMIT_INIT(1, 5);
         VLOG_WARN_RL(&rl, "Option 'routing-protocol-redirect' set on Logical "
-                          "Router Port '%s' refers to non-existent Logical "
+                          "Router Port '%s' refers to nonexistent Logical "
                           "Switch Port. Routing protocol redirecting won't be "
                           "configured.",
                           op->key);

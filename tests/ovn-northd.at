@@ -13913,7 +13913,7 @@ check ovn-nbctl --wait=sb remove logical_router_port lr-ls options routing-proto
 check ovn-nbctl --wait=sb remove logical_router_port lr-ls options routing-protocols
 check_no_redirect
 
-# Set non-existent LSP as target of 'bgp-redirect' and check that no rules are added
+# Set nonexistent LSP as target of 'bgp-redirect' and check that no rules are added
 check ovn-nbctl --wait=sb set logical_router_port lr-ls options:routing-protocol-redirect=lsp-foo
 check ovn-nbctl --wait=sb set logical_router_port lr-ls options:routing-protocols=BGP,BFD
 check_no_redirect
