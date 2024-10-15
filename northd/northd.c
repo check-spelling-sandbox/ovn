@@ -10269,7 +10269,7 @@ build_lswitch_ip_unicast_lookup(struct ovn_port *op,
     ovs_assert(op->nbsp);
 
     /* Note: A switch port can also have a chassis resident derived port.
-     * Check if 'op' is a chassis resident dervied port. If so, skip
+     * Check if 'op' is a chassis resident derived port. If so, skip
      * adding unicast lookup flows for this port. */
     if (lsp_is_external(op->nbsp) || is_cr_port(op)) {
         return;
