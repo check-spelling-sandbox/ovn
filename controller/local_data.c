@@ -559,7 +559,7 @@ chassis_tunnels_destroy(struct hmap *chassis_tunnels)
 
 /*
  * This function looks up the list of tunnel ports (provided by
- * ovn-chassis-id ports) and returns the tunnel for the given chassid-id and
+ * ovn-chassis-id ports) and returns the tunnel for the given chassis-id and
  * encap-ip. The ovn-chassis-id is formed using the chassis-id and encap-ip.
  * The list is hashed using the chassis-id. If the encap-ip is not specified,
  * it means we'll just return a tunnel for that chassis-id, i.e. we just check
@@ -572,7 +572,7 @@ chassis_tunnel_find(const struct hmap *chassis_tunnels, const char *chassis_id,
                     char *remote_encap_ip, const char *local_encap_ip)
 {
     /*
-     * If the specific encap_ip is given, look for the chassisid_ip entry,
+     * If the specific encap_ip is given, look for the chassis_id ip entry,
      * else return the 1st found entry for the chassis.
      */
     struct chassis_tunnel *tun = NULL;
