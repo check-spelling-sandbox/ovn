@@ -2048,14 +2048,14 @@ dhcp_get_hdr_from_pkt(struct dp_packet *pkt_in, const char **in_dhcp_pptr,
 
     if (dhcp_hdr->htype != 0x1) {
         static struct vlog_rate_limit rl = VLOG_RATE_LIMIT_INIT(1, 5);
-        VLOG_WARN_RL(&rl, "DHCP: Packet is recieved with "
+        VLOG_WARN_RL(&rl, "DHCP: Packet is received with "
                      "unsupported hardware type");
         return NULL;
     }
 
     if (dhcp_hdr->hlen != 0x6) {
         static struct vlog_rate_limit rl = VLOG_RATE_LIMIT_INIT(1, 5);
-        VLOG_WARN_RL(&rl, "DHCP: Packet is recieved with "
+        VLOG_WARN_RL(&rl, "DHCP: Packet is received with "
                      "unsupported hardware length");
         return NULL;
     }
