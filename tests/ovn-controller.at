@@ -453,7 +453,7 @@ check ovn-nbctl --wait=hv sync
 check ovn-nbctl set NB_Global . nb_cfg=9223372036854775806
 
 # nb_cfg must be set to zero if it exceed the value of LLONG_MAX
-# the command below will try incress the value of nb_cfg to be greater than LLONG_MAX and
+# the command below will try increase the value of nb_cfg to be greater than LLONG_MAX and
 # expect zero as a return value
 check ovn-nbctl --wait=hv sync
 check ovn-nbctl --wait=hv sync
