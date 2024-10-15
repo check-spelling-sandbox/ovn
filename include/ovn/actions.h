@@ -509,7 +509,7 @@ struct ovnact_sample {
                                            observation domain id. The other
                                            24 bits will come from the
                                            datapath's tunnel key. */
-    uint32_t collector_set_id;          /* colector_set_id. */
+    uint32_t collector_set_id;          /* collector_set_id. */
     struct expr_field obs_point_id_src; /* observation point id source reg */
     uint32_t obs_point_id;              /* observation point id */
     bool use_cookie;                    /* use cookie as obs_point_id */
