@@ -429,7 +429,7 @@ OVN v20.06.0
      backend selection. This is incompatible with older versions.
      Care should be taken while upgrading as the existing
      load balancer traffic will be affected if ovn-controllers
-     are not stopped before uprading northd services.
+     are not stopped before upgrading northd services.
    - Added limited support for logical switches with multiple localnet ports.
      The feature requires that no chassis has two or more physical networks
      with localnet ports that belong to the same logical switch mapped. Routing
