@@ -25,7 +25,7 @@ m4_define([MEASURE_RECOMPUTE],[
 #
 # Configure the northbound database using COMMANDS.
 #
-# BUILD_NBDB() will check if there is a cached nortbound database present
+# BUILD_NBDB() will check if there is a cached northbound database present
 # for this test group. If present, it will use the cached version. If the
 # testsuite was run using the '--rebuild' flag, it will force a rebuild of the
 # northbound database.
