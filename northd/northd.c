@@ -16980,7 +16980,7 @@ build_lsp_lflows_for_lbnats(struct ovn_port *lsp,
  * the LRP's datapath) as routable flows into the other router datapaths
  * which are connected to the LRP's peer's logical switch.
  *
- * i.e If logical switch sw0 is conencted to the routers R0, R1 and R2,
+ * i.e If logical switch sw0 is connected to the routers R0, R1 and R2,
  * and if LRP of R0 has routable addresses (IP1 and IP2), then it adds
  * the routes to reach these IPs in the R1 and R2's datapaths.
  *
