@@ -308,7 +308,7 @@ OVN v21.09.0 - 01 Oct 2021
     desired.
   - Added support for multiple routing tables in Logical Router Static Routes
     and LRPs. OVN Interconnection supports routes' route tables as well.
-    This requires to update schemas for OVN_Northdbound and OVN_IC_Southbound
+    This requires to update schemas for OVN_Northbound and OVN_IC_Southbound
     DBs.
 
 OVN v21.06.0 - 18 Jun 2021
