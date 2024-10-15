@@ -94,7 +94,7 @@ OVN v24.03.0 - 01 Mar 2024
     conntrack for the router port whose peer is l3dgw_port if set it true.
   - Enable PMTU discovery on geneve/vxlan tunnels for E/W traffic.
   - Support selecting encapsulation IP based on the source/destination VIF's
-    settting. See ovn-controller(8) 'external_ids:ovn-encap-ip' for more
+    setting. See ovn-controller(8) 'external_ids:ovn-encap-ip' for more
     details.
   - Introduce next-hop BFD availability check for OVN reroute policies.
   - Add the capability to mark (through pkt.mark) incoming/outgoing packets
