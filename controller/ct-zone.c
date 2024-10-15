@@ -343,7 +343,7 @@ ct_zones_commit(const struct ovsrec_bridge *br_int,
 }
 
 void
-ct_zones_pending_clear_commited(struct shash *pending)
+ct_zones_pending_clear_committed(struct shash *pending)
 {
     struct shash_node *iter;
     SHASH_FOR_EACH_SAFE (iter, pending) {

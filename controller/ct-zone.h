@@ -78,7 +78,7 @@ void ct_zones_commit(const struct ovsrec_bridge *br_int,
                      const struct ovsrec_datapath *ovs_dp,
                      struct ovsdb_idl_txn *ovs_idl_txn,
                      struct ct_zone_ctx *ctx);
-void ct_zones_pending_clear_commited(struct shash *pending);
+void ct_zones_pending_clear_committed(struct shash *pending);
 bool ct_zone_handle_dp_update(struct ct_zone_ctx *ctx,
                               const struct local_datapath *local_dp,
                               const struct shash *local_lports);
