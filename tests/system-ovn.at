@@ -12765,7 +12765,7 @@ subnet 192.168.2.0 netmask 255.255.255.0 {
   max-lease-time 120;
 }
 EOF
-cat > $DHCP_TEST_DIR/dhclien.conf <<EOF
+cat > $DHCP_TEST_DIR/dhclient.conf <<EOF
 timeout 2
 EOF
 
@@ -12781,8 +12781,8 @@ NS_CHECK_EXEC([server], [tcpdump -l -nvv -i s1  udp > pkt.pcap 2>tcpdump_err &])
 OVS_WAIT_UNTIL([grep "listening" tcpdump_err])
 on_exit 'kill $(pidof tcpdump)'
 
-NS_CHECK_EXEC([sw01], [dhclient -1 -q -lf $DHCP_TEST_DIR/dhclient-sw01.lease -pf $DHCP_TEST_DIR/dhclient-sw01.pid -cf $DHCP_TEST_DIR/dhclien.conf sw01])
-NS_CHECK_EXEC([sw11], [dhclient -1 -q -lf $DHCP_TEST_DIR/dhclient-sw11.lease -pf $DHCP_TEST_DIR/dhclient-sw11.pid -cf $DHCP_TEST_DIR/dhclien.conf sw11])
+NS_CHECK_EXEC([sw01], [dhclient -1 -q -lf $DHCP_TEST_DIR/dhclient-sw01.lease -pf $DHCP_TEST_DIR/dhclient-sw01.pid -cf $DHCP_TEST_DIR/dhclient.conf sw01])
+NS_CHECK_EXEC([sw11], [dhclient -1 -q -lf $DHCP_TEST_DIR/dhclient-sw11.lease -pf $DHCP_TEST_DIR/dhclient-sw11.pid -cf $DHCP_TEST_DIR/dhclient.conf sw11])
 
 OVS_WAIT_UNTIL([
     total_pkts=$(cat pkt.pcap | wc -l)
