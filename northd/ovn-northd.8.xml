@@ -3323,7 +3323,7 @@ arp.sha = <var>external_mac</var>;
             </pre>
 
             <p>
-              or in the case of IPv6 neighbor solicition:
+              or in the case of IPv6 neighbor solicitation:
             </p>
 
             <pre>
