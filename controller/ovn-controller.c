@@ -3577,7 +3577,7 @@ struct ed_type_lflow_output {
     struct ovn_extend_table meter_table;
     /* lflow <-> resource cross reference */
     struct objdep_mgr lflow_deps_mgr;;
-    /* conjunciton ID usage information of lflows */
+    /* conjunction ID usage information of lflows */
     struct conj_ids conj_ids;
 
     /* objects (lflows) processed in the current engine execution.
