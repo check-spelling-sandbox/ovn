@@ -92,7 +92,7 @@ def open_spell_check_dict():
                           'decap', 'tlv', 'tlvs', 'decapsulation', 'fd',
                           'cacheline', 'xlate', 'skiplist', 'idl',
                           'comparator', 'natting', 'alg', 'pasv', 'epasv',
-                          'wildcard', 'nated', 'amd64', 'x86_64',
+                          'wildcard', 'amd64', 'x86_64',
                           'recirculation', 'linux', 'afxdp', 'promisc', 'goto',
                           'misconfigured', 'misconfiguration', 'checkpatch',
                           'debian', 'travis', 'cirrus', 'appveyor', 'faq',
