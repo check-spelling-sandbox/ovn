@@ -13245,7 +13245,7 @@ dnl Check the IPFIX samples.
 kill $(cat collector.pid)
 OVS_WAIT_WHILE([kill -0 $(cat collector.pid) 2>/dev/null])
 
-dnl Can't match on observation domain ID due to the followig fix not being
+dnl Can't match on observation domain ID due to the following fix not being
 dnl available in any released version of nfdump:
 dnl https://github.com/phaag/nfdump/issues/544
 dnl
@@ -13402,7 +13402,7 @@ dnl Check the IPFIX samples.
 kill $(cat collector.pid)
 OVS_WAIT_WHILE([kill -0 $(cat collector.pid) 2>/dev/null])
 
-dnl Can't match on observation domain ID due to the followig fix not being
+dnl Can't match on observation domain ID due to the following fix not being
 dnl available in any released version of nfdump:
 dnl https://github.com/phaag/nfdump/issues/544
 dnl
@@ -13526,7 +13526,7 @@ dnl Check the IPFIX samples.
 kill $(cat collector.pid)
 OVS_WAIT_WHILE([kill -0 $(cat collector.pid) 2>/dev/null])
 
-dnl Can't match on observation domain ID due to the followig fix not being
+dnl Can't match on observation domain ID due to the following fix not being
 dnl available in any released version of nfdump:
 dnl https://github.com/phaag/nfdump/issues/544
 dnl
