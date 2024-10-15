@@ -198,7 +198,7 @@ BUILD_ASSERT_DECL(ACL_OBS_STAGE_MAX < (1 << 2));
 
 #define REG_ORIG_TP_DPORT_ROUTER   "reg9[16..31]"
 
-/* Registers used for pasing observability information for switches:
+/* Registers used for passing observability information for switches:
  * domain and point ID. */
 #define REG_OBS_POINT_ID_NEW "reg3"
 #define REG_OBS_POINT_ID_EST "reg9"
