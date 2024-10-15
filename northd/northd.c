@@ -11150,7 +11150,7 @@ parsed_routes_add(struct ovn_datapath *od, const struct hmap *lr_ports,
         return;
     }
 
-    /* Verify that ip_prefix and nexthop have same address familiy. */
+    /* Verify that ip_prefix and nexthop have same address family. */
     if (valid_nexthop) {
         if (IN6_IS_ADDR_V4MAPPED(&prefix) != IN6_IS_ADDR_V4MAPPED(&nexthop)) {
             static struct vlog_rate_limit rl = VLOG_RATE_LIMIT_INIT(5, 1);
