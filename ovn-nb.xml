@@ -407,7 +407,7 @@
           this option set, the traffic path will be a mix of tunnelling and
           localnet ports (since routing is distributed) resulting in the
           leakage of the router port mac address to the upstream switches
-          and undefined behavior if NATting is involed.  This option is
+          and undefined behavior if NATting is involved.  This option is
           disabled by default.
         </p>
       </column>
