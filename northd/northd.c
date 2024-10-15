@@ -4117,7 +4117,7 @@ ovn_port_add_tnlid(struct ovn_port *op, uint32_t tunnel_key)
     return added;
 }
 
-/* Returns false if the requested key is confict with another allocated key, so
+/* Returns false if the requested key is conflict with another allocated key, so
  * that the I-P engine can fallback to recompute if needed; otherwise return
  * true (even if the key is not allocated). */
 static bool
