@@ -3836,7 +3836,7 @@ tcp.flags = RST;
     <group title="Distributed Gateway Port Options">
       <p>
         These options apply to the distributed parent ports of logical ports
-        with <ref column="type"/> of <code>chasssisredirect</code>.
+        with <ref column="type"/> of <code>chassisredirect</code>.
       </p>
 
       <column name="options" key="chassis-redirect-port">
