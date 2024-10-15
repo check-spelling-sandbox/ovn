@@ -5997,7 +5997,7 @@ ovn-nbctl lsp-set-addresses sw0-p2-f "10:54:00:00:00:04 10.0.0.4"
 ovn-nbctl lsp-add sw0 sw0-p3-f
 ovn-nbctl lsp-set-addresses sw0-p3-f "10:54:00:00:00:05 10.0.0.5"
 
-# Add ACL with allow-ralated so that conntrack is hit.
+# Add ACL with allow-related so that conntrack is hit.
 
 ovn-nbctl acl-add sw0 from-lport 1002 "ip" allow-related
 ovn-nbctl acl-add sw0 to-lport 1002 "ip" allow-related
