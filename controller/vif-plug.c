@@ -427,7 +427,7 @@ consider_plug_lport(const struct sbrec_port_binding *pb,
             {
                 VLOG_WARN_RL(&rl,
                              "CMS requested plugging of lport %s, but a port "
-                             "that is not maintained by OVN already exsist "
+                             "that is not maintained by OVN already exists "
                              "in local vSwitch: "UUID_FMT,
                              pb->logical_port,
                              UUID_ARGS(&lbinding->iface->header_.uuid));
