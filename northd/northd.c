@@ -16831,7 +16831,7 @@ build_lrouter_nat_defrag_and_lb(
          * router, add flows that are specific to a NAT rule.  These
          * flows indicate the presence of an applicable NAT rule that
          * can be applied in a distributed manner.
-         * In particulr REG_SRC_IPV4/REG_SRC_IPV6 and eth.src are set to
+         * In particular REG_SRC_IPV4/REG_SRC_IPV6 and eth.src are set to
          * NAT external IP and NAT external mac so the ARP request
          * generated in the following stage is sent out with proper IP/MAC
          * src addresses.
