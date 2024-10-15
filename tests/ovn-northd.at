@@ -10045,7 +10045,7 @@ AT_KEYWORDS([drop])
 
 ovn_start
 
-# Check that there is an explicit drop lflow in for spoecified DP and table.
+# Check that there is an explicit drop lflow in for specified DP and table.
 check_default_lflow() {
     dp=$1
     pipeline=$2
