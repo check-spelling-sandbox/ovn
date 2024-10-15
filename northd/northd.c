@@ -8494,7 +8494,7 @@ build_vtep_hairpin(struct ovn_datapath *od, struct lflow_table *lflows,
         return;
     }
 
-    /* Ingress Pre-ARP flows for VTEP hairpining traffic. Priority 1000:
+    /* Ingress Pre-ARP flows for VTEP hairpinning traffic. Priority 1000:
      * Packets received from VTEP ports must go directly to L2LKP table.
      */
     char *action = xasprintf("next(pipeline=ingress, table=%d);",
