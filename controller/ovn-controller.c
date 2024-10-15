@@ -1161,7 +1161,7 @@ struct ed_type_runtime_data {
     struct sset local_lports;
 
     /* Port bindings that are relevant to the local chassis (VIFs bound
-     * localy, patch ports).
+     * locally, patch ports).
      */
     struct related_lports related_lports;
     struct sset active_tunnels;
