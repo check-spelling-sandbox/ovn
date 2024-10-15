@@ -5769,7 +5769,7 @@ ovs-vsctl \
 start_daemon ovn-controller
 
 # Logical network:
-# 1 logical switch connetected to one logical router.
+# 1 logical switch connected to one logical router.
 # 2 VMs, one used as backend for a load balancer.
 
 check ovn-nbctl                                                  \
@@ -5878,7 +5878,7 @@ ovs-vsctl \
 start_daemon ovn-controller
 
 # Logical network:
-# 1 logical switch connetected to one logical router.
+# 1 logical switch connected to one logical router.
 # 2 VMs, one used as backend for a load balancer.
 
 check ovn-nbctl                                                  \
@@ -13112,7 +13112,7 @@ dnl Start ovn-controller
 start_daemon ovn-controller
 
 dnl Logical network:
-dnl 1 logical switch connetected to one logical router
+dnl 1 logical switch connected to one logical router
 dnl 6 UDP load balancers (ports 1000, 1010, 2000, 2010, 3000, 3010)
 dnl 2 VIFs
 
