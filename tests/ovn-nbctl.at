@@ -1963,7 +1963,7 @@ Route Table <main>:
                 0.0.0.0/0               192.168.0.1 dst-ip
 ])
 
-dnl Delete route by explicitely specifying --policy
+dnl Delete route by explicitly specifying --policy
 AT_CHECK([ovn-nbctl --policy=dst-ip lr-route-del lr0 10.0.0.0/24])
 AT_CHECK([ovn-nbctl --policy=src-ip lr-route-del lr0 10.0.0.0/24])
 AT_CHECK([ovn-nbctl lr-route-list lr0], [0], [dnl
