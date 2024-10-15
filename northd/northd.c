@@ -7121,7 +7121,7 @@ consider_acl(struct lflow_table *lflows, const struct ovn_datapath *od,
     if (!strcmp(acl->action, "allow")
         || !strcmp(acl->action, "allow-related")) {
         /* If there are any stateful flows, we must even commit "allow"
-         * actions.  This is because, while the initiater's
+         * actions.  This is because, while the initiator's
          * direction may not have any stateful rules, the server's
          * may and then its return traffic would not have an
          * associated conntrack entry and would return "+invalid". */
@@ -7513,7 +7513,7 @@ build_acls(const struct ls_stateful_record *ls_stateful_rec,
          * By default, traffic is allowed (if default_acl_drop is 'false') or
          * dropped (if default_acl_drop is 'true').  This is partially
          * handled by the Priority 0 ACL flows added earlier, but we also
-         * need to commit IP flows.  This is because, while the initiater's
+         * need to commit IP flows.  This is because, while the initiator's
          * direction may not have any stateful rules, the server's may
          * and then its return traffic would not have an associated
          * conntrack entry and would return "+invalid".
