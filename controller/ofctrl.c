@@ -1478,7 +1478,7 @@ ofctrl_remove_flows_for_as_ip(struct ovn_desired_flow_table *flow_table,
         }
     }
     if (!found) {
-        /* No address set tracking infomation found, can't perform the
+        /* No address set tracking information found, can't perform the
          * deletion. */
         return false;
     }
