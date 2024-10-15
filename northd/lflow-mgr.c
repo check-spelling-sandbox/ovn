@@ -498,7 +498,7 @@ lflow_table_sync_to_sb(struct lflow_table *lflow_table,
  *
  * One way to ensure thread safety is to maintain array of hash locks
  * in each lflow_ref just like how we have static variable lflow_hash_locks
- * of type ovs_mutex. This would mean that client has to reconsile the
+ * of type ovs_mutex. This would mean that client has to reconcile the
  * lflow_ref hmap lflow_ref_nodes (by calling hmap_expand()) after the
  * lflow generation is complete.  (See lflow_table_expand()).
  *
