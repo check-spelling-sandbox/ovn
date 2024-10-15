@@ -219,7 +219,7 @@ m4_define([DUMP_RELATED_PORTS], [
 m4_define([CHECK_FLOWS_AFTER_RECOMPUTE], [
     hv=$1
     sbox=$2
-    # Make sure I+P has finalized his job before getting flows and comparing them after recompte.
+    # Make sure I+P has finalized his job before getting flows and comparing them after recompute.
     # Some tests have northd and ovn-nb ovsdb stopped, so avoid ovn-nbctl for those.
     if [[ -e ovn-nb/ovn-nb.sock ]] && [[ -e northd/ovn-northd.pid ]]; then
         # Do wait twice to handle some potential race conditions
@@ -249,7 +249,7 @@ m4_define([CHECK_RELATED_PORTS_AFTER_RECOMPUTE], [
     sbox=$2
     related_ports=$3
     AT_CAPTURE_FILE([related-ports-diff])
-    # Make sure I+P has finalized the job before getting flows and comparing them after recompte.
+    # Make sure I+P has finalized the job before getting flows and comparing them after recompute.
     # Some tests have northd and ovn-nb ovsdb stopped, so avoid ovn-nbctl for those.
     if [[ -e ovn-nb/ovn-nb.sock ]] && [[ -e northd/ovn-northd.pid ]]; then
         # Do wait twice to handle some potential race conditions
@@ -280,7 +280,7 @@ m4_define([CHECK_AFTER_RECOMPUTE], [
     sbox=$2
     related_ports=$3
     AT_CAPTURE_FILE([related-ports-diff])
-    # Make sure I+P has finalized his job before getting flows and comparing them after recompte.
+    # Make sure I+P has finalized his job before getting flows and comparing them after recompute.
     # Some tests have northd and ovn-nb ovsdb stopped, so avoid ovn-nbctl for those.
     if [[ -e ovn-nb/ovn-nb.sock ]] && [[ -e northd/ovn-northd.pid ]]; then
         # Do wait twice to handle some potential race conditions

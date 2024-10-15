@@ -311,7 +311,7 @@ void engine_set_force_recompute_immediate(void);
  * usual processing without forced full recompute. */
 void engine_clear_force_recompute(void);
 
-/* Returns whether next engine_run() is forced to rempute. */
+/* Returns whether next engine_run() is forced to recompute. */
 bool engine_get_force_recompute(void);
 
 /* Return the current engine_context. The values in the context can be NULL
