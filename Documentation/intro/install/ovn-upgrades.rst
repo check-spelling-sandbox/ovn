@@ -175,7 +175,7 @@ During database upgrading, if there is schema change, the DB file will be
 converted to the new schema automatically, if the schema change is backward
 compatible.  OVN tries the best to keep the DB schemas backward compatible.
 
-However, there can be situations that an incompatible change is reasonble.  An
+However, there can be situations that an incompatible change is reasonable.  An
 example of such case is to add constraints in the table to ensure correctness.
 If there were already data that violates the new constraints got added somehow,
 it will result in DB upgrade failures.  In this case, user should manually
