@@ -5928,7 +5928,7 @@ main(int argc, char *argv[])
              * (or it did not change anything in the database). */
             ct_zones_data = engine_get_data(&en_ct_zones);
             if (ct_zones_data) {
-                ct_zones_pending_clear_commited(&ct_zones_data->ctx.pending);
+                ct_zones_pending_clear_committed(&ct_zones_data->ctx.pending);
             }
 
             vif_plug_finish_deleted(
