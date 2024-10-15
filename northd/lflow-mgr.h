@@ -115,7 +115,7 @@ void lflow_table_add_lflow_default_drop(struct lflow_table *,
 /* This macro is similar to ovn_lflow_add_with_hint, except that it requires
  * the IN_OUT_PORT argument, which tells the lport name that appears in the
  * MATCH, which helps ovn-controller to bypass lflows parsing when the lport is
- * not local to the chassis. The critiera of the lport to be added using this
+ * not local to the chassis. The criteria of the lport to be added using this
  * argument:
  *
  * - For ingress pipeline, the lport that is used to match "inport".
