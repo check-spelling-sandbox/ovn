@@ -2427,7 +2427,7 @@ AT_CHECK([ovn-appctl inc-engine/recompute])
 # Check that localports physical flows are removed
 OVS_WAIT_UNTIL([test 0 = $(as hv1 ovs-ofctl dump-flows br-int | grep -c $(port_binding_cookie metadata))])
 
-# The order is impotant, if the port is removed first, the bug wouldn't be triggered
+# The order is important, if the port is removed first, the bug wouldn't be triggered
 AT_CHECK([ovn-nbctl lsp-del metadata])
 AT_CHECK([ovs-vsctl del-port br-int metadata])
 create_localport
