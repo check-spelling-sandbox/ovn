@@ -5328,7 +5328,7 @@ nd_ns {
           corresponding NAT rule. The flow matches if destination ip
           is an <code>exempted_ext_ip</code> and the action is <code>next;
           </code>. This flow is used to bypass the ct_snat action for a packet
-          which is destinted to <code>exempted_ext_ips</code>.
+          which is destined to <code>exempted_ext_ips</code>.
         </p>
       </li>
 
@@ -5396,7 +5396,7 @@ nd_ns {
           corresponding NAT rule. The flow matches if destination ip
           is an <code>exempted_ext_ip</code> and the action is <code>next;
           </code>. This flow is used to bypass the ct_snat action for a flow
-          which is destinted to <code>exempted_ext_ips</code>.
+          which is destined to <code>exempted_ext_ips</code>.
         </p>
 
       </li>
