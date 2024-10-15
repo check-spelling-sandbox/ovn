@@ -202,7 +202,7 @@ start_daemon ovn-controller
 
 # Logical network:
 # Two LRs - R1 and R2 that are connected to each other via LS "join"
-# in fd00::/64 network. R1 has switchess foo (fd11::/64) and
+# in fd00::/64 network. R1 has switches foo (fd11::/64) and
 # bar (fd12::/64) connected to it. R2 has alice (fd21::/64) connected
 # to it.  R2 is a gateway router on which we add NAT rules.
 #
@@ -382,7 +382,7 @@ start_daemon ovn-controller
 
 # Logical network:
 # Two LRs - R1 and R2 that are connected to each other via LS "join"
-# in 20.0.0.0/24 network. R1 has switchess foo (192.168.1.0/24) connected
+# in 20.0.0.0/24 network. R1 has switches foo (192.168.1.0/24) connected
 # to it.  R2 has alice (172.16.1.0/24) connected to it.
 # R2 is a gateway router on which we add NAT rules.
 #
@@ -494,7 +494,7 @@ start_daemon ovn-controller
 
 # Logical network:
 # Two LRs - R1 and R2 that are connected to each other via LS "join"
-# in fd20::/64 network. R1 has switchess foo (fd10::/64) connected
+# in fd20::/64 network. R1 has switches foo (fd10::/64) connected
 # to it.  R2 has alice (fd30::/64) connected to it.
 # R2 is a gateway router on which we add NAT rules.
 #
@@ -606,7 +606,7 @@ start_daemon ovn-controller
 
 # Logical network:
 # Three LRs - R1, R2 and R3 that are connected to each other via LS "join"
-# in 20.0.0.0/24 network. R1 has switchess foo (192.168.1.0/24) and
+# in 20.0.0.0/24 network. R1 has switches foo (192.168.1.0/24) and
 # bar (192.168.2.0/24) connected to it. R2 has alice (172.16.1.0/24) connected
 # to it.  R3 has bob (172.16.1.0/24) connected to it. Note how both alice and
 # bob have the same subnet behind it.  We are trying to simulate external
@@ -828,7 +828,7 @@ start_daemon ovn-controller
 
 # Logical network:
 # Three LRs - R1, R2 and R3 that are connected to each other via LS "join"
-# in fd20::/64 network. R1 has switchess foo (fd11::/64) and
+# in fd20::/64 network. R1 has switches foo (fd11::/64) and
 # bar (fd12::/64) connected to it. R2 has alice (fd30::/64) connected
 # to it.  R3 has bob (fd30::/64) connected to it. Note how both alice and
 # bob have the same subnet behind it.  We are trying to simulate external
@@ -2088,7 +2088,7 @@ start_daemon ovn-controller
 
 # Logical network:
 # Two LRs - R1 and R2 that are connected to each other via LS "join"
-# in 20.0.0.0/24 network. R1 has switchess foo (192.168.1.0/24) and
+# in 20.0.0.0/24 network. R1 has switches foo (192.168.1.0/24) and
 # bar (192.168.2.0/24) connected to it. R2 has alice (172.16.1.0/24) connected
 # to it.  R2 is a gateway router on which we add load-balancing rules.
 #
@@ -2434,7 +2434,7 @@ start_daemon ovn-controller
 
 # Logical network:
 # Two LRs - R1 and R2 that are connected to each other via LS "join"
-# in fd20::/64 network. R1 has switchess foo (fd11::/64) and
+# in fd20::/64 network. R1 has switches foo (fd11::/64) and
 # bar (fd12::/64) connected to it. R2 has alice (fd72::/64) connected
 # to it.  R2 is a gateway router on which we add load-balancing rules.
 #
@@ -2590,7 +2590,7 @@ start_daemon ovn-controller
 
 # Logical network:
 # Three LRs - R1, R2 and R3 that are connected to each other via LS "join"
-# in 20.0.0.0/24 network. R1 has switchess foo (192.168.1.0/24) and
+# in 20.0.0.0/24 network. R1 has switches foo (192.168.1.0/24) and
 # bar (192.168.2.0/24) connected to it. R2 has alice (172.16.1.0/24) connected
 # to it.  R3 has bob (172.16.1.0/24) connected to it. Note how both alice and
 # bob have the same subnet behind it.  We are trying to simulate external
@@ -2761,7 +2761,7 @@ start_daemon ovn-controller
 
 # Logical network:
 # Three LRs - R1, R2 and R3 that are connected to each other via LS "join"
-# in fd20::/64 network. R1 has switchess foo (fd11::/64) and
+# in fd20::/64 network. R1 has switches foo (fd11::/64) and
 # bar (fd12::/64) connected to it. R2 has alice (fd72::/64) connected
 # to it.  R3 has bob (fd72::/64) connected to it. Note how both alice and
 # bob have the same subnet behind it.  We are trying to simulate external
@@ -9878,7 +9878,7 @@ ovs-vsctl \
 start_daemon ovn-controller
 
 # Logical network:
-# One LR - R1 with switchess foo (fd11::/64) and
+# One LR - R1 with switches foo (fd11::/64) and
 # bar (fd12::/64) connected to it
 #
 #    foo -- R1 -- bar
@@ -12016,7 +12016,7 @@ start_daemon ovn-controller
 
 # Logical network:
 # Two LRs - R1 and R2 that are connected to each other via LS "join"
-# in 20.0.0.0/24 network. R1 has switchess foo (192.168.1.0/24) and
+# in 20.0.0.0/24 network. R1 has switches foo (192.168.1.0/24) and
 # bar (192.168.2.0/24) connected to it. R2 has alice (172.16.1.0/24) connected
 # to it.  R2 is a gateway router on which we add load-balancing rules.
 #
