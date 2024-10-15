@@ -2586,7 +2586,7 @@ update_installed_flows_by_track(struct ovn_desired_flow_table *flow_table,
                                  "updating installed (tracked conflict)");
                 }
             }
-            /* The track_list_node emptyness is used to check if the node is
+            /* The track_list_node emptiness is used to check if the node is
              * already added to track list, so initialize it again here. */
             ovs_list_init(&f->track_list_node);
         }
