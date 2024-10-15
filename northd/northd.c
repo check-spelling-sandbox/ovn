@@ -9145,7 +9145,7 @@ build_dhcpv4_options_flows(struct ovn_port *op,
             ds_destroy(&ipv4_addr_match);
 
             /* Add 34000 priority flow to allow DHCP reply from ovn-controller
-             * to the ogical port of the datapath if the CMS has configured
+             * to the logical port of the datapath if the CMS has configured
              * DHCPv4 options.
              * */
             if (!is_external) {
@@ -9225,7 +9225,7 @@ build_dhcpv6_options_flows(struct ovn_port *op,
             ds_destroy(&response_action);
 
             /* Add 34000 priority flow to allow DHCP reply from ovn-controller
-             * to the ogical port of the datapath if the CMS has configured
+             * to the logical port of the datapath if the CMS has configured
              * DHCPv6 options.
              * */
             if (!is_external) {
