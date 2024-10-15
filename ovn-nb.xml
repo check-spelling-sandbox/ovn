@@ -2981,7 +2981,7 @@ or
 
     <column name="direction">
       <p>
-        The value of this field is similar to <ref colun="direction"
+        The value of this field is similar to <ref column="direction"
         table="ACL" db="OVN_Northbound"/> column in the OVN Northbound
         database's <ref table="ACL" db="OVN_Northbound"/> table.
       </p>
