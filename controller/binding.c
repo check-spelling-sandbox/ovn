@@ -2688,7 +2688,7 @@ binding_handle_ovs_interface_changes(struct binding_ctx_in *b_ctx_in,
             if (iface_id) {
                 /* Check if iface_id is changed. If so we need to
                  * release the old port binding and associate this
-                 * inteface to new port binding. */
+                 * interface to new port binding. */
                 if (old_iface_id && strcmp(iface_id, old_iface_id)) {
                     cleared_iface_id = old_iface_id;
                 } else if (ofport <= 0) {
