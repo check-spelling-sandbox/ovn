@@ -74,7 +74,7 @@ static struct ovsdb_idl_txn *the_idl_txn;
 static int leader_only = true;
 
 /* --shuffle-remotes, --no-shuffle-remotes: Shuffle the order of remotes that
- * are specified in the connetion method string. */
+ * are specified in the connection method string. */
 static int shuffle_remotes = true;
 
 /* --unixctl-path: Path to use for unixctl server socket, for daemon mode. */
