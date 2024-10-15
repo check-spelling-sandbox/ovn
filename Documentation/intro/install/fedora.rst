@@ -80,8 +80,8 @@ YUM::
 
 Once that is completed, remove the file ``/tmp/ovn.spec``.
 
-Bootstraping
-------------
+Bootstrapping
+-------------
 
 Refer to :ref:`general-bootstrapping`.
 
