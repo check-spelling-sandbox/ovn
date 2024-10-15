@@ -12176,7 +12176,7 @@ build_lrouter_nat_flows_for_lb(
     }
 
     /* Add logical flows to UNDNAT the load balanced reverse traffic in
-     * the router egress pipleine stage - S_ROUTER_OUT_UNDNAT if the logical
+     * the router egress pipeline stage - S_ROUTER_OUT_UNDNAT if the logical
      * router has a gateway router port associated.
      */
     ds_put_format(&undnat_match, "%s && (", ip_match);
