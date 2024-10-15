@@ -54,7 +54,7 @@ repeated multiple times horizontally (multiple groups connected to one group)
 and/or vertically (multiple groups connected one-by-one in a chain).
 
 OVN Southbound OVSDB cluster must be configured with at least one remote, which
-allows OVSDB Relay servers to connnect to it.  This remote must not have
+allows OVSDB Relay servers to connect to it.  This remote must not have
 configured RBAC rules.  RBAC rules can be configured to be checked on the OVSDB
 Relay servers, which are used to connect to ovn-controller and
 ovn-controller-vtep.
