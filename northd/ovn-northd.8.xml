@@ -1471,7 +1471,7 @@
       <li>
         If packet was received from HW VTEP (ramp switch), and this packet is
         ARP or Neighbor Solicitation, such packet is passed to next table with
-        max proirity.  ARP/ND requests from HW VTEP must be handled in logical
+        max priority.  ARP/ND requests from HW VTEP must be handled in logical
         router ingress pipeline.
       </li>
       <li>
