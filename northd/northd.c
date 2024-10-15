@@ -2224,7 +2224,7 @@ join_logical_ports(const struct sbrec_port_binding_table *sbrec_pb_table,
                  *
                  * This change will affect container/virtual lport type
                  * changes only for now, this change is needed in
-                 * contaier/virtual lport cases to avoid port type
+                 * container/virtual lport cases to avoid port type
                  * conflicts in the ovn-controller when the user clears
                  * the parent_port field in the container lport or updated
                  * the lport type.
