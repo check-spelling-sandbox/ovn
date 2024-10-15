@@ -3311,7 +3311,7 @@ delete_done:
     return handled;
 }
 
-/* Static functions for local_lbindind and binding_lport. */
+/* Static functions for local_lbinding and binding_lport. */
 static struct local_binding *
 local_binding_create(const char *name, const struct ovsrec_interface *iface)
 {
