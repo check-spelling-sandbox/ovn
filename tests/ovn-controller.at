@@ -1851,7 +1851,7 @@ AT_CHECK([echo $(($reprocess_count_new - $reprocess_count_old))], [0], [0
 OVN_CLEANUP([hv1])
 AT_CLEANUP
 
-AT_SETUP([ovn-controller - I-P for address set update: conjunctions overlaping with other lflows])
+AT_SETUP([ovn-controller - I-P for address set update: conjunctions overlapping with other lflows])
 AT_KEYWORDS([as-i-p])
 
 ovn_start
