@@ -80,7 +80,7 @@ vif_plug_port_finish(const struct vif_plug_class *vif_plug_class,
     vif_plug_class->vif_plug_port_finish(ctx_in, ctx_out);
 }
 
-/* Free any data allocated to 'ctx_out' in a prevous call to
+/* Free any data allocated to 'ctx_out' in a previous call to
  * vif_plug_port_prepare. */
 void
 vif_plug_port_ctx_destroy(const struct vif_plug_class *vif_plug_class,
