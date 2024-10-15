@@ -471,7 +471,7 @@ update_sequence_numbers(int64_t loop_start_time,
                         struct ovsdb_idl_txn *ovnsb_idl_txn,
                         struct ovsdb_idl_loop *sb_loop)
 {
-    /* Create rows in global tables if neccessary */
+    /* Create rows in global tables if necessary */
     const struct nbrec_nb_global *nb = nbrec_nb_global_first(ovnnb_idl);
     if (!nb) {
         nb = nbrec_nb_global_insert(ovnnb_idl_txn);
