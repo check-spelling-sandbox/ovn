@@ -5543,7 +5543,7 @@ clone {
     </p>
 
     <p>
-      When debug drop-sampling has been cofigured in the OVN Northbound
+      When debug drop-sampling has been configured in the OVN Northbound
       database, the ovn-northd will replace all the <code>drop;</code>
       actions with a <code>sample(priority=65535, collector_set=<var>id</var>,
       obs_domain=<var>obs_id</var>, obs_point=@cookie)</code> action, where:
