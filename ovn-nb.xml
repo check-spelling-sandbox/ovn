@@ -2129,10 +2129,10 @@
         <p>
           Maps from endpoint IP to a colon-separated pair of logical port name
           and source IP,
-          e.g. <code><var>port_name</var>:<var>sourc_ip</var></code> for IPv4.
+          e.g. <code><var>port_name</var>:<var>source_ip</var></code> for IPv4.
           Health checks are sent to this port with the specified source IP.
           For IPv6 square brackets must be used around IP address, e.g:
-          <code><var>port_name</var>:<var>[sourc_ip]</var></code>
+          <code><var>port_name</var>:<var>[source_ip]</var></code>
         </p>
 
         <p>
