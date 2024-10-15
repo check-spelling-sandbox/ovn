@@ -497,7 +497,7 @@
       before eventually advancing to ingress table <code>ACLs</code>. If
       special ports such as route ports or localnet ports can't use ct(), a
       priority-110 flow is added to skip over stateful ACLs.  This
-      priority-110 flow is not addd for router ports if the option
+      priority-110 flow is not added for router ports if the option
       enable_router_port_acl is set to true in
       <ref column="options:enable_router_port_acl"
       table="Logical_Switch_Port" db="OVN_Northbound"/> column of
