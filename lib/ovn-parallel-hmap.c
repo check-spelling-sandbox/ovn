@@ -239,7 +239,7 @@ ovn_update_worker_pool(size_t requested_pool_size,
 
 cleanup:
     /* Something went wrong when opening semaphores. In this case
-     * it is better to shut off parallel procesing altogether
+     * it is better to shut off parallel processing altogether
      */
     VLOG_ERR("Failed to initialize parallel processing: %s",
              ovs_strerror(errno));
