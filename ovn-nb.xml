@@ -3317,7 +3317,7 @@ or
         the chassis where the <ref column="logical_port" table="NAT"/>
         resides.  In addition, the logical router's MAC address is
         automatically programmed in the peer logical switch's
-        destination lookup flow on the gateway chasssis.  If it is
+        destination lookup flow on the gateway chassis.  If it is
         desired to generate gratuitous ARPs for NAT addresses, then
         set the peer LSP's <ref column="options" key="nat-addresses"
         table="Logical_Switch_Port"/> to <code>router</code>.

@@ -101,7 +101,7 @@ get_ordered_ha_chassis_list(const struct sbrec_ha_chassis_group *ha_ch_grp,
             * then the local chassis can be active. Otherwise it can't.
             * This can happen in the following scenario.
             * Lets say we have chassis HA1 (prioirty 20) and HA2 (priority 10)
-            * in the ha_chasis_group and compute chassis C1 and C2 are in the
+            * in the ha_chassis_group and compute chassis C1 and C2 are in the
             * reference chassis list. If HA1 chassis has lost the link and
             * when this function is called for HA2 we need to consider
             * HA2 as active since it has active BFD sessions with C1 and C2.

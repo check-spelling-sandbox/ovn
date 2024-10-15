@@ -15290,7 +15290,7 @@ build_ipv6_input_flows_for_lrouter_port(
         ds_clear(match);
         if (is_l3dgw_port(op)) {
             /* Traffic with eth.src = l3dgw_port->lrp_networks.ea_s
-             * should only be sent from the gateway chassi, so that
+             * should only be sent from the gateway chassis, so that
              * upstream MAC learning points to the gateway chassis.
              * Also need to avoid generation of multiple ND replies
              * from different chassis. */

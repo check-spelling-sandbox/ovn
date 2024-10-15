@@ -1735,7 +1735,7 @@ AT_CHECK([ovn-nbctl --may-exist lrp-add lr0 lrp1 00:00:00:01:02:03 10.0.0.1/24 1
 
 dnl ---------------------------------------------------------------------
 
-OVN_NBCTL_TEST([ovn_nbctl_lrp_gw_chassi], [logical router port gateway chassis], [
+OVN_NBCTL_TEST([ovn_nbctl_lrp_gw_chassis], [logical router port gateway chassis], [
 AT_CHECK([ovn-nbctl lr-add lr0])
 AT_CHECK([ovn-nbctl lrp-add lr0 lrp0 00:00:00:01:02:03 192.168.1.1/24])
 AT_CHECK([ovn-nbctl lrp-get-gateway-chassis lrp0], [0], [])
