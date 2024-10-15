@@ -181,7 +181,7 @@ If there were already data that violates the new constraints got added somehow,
 it will result in DB upgrade failures.  In this case, user should manually
 correct data using ovn-nbctl (for north-bound DB) or ovn-sbctl (for south-
 bound DB), and then upgrade again following previous steps.  Below is a list
-of known impactible schema changes and how to fix when error encountered.
+of known impactable schema changes and how to fix when error encountered.
 
 #. Release 2.11: index [type, ip] added for Encap table of south-bound DB to
    prevent duplicated IPs being used for same tunnel type.  If there are
