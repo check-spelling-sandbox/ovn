@@ -348,7 +348,7 @@ patch_run(struct ovsdb_idl_txn *ovs_idl_txn,
         /* Wait for some iterations before really deleting any patch ports,
          * because with conditional monitoring it is possible that related SB
          * data is not completely downloaded yet after last restart of
-         * ovn-controller.  Otherwise it may cause unncessary dataplane
+         * ovn-controller.  Otherwise it may cause unnecessary dataplane
          * interruption during restart/upgrade. */
         if (!daemon_started_recently()) {
             remove_port(bridge_table, port);
