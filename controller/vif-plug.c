@@ -539,7 +539,7 @@ vif_plug_handle_iface(const struct ovsrec_interface *iface_rec,
                    || !lport_can_bind_on_this_chassis(
                        vif_plug_ctx_in->chassis_rec, pb))) {
         /* No lport for this interface or it is destined for different chassis,
-         * consuder unplugging it */
+         * consider unplugging it */
         handled &= consider_unplug_iface(iface_rec, pb,
                                          vif_plug_ctx_in, vif_plug_ctx_out);
     }
