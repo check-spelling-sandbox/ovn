@@ -122,7 +122,7 @@ static bool lflow_hash_lock_initialized = false;
  * used, so that no two threads can add to the bucket at the same time.  It is
  * ok that the same lock is used to protect multiple buckets, so a fixed sized
  * mutex array is used instead of 1-1 mapping to the hash buckets. This
- * simplies the implementation while effectively reduces lock contention
+ * simplifies the implementation while effectively reduces lock contention
  * because the chance that different threads contending the same lock amongst
  * the big number of locks is very low. */
 #define LFLOW_HASH_LOCK_MASK 0xFFFF
