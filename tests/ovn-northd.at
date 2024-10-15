@@ -493,7 +493,7 @@ check_row_count HA_Chassis 2 'chassis=[[]]'
 # We should have 1 ha chassis with 'chassis' column set for hv1
 check_row_count HA_Chassis 1 'chassis!=[[]]'
 
-# Create another logical router port and associate to the same ha_chasis_group
+# Create another logical router port and associate to the same ha_chassis_group
 check ovn-nbctl lr-add lr1
 check ovn-nbctl lrp-add lr1 lr1-public 00:00:20:20:12:14 182.168.0.100/24
 
