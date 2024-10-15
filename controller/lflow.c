@@ -1625,7 +1625,7 @@ add_lb_vip_hairpin_reply_action(struct in6_addr *vip6, ovs_be32 vip,
 
 /* Adds flows to detect hairpin sessions.
  *
- * For backwards compatibilty with older ovn-northd versions, uses
+ * For backwards compatibility with older ovn-northd versions, uses
  * ct_nw_dst(), ct_ipv6_dst(), ct_tp_dst(), otherwise uses the
  * original destination tuple stored by ovn-northd.
  */

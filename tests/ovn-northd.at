@@ -10206,7 +10206,7 @@ AT_CLEANUP
 ])
 
 OVN_FOR_EACH_NORTHD_NO_HV([
-AT_SETUP([Chassis-feature compatibitility - remote chassis])
+AT_SETUP([Chassis-feature compatibility - remote chassis])
 ovn_start
 
 AS_BOX([Local chassis])
