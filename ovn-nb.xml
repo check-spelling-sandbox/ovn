@@ -1183,7 +1183,7 @@
           SNAT and DNAT external IP addresses defined on the
           <ref column="options" key="router-port"/>'s logical router,
           using the <ref column="options" key="router-port"/>'s MAC address,
-          not cosidering configured load balancers.
+          not considering configured load balancers.
         </column>
 
         <column name="options" key="arp_proxy">
