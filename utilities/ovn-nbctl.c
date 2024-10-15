@@ -447,7 +447,7 @@ DHCP Options commands:\n\
                            lists the DHCP_Options rows\n\
   dhcp-options-set-options DHCP_OPTIONS_UUID  KEY=VALUE [KEY=VALUE]...\n\
                            set DHCP options for DHCP_OPTIONS_UUID\n\
-  dhcp-options-get-options DHCO_OPTIONS_UUID \n\
+  dhcp-options-get-options DHCP_OPTIONS_UUID \n\
                            displays the DHCP options for DHCP_OPTIONS_UUID\n\
 \n\
 Connection commands:\n\
