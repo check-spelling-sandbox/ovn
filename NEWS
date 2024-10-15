@@ -488,7 +488,7 @@ v2.12.0 - 03 Sep 2019
        datapath regardless of '--cleanup' option. Use '--cleanup' to remove
        internal ports too.
      * Removed experimental tag for SMC cache.
-     * Datapath classifer code refactored to enable function pointers to select
+     * Datapath classifier code refactored to enable function pointers to select
        the lookup implementation at runtime. This enables specialization of
        specific subtables based on the miniflow attributes, enhancing the
        performance of the subtable search.
