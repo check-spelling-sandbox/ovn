@@ -277,7 +277,7 @@
         <p>
           Note: This option is deprecated, the only behavior is to always
           combine logical flows by datapath groups.  Changing the value or
-          removing this option all toghether will have no effect.
+          removing this option all together will have no effect.
         </p>
         <p>
           <code>ovn-northd</code> combines logical flows that differs
