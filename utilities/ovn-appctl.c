@@ -106,7 +106,7 @@ Common commands:\n\
       Set log levels as detailed in SPEC, which may include:\n\
       A valid module name (all modules, by default)\n\
       'syslog', 'console', 'file' (all destinations, by default))\n\
-      'off', 'emer', 'err', 'warn', 'info', or 'dbg' ('dbg', bydefault)\n\
+      'off', 'emer', 'err', 'warn', 'info', or 'dbg' ('dbg', by default)\n\
   vlog/reopen        Make the program reopen its log file\n\
 Other options:\n\
   --timeout=SECS     wait at most SECS seconds for a response\n\
