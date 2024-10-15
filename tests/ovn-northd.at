@@ -10678,7 +10678,7 @@ check_recompute_counter 0 0 0 0 0 0
 
 # Delete and re-add a LSP for several times continuously, to ensure
 # frequent operations do not trigger recompute when there are in-flight
-# transcations.
+# transactions.
 for i in $(seq 10); do
     # wait for sb but not wait for hv
     check ovn-nbctl --wait=sb lsp-del lsp0-2
