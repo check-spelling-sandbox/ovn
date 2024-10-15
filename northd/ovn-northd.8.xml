@@ -2069,7 +2069,7 @@ output;
         creates based on learned <ref table="IGMP_Group" db="OVN_Southbound"/>
         entries.  The flows also forward packets to the
         <code>MC_MROUTER_FLOOD</code> multicast group, which
-        <code>ovn-nortdh</code> populates with all the logical ports that
+        <code>ovn-northd</code> populates with all the logical ports that
         are connected to logical routers with
         <ref column="options" table="Logical_Router"/>:mcast_relay='true'.
       </li>
