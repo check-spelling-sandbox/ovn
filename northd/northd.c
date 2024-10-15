@@ -5015,7 +5015,7 @@ northd_handle_sb_port_binding_changes(
              * "sync_from_sb").
              *
              * For an LRP PB, it is most likely because of
-             *   - IPv6 prefix delagation updates from ovn-controller.
+             *   - IPv6 prefix delegation updates from ovn-controller.
              *     This update is handled in "sync_from_sb" node.
              *   - ha chassis group and this can be ignored.
              *
