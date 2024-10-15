@@ -1403,7 +1403,7 @@ lsp_is_type_changed(const struct sbrec_port_binding *sb,
 
     if (!sb->type[0] && !nbsp->type[0]) {
         /* Two "VIF's" interface make sure both have parent_port
-         * set or both have parent_port unset, otherwisre they are
+         * set or both have parent_port unset, otherwise they are
          * different ports type.
          */
         if ((!sb->parent_port && nbsp->parent_name) ||
