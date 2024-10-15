@@ -25,7 +25,7 @@
 OVN Interconnection
 ===================
 
-This document provides a guide for interconnecting multiple OVN deployements
+This document provides a guide for interconnecting multiple OVN deployments
 with OVN managed tunneling.  More details about the OVN Interconnectiong design
 can be found in ``ovn-architecture``\(7) manpage.
 
