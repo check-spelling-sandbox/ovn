@@ -242,7 +242,7 @@ cached. In order to force the tests to rebuild all these objects, run::
 A typical workflow for a developer trying to improve the performance of OVN
 would be the following:
 
-0. Optional: Modify/add a performance test to buld the topology that you are
+0. Optional: Modify/add a performance test to build the topology that you are
    benchmarking, if required.
 1. Run ``make check-perf TESTSUITEFLAGS="--rebuild"`` to generate cached
    databases (and complete a test run). The results of each test run are
