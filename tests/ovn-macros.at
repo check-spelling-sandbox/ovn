@@ -347,7 +347,7 @@ m4_define([OVN_CLEANUP_SBOX],[
     OVN_CLEANUP_VSWITCH([$sbox])
 
     # Check for errors in logs. Ignore following errors:
-    # "connection failed (No such file or directory)" as happens everytime we restart ovs-vswitchd.
+    # "connection failed (No such file or directory)" as happens every time we restart ovs-vswitchd.
     # "has no network name*" as localnet network_name is often set "after" creating localnet.
     # "receive tunnel port not found*" happening when closing other hv.
     # "Failed to locate tunnel to reach main chassis" happening when controller started e.g. before ovn-bridge-mappings is set
