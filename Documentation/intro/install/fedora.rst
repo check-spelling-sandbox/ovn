@@ -97,7 +97,7 @@ OVN RPMs
 ~~~~~~~~~~~~~~~
 
 To build OVN RPMs, first generate openvswitch source tarball in
-your openvwitch source directory by running
+your openvswitch source directory by running
 
 ::
 
