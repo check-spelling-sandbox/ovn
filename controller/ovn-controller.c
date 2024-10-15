@@ -5550,7 +5550,7 @@ main(int argc, char *argv[])
                              * preserve tracked changes across iterations.  If
                              * change tracking is improved, we can simply skip
                              * this round of engine_run and continue processing
-                             * acculated changes incrementally later when
+                             * accumulated changes incrementally later when
                              * ofctrl_has_backlog() returns false. */
                             engine_run(false);
                         } else {
