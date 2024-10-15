@@ -560,7 +560,7 @@ OVN_CLEANUP([hv1])
 AT_CLEANUP
 ])
 
-# Test that changes of a port binding from one type to another doesn'that
+# Test that changes of a port binding from one type to another doesn't
 # result in any ovn-controller asserts or crashes.
 AT_SETUP([ovn-controller - port binding type change handling])
 AT_KEYWORDS([ovn])
