@@ -133,7 +133,7 @@ lookup_port_cb(const void *aux_, const char *port_name, unsigned int *portp)
 
     /* Store the key (DP + name) that used to lookup the multicast group to
      * lflow reference, so that in the future when the multicast group's
-     * existance (found/not found) changes, the logical flow that references
+     * existence (found/not found) changes, the logical flow that references
      * this multicast group can be reprocessed. */
     struct ds mg_key = DS_EMPTY_INITIALIZER;
     get_mc_group_key(port_name, aux->dp->tunnel_key, &mg_key);
