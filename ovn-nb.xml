@@ -2552,7 +2552,7 @@ or
           stages.  ACLs without this option <code>apply-after-lb</code>
           set, will be applied before the load balancer stage and ACLs
           with this option set will be applied after the load balancer
-          stage.  The priorities are indepedent between these stages and
+          stage.  The priorities are independent between these stages and
           may not be obvious to the CMS.  Hence CMS should be extra careful
           when using this option and should carefully evaluate the priorities
           of all the ACLs and the default deny/allow ACLs if any.
