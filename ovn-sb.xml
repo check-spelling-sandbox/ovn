@@ -2838,7 +2838,7 @@ tcp.flags = RST;
             <dt><code>obs_point=</code><var>id</var></dt>
             <dd>
               An unsigned 32-bit integer to be used as
-              <code>ObsservationPointID</code> or the string
+              <code>ObservationPointID</code> or the string
               <code>@cookie</code> to indicate that the first 32 bits of the
               <code>Logical_Flow</code>'s UUID shall be used instead.
             </dd>
