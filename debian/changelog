@@ -1023,7 +1023,7 @@ openvswitch (1.4.0-2+nmu1) unstable; urgency=low
 
   * Non maintainer upload.
   * Removes all patches in debian/patches, because they are patching stuff
-  inconditionally in debian/*, and this should be applied by default.
+  unconditionally in debian/*, and this should be applied by default.
   * Uses the correct ${kernel_source_dir} in debian/dkms.conf.in, so that
   the kernel module builds as expected (Closes: #659685).
 
