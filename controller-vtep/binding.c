@@ -144,7 +144,7 @@ binding_run(struct controller_vtep_ctx *ctx)
     struct shash ls_to_db = SHASH_INITIALIZER(&ls_to_db);
 
     /* Stores the 'chassis' and the 'ls_to_pb' map related to
-     * a vtep physcial switch. */
+     * a vtep physical switch. */
     struct ps {
         const struct sbrec_chassis *chassis_rec;
         struct shash ls_to_pb;
