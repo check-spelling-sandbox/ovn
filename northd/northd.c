@@ -5065,7 +5065,7 @@ northd_handle_lb_data_changes(struct tracked_lb_data *trk_lb_data,
 
     /* Fall back to recompute if any load balancer was dissociated from
      * a load balancer group (but not deleted). */
-    if (trk_lb_data->has_dissassoc_lbs_from_lbgrps) {
+    if (trk_lb_data->has_disassoc_lbs_from_lbgrps) {
         return false;
     }
 
@@ -5076,7 +5076,7 @@ northd_handle_lb_data_changes(struct tracked_lb_data *trk_lb_data,
 
     /* Fall back to recompute if any load balancer has been disassociated from
      * a logical switch or router. */
-    if (trk_lb_data->has_dissassoc_lbs_from_od) {
+    if (trk_lb_data->has_disassoc_lbs_from_od) {
         return false;
     }
 
@@ -5088,7 +5088,7 @@ northd_handle_lb_data_changes(struct tracked_lb_data *trk_lb_data,
 
     /* Fall back to recompute if any load balancer group has been disassociated
      * from a logical switch or router. */
-    if (trk_lb_data->has_dissassoc_lbgrps_from_od) {
+    if (trk_lb_data->has_disassoc_lbgrps_from_od) {
         return false;
     }
 
