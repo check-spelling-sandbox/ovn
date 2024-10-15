@@ -141,7 +141,7 @@ Q: What does it mean when a feature is marked "experimental"?
 
     * The feature was developed based on observations of how a specific
       vendor implements a feature, rather than using IETF standards or
-      other documentated specifications.
+      other documented specifications.
 
     A feature may be declared experimental for other reasons as well,
     but the above are the most common. When a feature is marked
