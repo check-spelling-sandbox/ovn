@@ -95,7 +95,7 @@ static bool sync_lflow_to_sb(struct ovn_lflow *,
                              const struct sbrec_logical_flow *sbflow,
                              const struct sbrec_logical_dp_group_table *);
 
-/* TODO:  Move the parallization logic to this module to avoid accessing
+/* TODO:  Move the parallelization logic to this module to avoid accessing
  * and modifying in both northd.c and lflow-mgr.c. */
 extern int parallelization_state;
 extern thread_local size_t thread_lflow_counter;
