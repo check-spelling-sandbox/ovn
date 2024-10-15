@@ -294,7 +294,7 @@ lb_data_load_balancer_group_handler(struct engine_node *node, void *data)
                 struct ovn_northd_lb *lb = hmapx_node->data;
                 /* Check if the pre updated lb is actually deleted or
                  * just disassociated from the lb group. If it's just
-                 * disassociated, then set 'has_disassoc_lbs_from_lb_grops' to
+                 * disassociated, then set 'has_disassoc_lbs_from_lbgrps' to
                  * true.  Later if required we can add this 'lb' to an hmapx of
                  * disassociated_lbs. */
                 if (!hmapx_find(&trk_lb_data->deleted_lbs, lb)) {
