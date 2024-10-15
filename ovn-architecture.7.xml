@@ -2747,7 +2747,7 @@
   <p>
     The tunnel traffic is encrypted with IPsec. The CMS sets the
     <code>ipsec</code> column in the northbound <code>NB_Global</code> table to
-    enable or disable IPsec encrytion. If <code>ipsec</code> is true, all OVN
+    enable or disable IPsec encryption. If <code>ipsec</code> is true, all OVN
     tunnels will be encrypted. If <code>ipsec</code> is false, no OVN tunnels
     will be encrypted.
   </p>
