@@ -2159,7 +2159,7 @@ create_cr_port(struct ovn_port *op, struct hmap *ports,
  * op's peer logical switch.  False otherwise.
  *
  * Chassis resident port needs to be created if the following
- * conditionsd are met:
+ * conditions are met:
  *   - op is a distributed gateway port
  *   - op has the option 'centralize_routing' set to true
  *   - op is the only distributed gateway port attached to its
