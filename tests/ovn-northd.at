@@ -12768,7 +12768,7 @@ AT_CHECK_UNQUOTED([ovn_trace --ct new ls "$flow" | TRACE_FILTER], [0], [dnl
     sample(probability=65535,collector_set=200,obs_domain=42,obs_point=4301);
 ])
 
-dnl Trace estasblished connections.
+dnl Trace established connections.
 flow="$base_flow && ct_label.obs_point_id == 4302"
 AT_CHECK_UNQUOTED([ovn_trace --ct est ls "$flow" | TRACE_FILTER], [0], [dnl
     reg9 = 4302;
@@ -12830,7 +12830,7 @@ AT_CHECK_UNQUOTED([ovn_trace --ct new ls "$flow" | TRACE_FILTER], [0], [dnl
     sample(probability=65535,collector_set=200,obs_domain=42,obs_point=4301);
 ])
 
-dnl Trace estasblished connections.
+dnl Trace established connections.
 flow="$base_flow && ct_label.obs_point_id == 4302"
 AT_CHECK_UNQUOTED([ovn_trace --ct est ls "$flow" | TRACE_FILTER], [0], [dnl
     reg9 = 4302;
@@ -12893,7 +12893,7 @@ AT_CHECK_UNQUOTED([ovn_trace --ct new --ct new ls "$flow" | TRACE_FILTER], [0], 
     sample(probability=65535,collector_set=200,obs_domain=42,obs_point=4301);
 ])
 
-dnl Trace estasblished connections.
+dnl Trace established connections.
 flow="$base_flow && ct_label.obs_point_id == 4302"
 AT_CHECK_UNQUOTED([ovn_trace --ct est --ct est ls "$flow" | TRACE_FILTER], [0], [dnl
     reg9 = 4302;
@@ -12987,7 +12987,7 @@ AT_CHECK_UNQUOTED([ovn_trace --ct new ls "$flow" | TRACE_FILTER], [0], [dnl
     sample(probability=65535,collector_set=100,obs_domain=42,obs_point=4301);
 ])
 
-dnl Trace estasblished connections.
+dnl Trace established connections.
 flow="$base_flow && ct_label.obs_point_id == 4302"
 AT_CHECK_UNQUOTED([ovn_trace --ct est ls "$flow" | TRACE_FILTER], [0], [dnl
     reg8[[0..7]] = 1;
@@ -13024,7 +13024,7 @@ AT_CHECK_UNQUOTED([ovn_trace --ct new ls "$flow" | TRACE_FILTER], [0], [dnl
     sample(probability=65535,collector_set=100,obs_domain=42,obs_point=reg3);
 ])
 
-dnl Trace estasblished connections.
+dnl Trace established connections.
 flow="$base_flow && ct_label.obs_point_id == 4302 && ct_mark.obs_stage == 0 && ct_mark.obs_collector_id == 1"
 AT_CHECK_UNQUOTED([ovn_trace --ct est ls "$flow" | TRACE_FILTER], [0], [dnl
     reg8[[0..7]] = 1;
@@ -13091,7 +13091,7 @@ AT_CHECK_UNQUOTED([ovn_trace --ct new ls "$flow" | TRACE_FILTER], [0], [dnl
     sample(probability=65535,collector_set=100,obs_domain=42,obs_point=reg3);
 ])
 
-dnl Trace estasblished connections.
+dnl Trace established connections.
 flow="$base_flow && ct_label.obs_point_id == 4302 && ct_mark.obs_stage == 1 && ct_mark.obs_collector_id == 1"
 AT_CHECK_UNQUOTED([ovn_trace --ct est ls "$flow" | TRACE_FILTER], [0], [dnl
     reg8[[0..7]] = 1;
@@ -13159,7 +13159,7 @@ AT_CHECK_UNQUOTED([ovn_trace --ct new --ct new ls "$flow" | TRACE_FILTER], [0], 
     sample(probability=65535,collector_set=100,obs_domain=42,obs_point=reg3);
 ])
 
-dnl Trace estasblished connections.
+dnl Trace established connections.
 flow="$base_flow && ct_label.obs_point_id == 4302 && ct_mark.obs_stage == 2 && ct_mark.obs_collector_id == 1"
 AT_CHECK_UNQUOTED([ovn_trace --ct est --ct est ls "$flow" | TRACE_FILTER], [0], [dnl
     reg8[[0..7]] = 1;
