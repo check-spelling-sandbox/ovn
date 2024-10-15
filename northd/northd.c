@@ -17689,7 +17689,7 @@ build_lswitch_and_lrouter_flows(
         };
 
         /* Combined build - all lflow generation from lswitch and lrouter
-         * will move here and will be reogranized by iterator type.
+         * will move here and will be reorganized by iterator type.
          */
         stopwatch_start(LFLOWS_DATAPATHS_STOPWATCH_NAME, time_msec());
         HMAP_FOR_EACH (od, key_node, &ls_datapaths->datapaths) {
