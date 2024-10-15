@@ -294,11 +294,11 @@ lb_data_load_balancer_group_handler(struct engine_node *node, void *data)
                 struct ovn_northd_lb *lb = hmapx_node->data;
                 /* Check if the pre updated lb is actually deleted or
                  * just disassociated from the lb group. If it's just
-                 * disassociated, then set 'has_dissassoc_lbs_from_lb_grops' to
+                 * disassociated, then set 'has_disassoc_lbs_from_lb_grops' to
                  * true.  Later if required we can add this 'lb' to an hmapx of
                  * disassociated_lbs. */
                 if (!hmapx_find(&trk_lb_data->deleted_lbs, lb)) {
-                    trk_lb_data->has_dissassoc_lbs_from_lbgrps = true;
+                    trk_lb_data->has_disassoc_lbs_from_lbgrps = true;
                 }
                 hmapx_delete(&pre_update_lbs, hmapx_node);
             }
@@ -635,7 +635,7 @@ handle_od_lb_changes(struct nbrec_load_balancer **nbrec_lbs,
     }
 
     if (!uuidset_is_empty(pre_lb_uuids)) {
-        trk_lb_data->has_dissassoc_lbs_from_od = true;
+        trk_lb_data->has_disassoc_lbs_from_od = true;
     }
 
     uuidset_destroy(pre_lb_uuids);
@@ -670,7 +670,7 @@ handle_od_lbgrp_changes(struct nbrec_load_balancer_group **nbrec_lbgrps,
     }
 
     if (!uuidset_is_empty(pre_lbgrp_uuids)) {
-        trk_lb_data->has_dissassoc_lbgrps_from_od = true;
+        trk_lb_data->has_disassoc_lbgrps_from_od = true;
     }
 
     uuidset_destroy(pre_lbgrp_uuids);
@@ -682,9 +682,9 @@ destroy_tracked_data(struct ed_type_lb_data *lb_data)
 {
     lb_data->tracked = false;
     lb_data->tracked_lb_data.has_health_checks = false;
-    lb_data->tracked_lb_data.has_dissassoc_lbs_from_lbgrps = false;
-    lb_data->tracked_lb_data.has_dissassoc_lbs_from_od = false;
-    lb_data->tracked_lb_data.has_dissassoc_lbgrps_from_od = false;
+    lb_data->tracked_lb_data.has_disassoc_lbs_from_lbgrps = false;
+    lb_data->tracked_lb_data.has_disassoc_lbs_from_od = false;
+    lb_data->tracked_lb_data.has_disassoc_lbgrps_from_od = false;
     lb_data->tracked_lb_data.has_routable_lb = false;
 
     struct hmapx_node *node;
