@@ -580,7 +580,7 @@ ovn_stage_to_str(enum ovn_stage stage)
  * changes, join_logical_ports() may determine that there is a new LSP or LRP
  * that has no corresponding Port_Binding record (in which case build_ports())
  * will create the missing Port_Binding) or that a Port_Binding record exists
- * that has no coresponding LSP (in which case build_ports() will delete the
+ * that has no corresponding LSP (in which case build_ports() will delete the
  * spurious Port_Binding).  Thus, after build_ports() runs, any given ovn_port
  * will have 'sb' nonnull, and 'nbsp' xor 'nbrp' nonnull.
  *
