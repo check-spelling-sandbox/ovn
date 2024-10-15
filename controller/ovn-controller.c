@@ -986,7 +986,7 @@ if_status_mgr_ovs_interface_handler(struct engine_node *node, void *data)
  *
  * There are some special considerations of this engine node:
  * 1. It has a single input OVS_interface, and it transparently passes the
- *    input changes as its own output data to its dependants. So there is no
+ *    input changes as its own output data to its dependents. So there is no
  *    processing to OVS_interface changes but simply mark the node status as
  *    UPDATED (and so the run() and the change handler is the same).
  * 2. The iface_table_external_ids_old is computed/updated in the member
