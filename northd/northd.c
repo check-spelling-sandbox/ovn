@@ -10131,7 +10131,7 @@ build_lswitch_destination_lookup_bmcast(struct ovn_datapath *od,
                       "outport = \""MC_FLOOD"\"; output;",
                       lflow_ref);
 
-        /* Forward uregistered IP multicast to routers with relay enabled
+        /* Forward unregistered IP multicast to routers with relay enabled
          * and to any ports configured to flood IP multicast traffic.
          * If configured to flood unregistered traffic this will be
          * handled by the L2 multicast flow.
