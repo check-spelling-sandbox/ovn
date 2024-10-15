@@ -153,7 +153,7 @@ VLOG_DEFINE_THIS_MODULE(pinctrl);
  *
  *  'pinctrl_main_seq' is used by pinctrl_handler() thread to wake up
  *  the main thread from poll_block() when mac bindings/igmp groups need to
- *  be updated in the Southboubd DB.
+ *  be updated in the Southbound DB.
  * */
 
 static struct ovs_mutex pinctrl_mutex = OVS_MUTEX_INITIALIZER;

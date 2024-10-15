@@ -1119,7 +1119,7 @@ Options:
                                  More details in ovsdb(7).  (default: no)
   --db-sb-relay-remote           Specifies upstream cluster/server remote for ovsdb relay
   --db-sb-relay-use-remote-in-db=no|yes
-                                 OVN_Sorthbound db listen on target connection table (default: $DB_SB_RELAY_USE_REMOTE_IN_DB)
+                                 OVN_Southbound db listen on target connection table (default: $DB_SB_RELAY_USE_REMOTE_IN_DB)
   -h, --help                     display this help message
 
 File location options:
