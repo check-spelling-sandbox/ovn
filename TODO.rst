@@ -101,7 +101,7 @@ OVN To-do List
 * ovn-northd parallel logical flow processing
 
   * Multi-threaded logical flow computation was optimized for the case
-    when datapath groups are disabled.  Datpath groups are always enabled
+    when datapath groups are disabled.  Datapath groups are always enabled
     now so northd parallel processing should be revisited.
 
 * ovn-controller daemon module

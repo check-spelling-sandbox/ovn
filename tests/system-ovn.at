@@ -11461,7 +11461,7 @@ ADD_VETH(bar1, bar1, br-int, "2002::2/64", "f0:00:00:01:02:05", \
 ovn-nbctl --wait=hv lsp-add bar bar1 \
 -- lsp-set-addresses bar1 "f0:00:00:01:02:05 192.168.2.2 2002::2"
 
-# Warm up the datapath (needed to make the DPDK datapth happy)
+# Warm up the datapath (needed to make the DPDK datapath happy)
 NS_CHECK_EXEC([foo1], [ping -q -c 3 -i 0.3 -w 2 192.168.2.2 | FORMAT_PING], \
 [0], [dnl
 3 packets transmitted, 3 received, 0% packet loss, time 0ms
