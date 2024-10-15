@@ -213,7 +213,7 @@
 
       <dt><code>external_ids:ovn-encap-df_default</code></dt>
       <dd>
-        indicates the DF flag handling of the encapulation. Set to
+        indicates the DF flag handling of the encapsulation. Set to
         <code>true</code> to set the DF flag for new data paths or
         <code>false</code> to clear the DF flag.
       </dd>
