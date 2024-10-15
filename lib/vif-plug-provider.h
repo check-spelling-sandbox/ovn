@@ -120,7 +120,7 @@ struct vif_plug_class {
     /* Pass vif_plug_port_ctx_in to VIF plug provider implementation to prepare
      * for port creation/update.
      *
-     * The VIF plug provider implemantation can perform lookup or any per port
+     * The VIF plug provider implementation can perform lookup or any per port
      * initialization and should fill vif_plug_port_ctx_out with data required
      * for port/interface creation.  The VIF plug implementation should return
      * 'true' if it wants the caller to create/update a port/interface, 'false'
