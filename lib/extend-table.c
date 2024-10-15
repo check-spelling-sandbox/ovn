@@ -89,13 +89,13 @@ ovn_extend_table_info_destroy(struct ovn_extend_table_info *e)
 /* Finds and returns a group_info in 'existing' whose key is identical
  * to 'target''s key, or NULL if there is none. */
 struct ovn_extend_table_info *
-ovn_extend_table_lookup(struct hmap *exisiting,
+ovn_extend_table_lookup(struct hmap *existing,
                         const struct ovn_extend_table_info *target)
 {
     struct ovn_extend_table_info *e;
 
     HMAP_FOR_EACH_WITH_HASH (e, hmap_node, target->hmap_node.hash,
-                             exisiting) {
+                             existing) {
         if (e->table_id == target->table_id) {
             return e;
         }
