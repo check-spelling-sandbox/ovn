@@ -4988,7 +4988,7 @@ northd_handle_sb_port_binding_changes(
 
         if (sbrec_port_binding_is_new(pb)) {
             /* Most likely the PB was created by northd and this is the
-             * notification of that trasaction. So we just update the sb
+             * notification of that transaction. So we just update the sb
              * pointer in northd data. Fallback to recompute otherwise. */
             if (!op) {
                 VLOG_WARN_RL(&rl, "A port-binding for %s is created but the "
