@@ -1239,7 +1239,7 @@
       indicate the ACL verdict by setting <code>reg8[16]</code> for
       <code>allow-type</code> ACLs, <code>reg8[17]</code> for <code>drop</code>
       ACLs, and <code>reg8[17]</code> for <code>reject</code> ACLs, and then
-      advancing the packet to the next table. These will be reffered to as the
+      advancing the packet to the next table. These will be referred to as the
       allow bit, drop bit, and reject bit throughout the documentation for this
       table and the next one.
     </p>
