@@ -6948,7 +6948,7 @@ build_acl_sample_generic_est_flows(const struct ovn_datapath *od,
                   ds_cstr(actions), lflow_ref);
 }
 
-/* Check if the smaple has only single collector and the sample action
+/* Check if the sample has only single collector and the sample action
  * with registers is supported. */
 static bool
 acl_use_generic_sample_flows(const struct nbrec_sample *sample,
