@@ -6314,7 +6314,7 @@ build_pre_lb(struct ovn_datapath *od, const struct shash *meter_groups,
     ovn_lflow_add(lflows, od, S_SWITCH_IN_PRE_LB, 0, "1", "next;", lflow_ref);
     ovn_lflow_add(lflows, od, S_SWITCH_OUT_PRE_LB, 0, "1", "next;", lflow_ref);
 
-    /* Do not send statless flows via conntrack */
+    /* Do not send stateless flows via conntrack */
     ovn_lflow_add(lflows, od, S_SWITCH_IN_PRE_LB, 110,
                   REGBIT_ACL_STATELESS" == 1", "next;", lflow_ref);
     ovn_lflow_add(lflows, od, S_SWITCH_OUT_PRE_LB, 110,
