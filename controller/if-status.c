@@ -657,7 +657,7 @@ if_status_mgr_run(struct if_status_mgr *mgr,
     struct hmapx_node *node;
 
     /* Move interfaces from state OIF_INSTALL_FLOWS to OIF_MARK_UP if a
-     * notification has been received aabout their flows being installed
+     * notification has been received about their flows being installed
      * in OVS.
      */
     HMAPX_FOR_EACH_SAFE (node, &mgr->ifaces_per_state[OIF_INSTALL_FLOWS]) {
