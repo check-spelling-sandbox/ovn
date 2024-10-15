@@ -1286,7 +1286,7 @@ ovn_port_destroy(struct hmap *ports, struct ovn_port *port)
 }
 
 /* Returns the ovn_port that matches 'name'.  If 'prefer_bound' is true and
- * multiple ports share the same name, gives precendence to ports bound to
+ * multiple ports share the same name, gives precedence to ports bound to
  * an ovn_datapath.
  */
 static struct ovn_port *
