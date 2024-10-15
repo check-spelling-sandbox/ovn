@@ -411,7 +411,7 @@ static thread_local int var;], [return var;])],
      if test $ovs_cv___thread = yes; then
        AC_DEFINE([HAVE___THREAD], [1],
                  [Define to 1 if the C compiler and linker supports the
-                  GCC __thread extenions.])
+                  GCC __thread extensions.])
      fi
    fi])
 
