@@ -11173,7 +11173,7 @@ wait_for_local_bindings() {
 ensure_controller_run() {
 # We want to make sure controller could run at least one full loop.
 # We can't use wait=hv as sb might be sleeping.
-# Use 2 ovn-appctl to guarentee that ovn-controller run the full loop, and not just the unixctl handling
+# Use 2 ovn-appctl to guarantee that ovn-controller run the full loop, and not just the unixctl handling
   OVS_WAIT_UNTIL([test x$(ovn-appctl -t ovn-controller debug/status) = "xrunning"])
   OVS_WAIT_UNTIL([test x$(ovn-appctl -t ovn-controller debug/status) = "xrunning"])
 }
