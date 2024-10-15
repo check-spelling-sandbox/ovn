@@ -681,7 +681,7 @@ chassis_build_encaps(struct ovsdb_idl_txn *ovnsb_idl_txn,
     return encaps;
 }
 
-/* 'struct sset' of all supported options in other_confing. Anything missing
+/* 'struct sset' of all supported options in other_config. Anything missing
  * in this set will be removed from the chassis configuration. */
 static void
 update_supported_sset(struct sset *supported)
