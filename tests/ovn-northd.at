@@ -851,7 +851,7 @@ check sleep 5
 check_row_count Datapath_Binding 0
 
 # Do not resume both main and backup right after each other
-# as there would be no guarentee of which one would become active
+# as there would be no guarantee of which one would become active
 AS_BOX([Resume the main northd])
 check as northd ovs-appctl -t ovn-northd resume
 OVS_WAIT_FOR_OUTPUT([get_northd_status], [0], [false
