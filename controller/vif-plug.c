@@ -551,7 +551,7 @@ vif_plug_handle_iface(const struct ovsrec_interface *iface_rec,
  * conditional monitoring status and other events that could trigger main loop
  * runs during this period.  Until we find a reliable way to determine the
  * completeness of the initial data downloading we need this counter so that we
- * do not erronously unplug ports because the data is just not loaded yet.
+ * do not erroneously unplug ports because the data is just not loaded yet.
  */
 void
 vif_plug_run(struct vif_plug_ctx_in *vif_plug_ctx_in,
