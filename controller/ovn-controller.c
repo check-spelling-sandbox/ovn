@@ -5561,7 +5561,7 @@ main(int argc, char *argv[])
                          * try to run the engine so that we can handle any
                          * incremental changes that don't require a recompute.
                          * If a recompute is required, the engine will cancel,
-                         * triggerring a full run in the next iteration.
+                         * triggering a full run in the next iteration.
                          */
                         engine_run(false);
                     }
