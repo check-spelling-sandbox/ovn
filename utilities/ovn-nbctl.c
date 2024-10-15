@@ -295,7 +295,7 @@ Mirror commands:\n\
                             specify TYPE 'gre', 'erspan', or 'local'\n\
                             specify the tunnel INDEX value\n\
                                 (indicates key if GRE\n\
-                                 erpsan_idx if ERSPAN)\n\
+                                 erspan_idx if ERSPAN)\n\
                             specify FILTER for mirroring selection\n\
                                 'to-lport' / 'from-lport' / 'both'\n\
                             specify Sink / Destination i.e. Remote IP, or a\n\
