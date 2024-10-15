@@ -497,7 +497,7 @@ if_status_mgr_update(struct if_status_mgr *mgr,
 
     /* Interfaces in OIF_MARK_UP/INSTALL_FLOWS state have already set their
      * pb->chassis. However, the update might still be in fly (confirmation
-     * not received yet) or pb->chassis was overwitten by another chassis.
+     * not received yet) or pb->chassis was overwritten by another chassis.
      */
 
     /* Move all interfaces that have been confirmed "up" by the binding module,
@@ -559,7 +559,7 @@ if_status_mgr_update(struct if_status_mgr *mgr,
     }
 
     /* Update pb->chassis in case it's not set (previous update still in fly
-     * or pb->chassis was overwitten by another chassis.
+     * or pb->chassis was overwritten by another chassis.
      */
     if (!sb_readonly) {
         HMAPX_FOR_EACH_SAFE (node, &mgr->ifaces_per_state[OIF_INSTALL_FLOWS]) {
