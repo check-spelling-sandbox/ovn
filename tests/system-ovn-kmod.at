@@ -1018,7 +1018,7 @@ NETNS_START_TCPDUMP([client], [-U -i client -vnne 'ip and (icmp or udp)'], [tcpd
 
 dnl Send two packets to the server with a short interval.
 dnl First packet should generate 'needs frag', the second should result in
-dnl corectly fragmented reply.
+dnl correctly fragmented reply.
 AT_DATA([client.py], [dnl
 import socket
 import time
