@@ -3191,7 +3191,7 @@ consider_port_sec_flows(const struct sbrec_port_binding *pb,
      * priority: 80
      * match - "outport == pb->logical_port"
      * action - "port_sec_failed = 1;"
-     * descrption: "Drop all traffic"
+     * description: "Drop all traffic"
      */
     reset_match_for_port_sec_flows(pb, MFF_LOG_OUTPORT, &match);
     build_port_sec_deny_action(&ofpacts);
