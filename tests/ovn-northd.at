@@ -5419,7 +5419,7 @@ check ovn-nbctl --wait=sb set logical_router_port ro2-sw ha_chassis_group="$grp2
 
 check_lflows 1
 
-AS_BOX([Checking that Load Balancer VIP flows are not iinstalled for routers with HA_Chassis_Group removed])
+AS_BOX([Checking that Load Balancer VIP flows are not installed for routers with HA_Chassis_Group removed])
 
 check ovn-nbctl clear logical_router_port ro1-sw ha_chassis_group
 check ovn-nbctl --wait=sb clear logical_router_port ro2-sw ha_chassis_group
