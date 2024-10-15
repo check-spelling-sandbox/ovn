@@ -5764,7 +5764,7 @@ main(int argc, char *argv[])
                                    br_int,
                                    &runtime_data->lbinding_data.bindings);
                         /* Updating monitor conditions if runtime data or
-                         * logical datapath goups changed. */
+                         * logical datapath groups changed. */
                         if (engine_node_changed(&en_runtime_data)
                             || engine_node_changed(&en_sb_logical_dp_group)) {
                             ovnsb_expected_cond_seqno =
