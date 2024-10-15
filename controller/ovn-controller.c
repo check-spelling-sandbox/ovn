@@ -1433,7 +1433,7 @@ en_runtime_data_run(struct engine_node *node, void *data)
     struct ed_type_ofctrl_is_connected *ed_ofctrl_is_connected =
         engine_get_input_data("ofctrl_is_connected", node);
     if (ed_ofctrl_is_connected->connected) {
-        /* Calculate the active tunnels only if have an an active
+        /* Calculate the active tunnels only if have an active
          * OpenFlow connection to br-int.
          * If we don't have a connection to br-int, it could mean
          * ovs-vswitchd is down for some reason and the BFD status
