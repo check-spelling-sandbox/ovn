@@ -399,7 +399,7 @@ static thread_local int var;], [return var;])],
    if test $ovs_cv_thread_local = yes; then
      AC_DEFINE([HAVE_THREAD_LOCAL], [1],
                [Define to 1 if the C compiler and linker supports the C11
-                thread_local matcro defined in <threads.h>.])
+                thread_local macro defined in <threads.h>.])
    else
      AC_CACHE_CHECK(
        [whether $CC supports __thread],
