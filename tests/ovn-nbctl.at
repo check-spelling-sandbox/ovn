@@ -561,8 +561,8 @@ dnl ---------------------------------------------------------------------
 
 OVN_NBCTL_TEST([ovn_nbctl_nats], [NATs], [
 AT_CHECK([ovn-nbctl lr-add lr0])
-AT_CHECK([ovn-nbctl lr-nat-add lr0 snatt 30.0.0.2 192.168.1.2], [1], [],
-[ovn-nbctl: snatt: type must be one of "dnat", "snat" and "dnat_and_snat".
+AT_CHECK([ovn-nbctl lr-nat-add lr0 snat_ 30.0.0.2 192.168.1.2], [1], [],
+[ovn-nbctl: snat_: type must be one of "dnat", "snat" and "dnat_and_snat".
 ])
 AT_CHECK([ovn-nbctl lr-nat-add lr0 snat 30.0.0.2a 192.168.1.2], [1], [],
 [ovn-nbctl: 30.0.0.2a: Not a valid IPv4 or IPv6 address.
