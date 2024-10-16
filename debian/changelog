@@ -1170,7 +1170,7 @@ openvswitch (1.1.1-1) unstable; urgency=low
   * Bug fixes.
 
   [ Simon Horman ]
-  * docs: Suppress warning marcro DD not defined
+  * docs: Suppress warning macro DD not defined
     (upstream commit 58f870d0)
   * debian: Make openvswitch depend on Python
     (upstream commit aa41cb61)
