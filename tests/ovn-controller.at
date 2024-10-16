@@ -2298,7 +2298,7 @@ check ovn-nbctl --wait=sb lsp-set-addresses ls1-lp1 "f0:00:00:00:00:01 10.1.2.4"
 # until the wait time is completed.
 start_daemon ovn-controller
 
-# Wait for octrl to run - it will handle the wait-before-clear
+# Wait for octl to run - it will handle the wait-before-clear
 OVS_WAIT_UNTIL([grep -q 'wait-before-clear' hv1/ovn-controller.log])
 
 # Check that there is no flow using 10.1.2.4 except the lb one (using 2.2.2.2)
