@@ -9,7 +9,7 @@
 # Short-Description: OVN Controller for VTEP enabled devices
 # Description:       ovn-controller-vtep provides the userspace
 #                    components and utilities for OVN that can be run on
-#                    hosts taht connect to VTEP enabled devices.
+#                    hosts that connect to VTEP enabled devices.
 ### END INIT INFO
 
 test -x /usr/bin/ovn-controller-vtep  || exit 0
