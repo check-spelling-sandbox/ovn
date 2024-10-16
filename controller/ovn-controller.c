@@ -1208,10 +1208,10 @@ struct ed_type_runtime_data {
  * |@local_lports_changed | captured in the @tracked_dp_bindings. So there  |
  * |                      | is no need to capture the changes in the        |
  * |                      | local_lports. If @local_lports_changed is true  |
- * |                      | but without anydata in the @tracked_dp_bindings,|
- * |                      | it means we needto only update the SB monitor   |
- * |                      | clauses and there isno need for any flow        |
- * |                      | (re)computations.                               |
+ * |                      | but without any data in the                     |
+ * |                      | @tracked_dp_bindings, it means we need to only  |
+ * |                      | update the SB monitor clauses and there is no   |
+ * |                      | need for any flow (re)computations.             |
  *  ------------------------------------------------------------------------
  * |                      | This represents if the data was tracked or not  |
  * |                      | by the runtime data handlers during the engine  |
