@@ -2456,7 +2456,7 @@ consider_iface_claim(const struct ovsrec_interface *iface_rec,
  * The 'iface_id' could be cleared from the 'iface_rec'
  * and hence it is passed separately.
  *
- * This fuction should be called if
+ * This function should be called if
  *   - OVS interface 'iface_rec' is deleted.
  *   - OVS interface 'iface_rec' external_ids:iface-id is updated
  *     (with the old value being 'iface_id'.)
