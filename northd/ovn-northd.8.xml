@@ -4446,7 +4446,7 @@ reg8[16..31] = select(1,..n);
 
       <li>
         <p>
-          If the policy action is <code>reroute</code> with just one nexhop,
+          If the policy action is <code>reroute</code> with just one nexthop,
           then the logical flow is added with the following actions:
         </p>
 
