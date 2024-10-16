@@ -11261,7 +11261,7 @@ check_engine_stats sync_to_sb_lb recompute compute
 CHECK_NO_CHANGE_AFTER_RECOMPUTE(1)
 
 # Associate lb1 to sw0 and also create a port sw0p1.  This should not result in
-# full recompute of northd, but should rsult in full recompute of lflow node.
+# full recompute of northd, but should result in full recompute of lflow node.
 check as northd ovn-appctl -t ovn-northd inc-engine/clear-stats
 check ovn-nbctl --wait=sb ls-lb-add sw0 lb1 -- lsp-add sw0 sw0p1
 check_engine_stats lb_data norecompute compute
