@@ -10153,7 +10153,7 @@ AT_CHECK([ovn-sbctl dump-flows | grep "ls_in_acl" | grep "match=(1)"  | ovn_stri
 
 check ovn-nbctl --wait=sb acl-del S1
 
-# Check LB + statelful ACL
+# Check LB + stateful ACL
 check ovn-nbctl --wait=sb \
                 -- acl-add S1 from-lport 2 "udp" allow-related
 
