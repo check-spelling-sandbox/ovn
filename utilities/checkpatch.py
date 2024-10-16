@@ -359,7 +359,7 @@ def has_c99_comment(line):
 
 
 def trailing_operator(line):
-    """Returns TRUE if the current line ends with an operatorsuch as ? or :"""
+    """Returns TRUE if the current line ends with an operator such as ? or :"""
     return __regex_trailing_operator.match(line) is not None
 
 
