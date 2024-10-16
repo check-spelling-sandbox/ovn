@@ -655,10 +655,10 @@ if [ "$HAVE_OPENSSL" = yes ]; then
         run ovn-sbctl set-connection pssl:6642
     fi
     run ovs-vsctl set open . external-ids:ovn-remote=ssl:127.0.0.1:6642
-    OVN_CTRLR_PKI="-p $sandbox/chassis-1-privkey.pem -c $sandbox/chassis-1-cert.pem -C $sandbox/pki/switchca/cacert.pem"
+    OVN_CTL_PKI="-p $sandbox/chassis-1-privkey.pem -c $sandbox/chassis-1-cert.pem -C $sandbox/pki/switchca/cacert.pem"
 else
     run ovs-vsctl set open . external-ids:ovn-remote=$OVN_SB_DB
-    OVN_CTRLR_PKI=""
+    OVN_CTL_PKI=""
 fi
 for i in $(seq $n_ics); do
     if [ $i -eq 1 ]; then inst=""; else inst=$i; fi
@@ -682,13 +682,13 @@ done
 for i in $(seq $n_controllers); do
     if [ $i -eq 1 ]; then inst=""; else inst=$i; fi
     rungdb $gdb_ovn_controller $gdb_ovn_controller_ex ovn-controller \
-            $OVN_CTRLR_PKI --detach --no-chdir -vsyslog:off \
+            $OVN_CTL_PKI --detach --no-chdir -vsyslog:off \
             --log-file=ovn-controller${inst}.log \
             --pidfile=ovn-controller${inst}.pid -vconsole:off
 done
 rungdb $gdb_ovn_controller_vtep $gdb_ovn_controller_vtep_ex \
     ovn-controller-vtep --detach --no-chdir --pidfile -vconsole:off \
-    $OVN_CTRLR_PKI --log-file -vsyslog:off \
+    $OVN_CTL_PKI --log-file -vsyslog:off \
     --ovnsb-db="$OVN_SB_DB"
 
 cat <<EOF
