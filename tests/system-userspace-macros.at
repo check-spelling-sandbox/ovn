@@ -33,7 +33,7 @@ m4_define([OVS_TRAFFIC_VSWITCHD_START],
 #
 #   OVS_TRAFFIC_VSWITCHD_STOP(["/expected error/d"])
 #
-# 'extra_cmds' are shell commands to be executed afte OVS_VSWITCHD_STOP() is
+# 'extra_cmds' are shell commands to be executed after OVS_VSWITCHD_STOP() is
 # invoked. They can be used to perform additional cleanups such as name space
 # removal.
 m4_define([OVS_TRAFFIC_VSWITCHD_STOP],
