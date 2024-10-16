@@ -1292,7 +1292,7 @@ openvswitch (1.1.0~pre2.g2.ea763e0e-1) unstable; urgency=low
 
 openvswitch (1.1.0~pre2.g1.bbe8d06e-1) unstable; urgency=low
 
-  * Git snaptshot
+  * Git snapshot
 
  -- Simon Horman <horms@debian.org>  Thu, 06 Jan 2011 11:11:55 +0900
 
