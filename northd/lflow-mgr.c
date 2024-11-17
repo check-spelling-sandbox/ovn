@@ -511,7 +511,7 @@ lflow_table_sync_to_sb(struct lflow_table *lflow_table,
  * scenario.
  */
 struct lflow_ref {
-    /* hmap of lfow ref nodes. hmap_node is 'struct lflow_ref_node *'. */
+    /* hmap of lflow ref nodes. hmap_node is 'struct lflow_ref_node *'. */
     struct hmap lflow_ref_nodes;
 };
 
