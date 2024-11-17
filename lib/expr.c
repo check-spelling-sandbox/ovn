@@ -1635,7 +1635,7 @@ add_symbol(struct shash *symtab, const char *name, int width,
  * 'name' is referenced, expression annotation (see expr_annotate()) will
  * ensure that 'prereqs' are also true.  If 'must_crossproduct' is true, then
  * conversion to flows will never attempt to use the field as a conjunctive
- * match dimension (see "Crossproducting" in the large comment on struct
+ * match dimension (see "Crossproducts" in the large comment on struct
  * expr_symbol in expr.h for an example).
  *
  * A given field 'id' must only be used for a single symbol in a symbol table.

@@ -208,8 +208,8 @@ const char *expr_level_to_string(enum expr_level);
  * suggested under "Types" above).
  *
  *
- * Crossproducting
- * ===============
+ * Crossproducts
+ * =============
  *
  * Ordinarily OVN is willing to consider using any field as a dimension in the
  * Open vSwitch "conjunctive match" extension (see ovs-ofctl(8)).  However,
