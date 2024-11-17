@@ -133,7 +133,7 @@ m4_divert_text([PREPARE_TESTS],
        as $hv
        for chassis; do
          if test $hv != $chassis; then
-             echo "checking bdf_status for $hv -> $chassis"
+             echo "checking bfd_status for $hv -> $chassis"
              OVS_WAIT_UNTIL([
                  bfd_status=$(as $hv ovs-vsctl get interface ovn-$chassis-0 bfd_status:state)
                  echo "bfd status = $bfd_status"
