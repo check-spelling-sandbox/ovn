@@ -13965,7 +13965,7 @@ ovs-vsctl add-port br-int p1 -- \
 # Make sure ovn-controller runs and claims the port.
 ensure_controller_run
 
-# Wake up sb, so that it can handle lsp-set-address, but no the pb->chassis (as updates from controller stillblocked)
+# Wake up sb, so that it can handle lsp-set-address, but no the pb->chassis (as updates from controller are still blocked)
 wake_up_sb
 ensure_controller_run
 
