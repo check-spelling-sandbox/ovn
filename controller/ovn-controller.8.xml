@@ -223,7 +223,7 @@
         A list of key-value pairs that map a physical network name to a local
         ovs bridge that provides connectivity to that network.  An example
         value mapping two physical network names to two ovs bridges would be:
-        <code>physnet1:br-eth0,physnet2:br-eth1</code>.
+        <code>phynet1:br-eth0,phynet2:br-eth1</code>.
       </dd>
 
       <dt><code>external_ids:ovn-encap-csum</code></dt>
@@ -270,7 +270,7 @@
         A list of key-value pairs that map a chassis specific mac to
         a physical network name. An example
         value mapping two chassis macs to two physical network names would be:
-        <code>physnet1:aa:bb:cc:dd:ee:ff,physnet2:a1:b2:c3:d4:e5:f6</code>.
+        <code>phynet1:aa:bb:cc:dd:ee:ff,phynet2:a1:b2:c3:d4:e5:f6</code>.
         These are the macs that ovn-controller will replace a router port
         mac with, if packet is going from a distributed router port on
         vlan type logical switch.

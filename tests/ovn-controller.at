@@ -66,8 +66,8 @@ kill `cat ovn-nb/ovsdb-server.pid`
 check_patches
 
 # Configure two ovn-bridge mappings, but no patch ports should be created yet
-AT_CHECK([ovs-vsctl set Open_vSwitch . external-ids:ovn-bridge-mappings=physnet1:br-eth0,physnet2:br-eth1])
-check_bridge_mappings "physnet1:br-eth0,physnet2:br-eth1"
+AT_CHECK([ovs-vsctl set Open_vSwitch . external-ids:ovn-bridge-mappings=phynet1:br-eth0,phynet2:br-eth1])
+check_bridge_mappings "phynet1:br-eth0,phynet2:br-eth1"
 check_patches
 
 # Create a localnet port, but we should still have no patch ports, as they
@@ -76,7 +76,7 @@ check_patches
 ovn-sbctl \
     -- --id=@dp101 create Datapath_Binding tunnel_key=101 external_ids:name=dp101 \
     -- create Port_Binding datapath=@dp101 logical_port=localnet1 tunnel_key=1 \
-        type=localnet options:network_name=physnet1
+        type=localnet options:network_name=phynet1
 check_patches
 
 # Create a localnet port on a logical switch with a port bound to this chassis.
@@ -84,7 +84,7 @@ check_patches
 ovn-sbctl \
     -- --id=@dp102 create Datapath_Binding tunnel_key=102 external_ids:name=dp102 \
     -- create Port_Binding datapath=@dp102 logical_port=localnet2 tunnel_key=1 \
-        type=localnet options:network_name=physnet1 \
+        type=localnet options:network_name=phynet1 \
     -- create Port_Binding datapath=@dp102 logical_port=localvif2 tunnel_key=2
 ovs-vsctl add-port br-int localvif2 -- set Interface localvif2 external_ids:iface-id=localvif2
 check_patches \

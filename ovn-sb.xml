@@ -3675,7 +3675,7 @@ tcp.flags = RST;
         mapped to a local OVS bridge that provides access to that network.  An
         example of configuring <code>ovn-bridge-mappings</code> would be:
 
-        <pre>$ ovs-vsctl set open . external-ids:ovn-bridge-mappings=physnet1:br-eth0,physnet2:br-eth1</pre>
+        <pre>$ ovs-vsctl set open . external-ids:ovn-bridge-mappings=phynet1:br-eth0,phynet2:br-eth1</pre>
 
         <p>
           When a logical switch has a <code>localnet</code> port attached,
@@ -3713,7 +3713,7 @@ tcp.flags = RST;
         mapped to a local OVS bridge that provides access to that network.  An
         example of configuring <code>ovn-bridge-mappings</code> would be:
 
-        <pre>$ ovs-vsctl set open . external-ids:ovn-bridge-mappings=physnet1:br-eth0,physnet2:br-eth1</pre>
+        <pre>$ ovs-vsctl set open . external-ids:ovn-bridge-mappings=phynet1:br-eth0,phynet2:br-eth1</pre>
 
         <p>
           When a logical switch has a <code>l2gateway</code> port attached,
