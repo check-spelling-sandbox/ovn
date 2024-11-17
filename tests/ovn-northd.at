@@ -636,7 +636,7 @@ exp_ref_ch_list="$comp1_ch_uuid $comp2_ch_uuid"
 
 wait_column "$exp_ref_ch_list" HA_Chassis_Group ref_chassis
 
-# Unind sw1-p1. comp2 should not be in the ref_chassis.
+# Unbind sw1-p1. comp2 should not be in the ref_chassis.
 ovn-sbctl lsp-unbind sw1-p1
 wait_row_count nb:Logical_Switch_Port 1 name=sw1-p1 up=false
 wait_column "$comp2_ch_uuid" HA_Chassis_Group ref_chassis
