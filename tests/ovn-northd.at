@@ -13783,7 +13783,7 @@ check ovn-nbctl --wait=sb lsp-del ln-public
 # Check that the lflows are as expected when public has no localnet port.
 check_flows_cr_port_for_public_lr0
 
-# Create multiple gateway ports.  chassisresident port should not be
+# Create multiple gateway ports.  chassis resident port should not be
 # created for 'public-lr0' even if there is no localnet port on 'public'
 # logical switch.
 check ovn-nbctl --wait=sb lrp-set-gateway-chassis lr0-sw0 gw1
