@@ -12011,7 +12011,7 @@ build_distr_lrouter_nat_flows_for_lb(struct lrouter_nat_lb_flows_ctx *ctx,
         break;
     }
 
-    /* undnat_action: Remove the ct action from the lr_out_undenat NAT rule.
+    /* undnat_action: Remove the ct action from the lr_out_undnat NAT rule.
      */
     if (stateless_nat) {
         ds_clear(&undnat_action);
