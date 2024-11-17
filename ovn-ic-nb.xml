@@ -225,7 +225,7 @@
               choose an available port.  If <var>host</var>, which can either
               be a DNS name (if built with unbound library) or an IP address,
               is specified, then connections are restricted to the resolved or
-              specified local IPaddress (either IPv4 or IPv6 address).  If
+              specified local IP address (either IPv4 or IPv6 address).  If
               <var>host</var> is an IPv6 address, wrap in square brackets,
               e.g. <code>pssl:6640:[::1]</code>.  If <var>host</var> is not
               specified then it listens only on IPv4 (but not IPv6) addresses.
