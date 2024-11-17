@@ -1026,7 +1026,7 @@
 
       <p>
         For a one-bit field or predicate, a mention of its name is equivalent
-        to <code><var>symobl</var> == 1</code>, e.g. <code>vlan.present</code>
+        to <code><var>symbol</var> == 1</code>, e.g. <code>vlan.present</code>
         is equivalent to <code>vlan.present == 1</code>.  The same is true for
         one-bit subfields, e.g. <code>vlan.tci[12]</code>.  There is no
         technical limitation to implementing the same for ordinal fields of all
