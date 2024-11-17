@@ -89,7 +89,7 @@ struct worker_pool {
     size_t size;   /* Number of threads in the pool. */
     struct ovs_list list_node; /* List of pools - used in cleanup/exit. */
     struct worker_control *controls; /* "Handles" in this pool. */
-    sem_t *done; /* Work completion semaphorew. */
+    sem_t *done; /* Work completion semaphore. */
 };
 
 /* Return pool size; bigger than 1 means parallelization has been enabled. */
