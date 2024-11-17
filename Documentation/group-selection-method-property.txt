@@ -137,7 +137,7 @@ Open Flow 1.4 section 7.2.2 Flow Match Structures.
 Fields must not be specified unless the group selection_method is non-zero
 length.
 
-The pre-requisites for fields specified must be satisfied in the match for
+The prerequisites for fields specified must be satisfied in the match for
 any flow that uses the group.
 
 Masking is allowed but not required for fields whose TLVs allow masking.

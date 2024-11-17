@@ -130,7 +130,7 @@ Code
 - Prefix commands with ``$``.
 
 - Where possible, include fully-working snippets of code. If there
-  pre-requisites, explain what they are and how to achieve them.
+  prerequisites, explain what they are and how to achieve them.
 
 Admonitions
 ~~~~~~~~~~~

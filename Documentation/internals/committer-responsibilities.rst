@@ -25,8 +25,8 @@
 Expectations for Developers with OVN Repo Access
 ================================================
 
-Pre-requisites
---------------
+Prerequisites
+-------------
 
 Be familiar with the guidelines and standards defined in
 :doc:`contributing/index`.
