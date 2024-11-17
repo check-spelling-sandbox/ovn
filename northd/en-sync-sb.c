@@ -219,7 +219,7 @@ sync_to_sb_addr_set_nb_port_group_handler(struct engine_node *node,
  * This engine node syncs the SB load balancers.
  */
 struct sb_lb_record {
-    struct hmap_node key_node;  /* Index on 'nblb->header_.uuid'. */
+    struct hmap_node key_node;  /* Index on 'nlb->header_.uuid'. */
 
     struct ovn_lb_datapaths *lb_dps;
     const struct sbrec_load_balancer *sbrec_lb;
