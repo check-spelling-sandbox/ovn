@@ -25,7 +25,7 @@ OVN v24.09.0 - 13 Sep 2024
     "true" for all scenarios.
   - Added DHCPv4 relay support.
   - A new LSP option "force_fdb_lookup" has been added to ensure the additional
-    MAC addresses configured on the LSP with "unknown", are learnt via the
+    MAC addresses configured on the LSP with "unknown", are learned via the
     OVN native FDB.
   - Add support for ovsdb-server `--config-file` option in ovn-ctl.
   - Add "ovn-bridge-remote" config option to vswitchd external-ids,

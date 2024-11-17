@@ -403,7 +403,7 @@
     <p>
       This table looks up the MAC learning table of the logical switch
       datapath to check if the <code>port-mac</code> pair is present
-      or not. MAC is learnt for logical switch VIF ports whose
+      or not. MAC is learned for logical switch VIF ports whose
       port security is disabled and 'unknown' address setn as well as
       for localnet ports with option localnet_learn_fdb. A localnet
       port entry does not overwrite a VIF port entry.
@@ -2059,14 +2059,14 @@ output;
       <li>
         Priority-90 flows for transit switches that forward registered
         IP multicast traffic to their corresponding multicast group , which
-        <code>ovn-northd</code> creates based on learnt
+        <code>ovn-northd</code> creates based on learned
         <ref table="IGMP_Group" db="OVN_Southbound"/> entries.
       </li>
 
       <li>
         Priority-90 flows that forward registered IP multicast traffic to
         their corresponding multicast group, which <code>ovn-northd</code>
-        creates based on learnt <ref table="IGMP_Group" db="OVN_Southbound"/>
+        creates based on learned <ref table="IGMP_Group" db="OVN_Southbound"/>
         entries.  The flows also forward packets to the
         <code>MC_MROUTER_FLOOD</code> multicast group, which
         <code>ovn-nortdh</code> populates with all the logical ports that
@@ -2273,7 +2273,7 @@ output;
 
       <li>
         One priority-0 fallback flow that outputs the packet to the egress
-        stage with the outport learnt from <code>get_fdb</code> action.
+        stage with the outport learned from <code>get_fdb</code> action.
       </li>
     </ul>
 

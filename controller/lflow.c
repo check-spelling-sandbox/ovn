@@ -1428,7 +1428,7 @@ add_neighbor_flows(struct ovsdb_idl_index *sbrec_port_binding_by_name,
                    const struct hmap *local_datapaths,
                    struct ovn_desired_flow_table *flow_table)
 {
-    /* Add flows for learnt MAC bindings */
+    /* Add flows for learned MAC bindings */
     const struct sbrec_mac_binding *b;
     SBREC_MAC_BINDING_TABLE_FOR_EACH (b, mac_binding_table) {
         consider_neighbor_flow(sbrec_port_binding_by_name, local_datapaths,

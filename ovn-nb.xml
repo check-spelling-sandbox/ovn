@@ -1372,7 +1372,7 @@
           <ref column="addresses"/> column contains <code>unknown</code>.
           If set to <code>true</code>, MAC addresses (if configured)
           are not installed in the l2 lookup table but the MAC addresses are
-          learnt and stored in the FDB table.
+          learned and stored in the FDB table.
           The default value is <code>false</code>.
         </column>
 
@@ -5280,7 +5280,7 @@ or
       </column>
 
       <column name="override_dynamic_mac">
-        Override dynamically learnt MACs.
+        Override dynamically learned MACs.
       </column>
     </group>
   </table>

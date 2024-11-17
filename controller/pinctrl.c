@@ -5207,7 +5207,7 @@ struct ip_mcast_snoop_cfg {
     uint32_t idle_time_s;      /* Idle timeout for multicast groups. */
     uint32_t query_interval_s; /* Multicast query interval. */
     uint32_t query_max_resp_s; /* Multicast query max-response field. */
-    uint32_t seq_no;           /* Used for flushing learnt groups. */
+    uint32_t seq_no;           /* Used for flushing learned groups. */
 
     struct eth_addr query_eth_src;    /* Src ETH address used for queries. */
     struct eth_addr query_eth_v4_dst; /* Dst ETH address used for IGMP

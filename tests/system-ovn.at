@@ -12281,7 +12281,7 @@ AT_CLEANUP
 ])
 
 OVN_FOR_EACH_NORTHD([
-AT_SETUP([load balancing affinity sessions - auto clear learnt flows])
+AT_SETUP([load balancing affinity sessions - auto clear learned flows])
 AT_SKIP_IF([test $HAVE_NC = no])
 AT_KEYWORDS([lb])
 
@@ -12347,7 +12347,7 @@ else
 fi
 check ovn-nbctl --wait=hv sync
 
-dnl The learnt flow should also be auto deleted.
+dnl The learned flow should also be auto deleted.
 AT_CHECK([ovs-ofctl dump-flows br-int | grep 'table=OFTABLE_CHK_LB_AFFINITY, n_packets' -c], [1], [dnl
 0
 ])

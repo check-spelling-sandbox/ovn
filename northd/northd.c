@@ -10178,7 +10178,7 @@ build_lswitch_destination_lookup_bmcast(struct ovn_datapath *od,
 }
 
 
-/* Ingress table 25: Add IP multicast flows learnt from IGMP/MLD
+/* Ingress table 25: Add IP multicast flows learned from IGMP/MLD
  * (priority 90). */
 static void
 build_lswitch_ip_mcast_igmp_mld(struct ovn_igmp_group *igmp_group,
@@ -18692,7 +18692,7 @@ build_mcast_groups(const struct sbrec_igmp_group_table *sbrec_igmp_group_table,
     }
 
     /* Build IGMP groups for multicast routers with relay enabled. The router
-     * IGMP groups are based on the groups learnt by their multicast enabled
+     * IGMP groups are based on the groups learned by their multicast enabled
      * peers.
      */
     HMAP_FOR_EACH (od, key_node, &ls_datapaths->datapaths) {
