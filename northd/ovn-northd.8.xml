@@ -406,7 +406,7 @@
       or not. MAC is learned for logical switch VIF ports whose
       port security is disabled and 'unknown' address setn as well as
       for localnet ports with option localnet_learn_fdb. A localnet
-      port entry does not overwrite a VIF port entry.
+      port entry does not override a VIF port entry.
     </p>
 
     <ul>
