@@ -115,7 +115,7 @@ bool ovn_stop_parallel_processing(void);
 
 void ovn_fast_hmap_size_for(struct hmap *hmap, int size);
 
-/* Build a hmap with a mask equals to size */
+/* Build a hmap with a mask equal to size */
 
 void ovn_fast_hmap_init(struct hmap *hmap, ssize_t size);
 

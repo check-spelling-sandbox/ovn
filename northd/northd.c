@@ -16730,7 +16730,7 @@ build_lrouter_nat_defrag_and_lb(
         if (!od->is_gw_router) {
             if (!sset_contains(&nat_entries, nat->external_ip)) {
                 /* Drop packets coming in from external that still has
-                 * destination IP equals to the NAT external IP, to avoid loop.
+                 * destination IP equal to the NAT external IP, to avoid loop.
                  * The packets must have gone through DNAT/unSNAT stage but
                  * failed to convert the destination. */
                 ds_clear(match);
