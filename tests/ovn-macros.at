@@ -91,7 +91,7 @@ m4_divert_text([PREPARE_TESTS],
          OVS_WAIT_UNTIL([
              test 1 = $(as $hv ovs-vsctl show | grep "Port \b$patch_port\b" | wc -l)
          ])
-         # Wait for a flow outputing to patch port
+         # Wait for a flow outputting to patch port
          OVS_WAIT_UNTIL([
              hv_patch_ofport=$(as $hv ovs-vsctl --bare --columns ofport find Interface name=$patch_port)
              echo "$patch_port=$hv_patch_ofport"
@@ -105,7 +105,7 @@ m4_divert_text([PREPARE_TESTS],
      hv1=$1
      hv2=$2
      echo "$3: waiting for flows for remote output on $hv1"
-     # Wait for a flow outputing  to remote output
+     # Wait for a flow outputting  to remote output
      OVS_WAIT_UNTIL([
          ofport=$(as $hv1 ovs-vsctl --bare --columns ofport find Interface name=ovn-${hv2}-0)
          echo "tunnel port=$ofport"
@@ -117,7 +117,7 @@ m4_divert_text([PREPARE_TESTS],
      hv1=$1
      hv2=$2
      echo "$3: waiting for flows for remote input on $hv1"
-     # Wait for a flow outputing  to remote input
+     # Wait for a flow outputting  to remote input
      OVS_WAIT_UNTIL([
          ofport=$(as $hv1 ovs-vsctl --bare --columns ofport find Interface name=ovn-${hv2}-0)
          echo "tunnel port=$ofport"
