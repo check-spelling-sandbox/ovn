@@ -133,7 +133,7 @@ lookup_port_cb(const void *aux_, const char *port_name, unsigned int *portp)
 
     /* Store the key (DP + name) that used to lookup the multicast group to
      * lflow reference, so that in the future when the multicast group's
-     * existance (found/not found) changes, the logical flow that references
+     * existence (found/not found) changes, the logical flow that references
      * this multicast group can be reprocessed. */
     struct ds mg_key = DS_EMPTY_INITIALIZER;
     get_mc_group_key(port_name, aux->dp->tunnel_key, &mg_key);
@@ -1428,7 +1428,7 @@ add_neighbor_flows(struct ovsdb_idl_index *sbrec_port_binding_by_name,
                    const struct hmap *local_datapaths,
                    struct ovn_desired_flow_table *flow_table)
 {
-    /* Add flows for learnt MAC bindings */
+    /* Add flows for learned MAC bindings */
     const struct sbrec_mac_binding *b;
     SBREC_MAC_BINDING_TABLE_FOR_EACH (b, mac_binding_table) {
         consider_neighbor_flow(sbrec_port_binding_by_name, local_datapaths,
@@ -1625,7 +1625,7 @@ add_lb_vip_hairpin_reply_action(struct in6_addr *vip6, ovs_be32 vip,
 
 /* Adds flows to detect hairpin sessions.
  *
- * For backwards compatibilty with older ovn-northd versions, uses
+ * For backwards compatibility with older ovn-northd versions, uses
  * ct_nw_dst(), ct_ipv6_dst(), ct_tp_dst(), otherwise uses the
  * original destination tuple stored by ovn-northd.
  */
@@ -2288,7 +2288,7 @@ lflow_handle_flows_for_lport(const struct sbrec_port_binding *pb,
      * of the port binding.  Right now port binding 'uuid' is used in
      * the logical flow table (l_ctx_out->flow_table) only for port
      * security flows.  Later if new flows are added using the
-     * port binding'uuid', then this function should handle it properly.
+     * port binding 'uuid', then this function should handle it properly.
      */
     ofctrl_remove_flows(l_ctx_out->flow_table, &pb->header_.uuid);
     if (deleted) {
@@ -3191,7 +3191,7 @@ consider_port_sec_flows(const struct sbrec_port_binding *pb,
      * priority: 80
      * match - "outport == pb->logical_port"
      * action - "port_sec_failed = 1;"
-     * descrption: "Drop all traffic"
+     * description: "Drop all traffic"
      */
     reset_match_for_port_sec_flows(pb, MFF_LOG_OUTPORT, &match);
     build_port_sec_deny_action(&ofpacts);

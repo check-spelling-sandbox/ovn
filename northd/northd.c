@@ -198,7 +198,7 @@ BUILD_ASSERT_DECL(ACL_OBS_STAGE_MAX < (1 << 2));
 
 #define REG_ORIG_TP_DPORT_ROUTER   "reg9[16..31]"
 
-/* Registers used for pasing observability information for switches:
+/* Registers used for passing observability information for switches:
  * domain and point ID. */
 #define REG_OBS_POINT_ID_NEW "reg3"
 #define REG_OBS_POINT_ID_EST "reg9"
@@ -1286,7 +1286,7 @@ ovn_port_destroy(struct hmap *ports, struct ovn_port *port)
 }
 
 /* Returns the ovn_port that matches 'name'.  If 'prefer_bound' is true and
- * multiple ports share the same name, gives precendence to ports bound to
+ * multiple ports share the same name, gives precedence to ports bound to
  * an ovn_datapath.
  */
 static struct ovn_port *
@@ -1403,7 +1403,7 @@ lsp_is_type_changed(const struct sbrec_port_binding *sb,
 
     if (!sb->type[0] && !nbsp->type[0]) {
         /* Two "VIF's" interface make sure both have parent_port
-         * set or both have parent_port unset, otherwisre they are
+         * set or both have parent_port unset, otherwise they are
          * different ports type.
          */
         if ((!sb->parent_port && nbsp->parent_name) ||
@@ -2159,7 +2159,7 @@ create_cr_port(struct ovn_port *op, struct hmap *ports,
  * op's peer logical switch.  False otherwise.
  *
  * Chassis resident port needs to be created if the following
- * conditionsd are met:
+ * conditions are met:
  *   - op is a distributed gateway port
  *   - op has the option 'centralize_routing' set to true
  *   - op is the only distributed gateway port attached to its
@@ -2224,7 +2224,7 @@ join_logical_ports(const struct sbrec_port_binding_table *sbrec_pb_table,
                  *
                  * This change will affect container/virtual lport type
                  * changes only for now, this change is needed in
-                 * contaier/virtual lport cases to avoid port type
+                 * container/virtual lport cases to avoid port type
                  * conflicts in the ovn-controller when the user clears
                  * the parent_port field in the container lport or updated
                  * the lport type.
@@ -4117,7 +4117,7 @@ ovn_port_add_tnlid(struct ovn_port *op, uint32_t tunnel_key)
     return added;
 }
 
-/* Returns false if the requested key is confict with another allocated key, so
+/* Returns false if the requested key is conflict with another allocated key, so
  * that the I-P engine can fallback to recompute if needed; otherwise return
  * true (even if the key is not allocated). */
 static bool
@@ -4988,7 +4988,7 @@ northd_handle_sb_port_binding_changes(
 
         if (sbrec_port_binding_is_new(pb)) {
             /* Most likely the PB was created by northd and this is the
-             * notification of that trasaction. So we just update the sb
+             * notification of that transaction. So we just update the sb
              * pointer in northd data. Fallback to recompute otherwise. */
             if (!op) {
                 VLOG_WARN_RL(&rl, "A port-binding for %s is created but the "
@@ -5015,7 +5015,7 @@ northd_handle_sb_port_binding_changes(
              * "sync_from_sb").
              *
              * For an LRP PB, it is most likely because of
-             *   - IPv6 prefix delagation updates from ovn-controller.
+             *   - IPv6 prefix delegation updates from ovn-controller.
              *     This update is handled in "sync_from_sb" node.
              *   - ha chassis group and this can be ignored.
              *
@@ -5065,7 +5065,7 @@ northd_handle_lb_data_changes(struct tracked_lb_data *trk_lb_data,
 
     /* Fall back to recompute if any load balancer was dissociated from
      * a load balancer group (but not deleted). */
-    if (trk_lb_data->has_dissassoc_lbs_from_lbgrps) {
+    if (trk_lb_data->has_disassoc_lbs_from_lbgrps) {
         return false;
     }
 
@@ -5076,7 +5076,7 @@ northd_handle_lb_data_changes(struct tracked_lb_data *trk_lb_data,
 
     /* Fall back to recompute if any load balancer has been disassociated from
      * a logical switch or router. */
-    if (trk_lb_data->has_dissassoc_lbs_from_od) {
+    if (trk_lb_data->has_disassoc_lbs_from_od) {
         return false;
     }
 
@@ -5088,7 +5088,7 @@ northd_handle_lb_data_changes(struct tracked_lb_data *trk_lb_data,
 
     /* Fall back to recompute if any load balancer group has been disassociated
      * from a logical switch or router. */
-    if (trk_lb_data->has_dissassoc_lbgrps_from_od) {
+    if (trk_lb_data->has_disassoc_lbgrps_from_od) {
         return false;
     }
 
@@ -6314,7 +6314,7 @@ build_pre_lb(struct ovn_datapath *od, const struct shash *meter_groups,
     ovn_lflow_add(lflows, od, S_SWITCH_IN_PRE_LB, 0, "1", "next;", lflow_ref);
     ovn_lflow_add(lflows, od, S_SWITCH_OUT_PRE_LB, 0, "1", "next;", lflow_ref);
 
-    /* Do not send statless flows via conntrack */
+    /* Do not send stateless flows via conntrack */
     ovn_lflow_add(lflows, od, S_SWITCH_IN_PRE_LB, 110,
                   REGBIT_ACL_STATELESS" == 1", "next;", lflow_ref);
     ovn_lflow_add(lflows, od, S_SWITCH_OUT_PRE_LB, 110,
@@ -6948,7 +6948,7 @@ build_acl_sample_generic_est_flows(const struct ovn_datapath *od,
                   ds_cstr(actions), lflow_ref);
 }
 
-/* Check if the smaple has only single collector and the sample action
+/* Check if the sample has only single collector and the sample action
  * with registers is supported. */
 static bool
 acl_use_generic_sample_flows(const struct nbrec_sample *sample,
@@ -7121,7 +7121,7 @@ consider_acl(struct lflow_table *lflows, const struct ovn_datapath *od,
     if (!strcmp(acl->action, "allow")
         || !strcmp(acl->action, "allow-related")) {
         /* If there are any stateful flows, we must even commit "allow"
-         * actions.  This is because, while the initiater's
+         * actions.  This is because, while the initiator's
          * direction may not have any stateful rules, the server's
          * may and then its return traffic would not have an
          * associated conntrack entry and would return "+invalid". */
@@ -7513,7 +7513,7 @@ build_acls(const struct ls_stateful_record *ls_stateful_rec,
          * By default, traffic is allowed (if default_acl_drop is 'false') or
          * dropped (if default_acl_drop is 'true').  This is partially
          * handled by the Priority 0 ACL flows added earlier, but we also
-         * need to commit IP flows.  This is because, while the initiater's
+         * need to commit IP flows.  This is because, while the initiator's
          * direction may not have any stateful rules, the server's may
          * and then its return traffic would not have an associated
          * conntrack entry and would return "+invalid".
@@ -8494,7 +8494,7 @@ build_vtep_hairpin(struct ovn_datapath *od, struct lflow_table *lflows,
         return;
     }
 
-    /* Ingress Pre-ARP flows for VTEP hairpining traffic. Priority 1000:
+    /* Ingress Pre-ARP flows for VTEP hairpinning traffic. Priority 1000:
      * Packets received from VTEP ports must go directly to L2LKP table.
      */
     char *action = xasprintf("next(pipeline=ingress, table=%d);",
@@ -8840,7 +8840,7 @@ build_lswitch_rport_arp_req_flow(
                       patch_op->cr_port->json_key);
     }
 
-    /* Send a the packet to the router pipeline.  If the switch has non-router
+    /* Send a packet to the router pipeline.  If the switch has non-router
      * ports then flood it there as well.
      */
     if (od->n_router_ports != od->nbs->n_ports) {
@@ -9145,7 +9145,7 @@ build_dhcpv4_options_flows(struct ovn_port *op,
             ds_destroy(&ipv4_addr_match);
 
             /* Add 34000 priority flow to allow DHCP reply from ovn-controller
-             * to the ogical port of the datapath if the CMS has configured
+             * to the logical port of the datapath if the CMS has configured
              * DHCPv4 options.
              * */
             if (!is_external) {
@@ -9225,7 +9225,7 @@ build_dhcpv6_options_flows(struct ovn_port *op,
             ds_destroy(&response_action);
 
             /* Add 34000 priority flow to allow DHCP reply from ovn-controller
-             * to the ogical port of the datapath if the CMS has configured
+             * to the logical port of the datapath if the CMS has configured
              * DHCPv6 options.
              * */
             if (!is_external) {
@@ -10131,7 +10131,7 @@ build_lswitch_destination_lookup_bmcast(struct ovn_datapath *od,
                       "outport = \""MC_FLOOD"\"; output;",
                       lflow_ref);
 
-        /* Forward uregistered IP multicast to routers with relay enabled
+        /* Forward unregistered IP multicast to routers with relay enabled
          * and to any ports configured to flood IP multicast traffic.
          * If configured to flood unregistered traffic this will be
          * handled by the L2 multicast flow.
@@ -10178,7 +10178,7 @@ build_lswitch_destination_lookup_bmcast(struct ovn_datapath *od,
 }
 
 
-/* Ingress table 25: Add IP multicast flows learnt from IGMP/MLD
+/* Ingress table 25: Add IP multicast flows learned from IGMP/MLD
  * (priority 90). */
 static void
 build_lswitch_ip_mcast_igmp_mld(struct ovn_igmp_group *igmp_group,
@@ -10269,7 +10269,7 @@ build_lswitch_ip_unicast_lookup(struct ovn_port *op,
     ovs_assert(op->nbsp);
 
     /* Note: A switch port can also have a chassis resident derived port.
-     * Check if 'op' is a chassis resident dervied port. If so, skip
+     * Check if 'op' is a chassis resident derived port. If so, skip
      * adding unicast lookup flows for this port. */
     if (lsp_is_external(op->nbsp) || is_cr_port(op)) {
         return;
@@ -11150,7 +11150,7 @@ parsed_routes_add(struct ovn_datapath *od, const struct hmap *lr_ports,
         return;
     }
 
-    /* Verify that ip_prefix and nexthop have same address familiy. */
+    /* Verify that ip_prefix and nexthop have same address family. */
     if (valid_nexthop) {
         if (IN6_IS_ADDR_V4MAPPED(&prefix) != IN6_IS_ADDR_V4MAPPED(&nexthop)) {
             static struct vlog_rate_limit rl = VLOG_RATE_LIMIT_INIT(5, 1);
@@ -12011,7 +12011,7 @@ build_distr_lrouter_nat_flows_for_lb(struct lrouter_nat_lb_flows_ctx *ctx,
         break;
     }
 
-    /* undnat_action: Remove the ct action from the lr_out_undenat NAT rule.
+    /* undnat_action: Remove the ct action from the lr_out_undnat NAT rule.
      */
     if (stateless_nat) {
         ds_clear(&undnat_action);
@@ -12176,7 +12176,7 @@ build_lrouter_nat_flows_for_lb(
     }
 
     /* Add logical flows to UNDNAT the load balanced reverse traffic in
-     * the router egress pipleine stage - S_ROUTER_OUT_UNDNAT if the logical
+     * the router egress pipeline stage - S_ROUTER_OUT_UNDNAT if the logical
      * router has a gateway router port associated.
      */
     ds_put_format(&undnat_match, "%s && (", ip_match);
@@ -14320,7 +14320,7 @@ build_lrouter_routing_protocol_redirect(
     if (!lsp_in_peer) {
         static struct vlog_rate_limit rl = VLOG_RATE_LIMIT_INIT(1, 5);
         VLOG_WARN_RL(&rl, "Option 'routing-protocol-redirect' set on Logical "
-                          "Router Port '%s' refers to non-existent Logical "
+                          "Router Port '%s' refers to nonexistent Logical "
                           "Switch Port. Routing protocol redirecting won't be "
                           "configured.",
                           op->key);
@@ -15290,7 +15290,7 @@ build_ipv6_input_flows_for_lrouter_port(
         ds_clear(match);
         if (is_l3dgw_port(op)) {
             /* Traffic with eth.src = l3dgw_port->lrp_networks.ea_s
-             * should only be sent from the gateway chassi, so that
+             * should only be sent from the gateway chassis, so that
              * upstream MAC learning points to the gateway chassis.
              * Also need to avoid generation of multiple ND replies
              * from different chassis. */
@@ -16513,7 +16513,7 @@ lrouter_check_nat_entry(const struct ovn_datapath *od,
      * satisfies the conditions for distributed NAT processing. */
     *distributed = false;
 
-    /* NAT cannnot be distributed if the DGP's peer
+    /* NAT cannot be distributed if the DGP's peer
      * has a chassisredirect port (as the routing is centralized
      * on the gateway chassis for the DGP's networks/subnets.)
      */
@@ -16730,7 +16730,7 @@ build_lrouter_nat_defrag_and_lb(
         if (!od->is_gw_router) {
             if (!sset_contains(&nat_entries, nat->external_ip)) {
                 /* Drop packets coming in from external that still has
-                 * destination IP equals to the NAT external IP, to avoid loop.
+                 * destination IP equal to the NAT external IP, to avoid loop.
                  * The packets must have gone through DNAT/unSNAT stage but
                  * failed to convert the destination. */
                 ds_clear(match);
@@ -16831,7 +16831,7 @@ build_lrouter_nat_defrag_and_lb(
          * router, add flows that are specific to a NAT rule.  These
          * flows indicate the presence of an applicable NAT rule that
          * can be applied in a distributed manner.
-         * In particulr REG_SRC_IPV4/REG_SRC_IPV6 and eth.src are set to
+         * In particular REG_SRC_IPV4/REG_SRC_IPV6 and eth.src are set to
          * NAT external IP and NAT external mac so the ARP request
          * generated in the following stage is sent out with proper IP/MAC
          * src addresses.
@@ -16844,7 +16844,7 @@ build_lrouter_nat_defrag_and_lb(
                           is_v6 ? "6" : "4", nat->logical_ip,
                           l3dgw_port->json_key);
             /* Add a rule to drop traffic from a distributed NAT if
-             * the virtual port has not claimed yet becaused otherwise
+             * the virtual port has not claimed yet because otherwise
              * the traffic will be centralized misconfiguring the TOR switch.
              */
             struct ovn_port *op = ovn_port_find(ls_ports,
@@ -16980,7 +16980,7 @@ build_lsp_lflows_for_lbnats(struct ovn_port *lsp,
  * the LRP's datapath) as routable flows into the other router datapaths
  * which are connected to the LRP's peer's logical switch.
  *
- * i.e If logical switch sw0 is conencted to the routers R0, R1 and R2,
+ * i.e If logical switch sw0 is connected to the routers R0, R1 and R2,
  * and if LRP of R0 has routable addresses (IP1 and IP2), then it adds
  * the routes to reach these IPs in the R1 and R2's datapaths.
  *
@@ -17689,7 +17689,7 @@ build_lswitch_and_lrouter_flows(
         };
 
         /* Combined build - all lflow generation from lswitch and lrouter
-         * will move here and will be reogranized by iterator type.
+         * will move here and will be reorganized by iterator type.
          */
         stopwatch_start(LFLOWS_DATAPATHS_STOPWATCH_NAME, time_msec());
         HMAP_FOR_EACH (od, key_node, &ls_datapaths->datapaths) {
@@ -18692,7 +18692,7 @@ build_mcast_groups(const struct sbrec_igmp_group_table *sbrec_igmp_group_table,
     }
 
     /* Build IGMP groups for multicast routers with relay enabled. The router
-     * IGMP groups are based on the groups learnt by their multicast enabled
+     * IGMP groups are based on the groups learned by their multicast enabled
      * peers.
      */
     HMAP_FOR_EACH (od, key_node, &ls_datapaths->datapaths) {

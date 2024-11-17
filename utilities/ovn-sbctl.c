@@ -539,7 +539,7 @@ cmd_lsp_bind(struct ctl_context *ctx)
 
     if (sbctl_bd->bd_cfg->chassis) {
         if (!may_exist || sbctl_bd->bd_cfg->chassis != sbctl_ch->ch_cfg) {
-            ctl_error(ctx, "lport (%s) has already been binded to chassis (%s)",
+            ctl_error(ctx, "lport (%s) has already been bound to chassis (%s)",
                       lport_name, sbctl_bd->bd_cfg->chassis->name);
         }
         return;

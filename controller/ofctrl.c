@@ -1478,7 +1478,7 @@ ofctrl_remove_flows_for_as_ip(struct ovn_desired_flow_table *flow_table,
         }
     }
     if (!found) {
-        /* No address set tracking infomation found, can't perform the
+        /* No address set tracking information found, can't perform the
          * deletion. */
         return false;
     }
@@ -1523,7 +1523,7 @@ ofctrl_remove_flows_for_as_ip(struct ovn_desired_flow_table *flow_table,
 }
 
 /* Remove ovn_flows for the given "sb_to_flow" node in the uuid_flow_table.
- * Optionally log the message for each flow that is acturally removed, if
+ * Optionally log the message for each flow that is actually removed, if
  * log_msg is not NULL. */
 static void
 remove_flows_from_sb_to_flow(struct ovn_desired_flow_table *flow_table,
@@ -2586,7 +2586,7 @@ update_installed_flows_by_track(struct ovn_desired_flow_table *flow_table,
                                  "updating installed (tracked conflict)");
                 }
             }
-            /* The track_list_node emptyness is used to check if the node is
+            /* The track_list_node emptiness is used to check if the node is
              * already added to track list, so initialize it again here. */
             ovs_list_init(&f->track_list_node);
         }

@@ -95,11 +95,11 @@ bfd_calculate_active_tunnels(const struct ovsrec_bridge *br_int,
  * with.
  * Eg.
  * If there are 2 HA chassis groups.
- * Group name - hapgrp1
+ * Group name - hagrp1
  *   - HA chassis - (HA1, HA2, HA3)
  *   - ref chassis - (C1, C2)
  *
- * Group name - hapgrp2
+ * Group name - hagrp2
  *   - HA chassis - (HA1, HA4, HA5)
  *   - ref chassis - (C1, C3, C4)
  *

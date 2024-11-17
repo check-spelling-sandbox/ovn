@@ -1740,7 +1740,7 @@ delete_orphan_ic_routes(struct ic_context *ctx,
 
         if (!t_sw) {
             static struct vlog_rate_limit rl = VLOG_RATE_LIMIT_INIT(5, 1);
-            VLOG_INFO_RL(&rl, "Deleting orphan ICDB:Route: %s->%s (%s, rtb:%s,"
+            VLOG_INFO_RL(&rl, "Deleting orphan ICSB:Route: %s->%s (%s, rtb:%s,"
                          " transit switch: %s)", isb_route->ip_prefix,
                          isb_route->nexthop, isb_route->origin,
                          isb_route->route_table, isb_route->transit_switch);

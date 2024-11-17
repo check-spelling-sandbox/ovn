@@ -52,7 +52,7 @@ Backport Policy
 
 Patches which are fixing bugs should be considered for backporting from
 `main` to release branches. OVN contributors submit their patches
-targeted to the `main` branch, using the ``Fixes`` tag desribed in
+targeted to the `main` branch, using the ``Fixes`` tag described in
 :doc:`submitting-patches`. The maintainer first applies the patch to `main`,
 then backports the patch to each older affected tree, as far back as it goes
 or at least to all currently supported branches. This is usually each branch

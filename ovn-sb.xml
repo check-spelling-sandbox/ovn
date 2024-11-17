@@ -1026,7 +1026,7 @@
 
       <p>
         For a one-bit field or predicate, a mention of its name is equivalent
-        to <code><var>symobl</var> == 1</code>, e.g. <code>vlan.present</code>
+        to <code><var>symbol</var> == 1</code>, e.g. <code>vlan.present</code>
         is equivalent to <code>vlan.present == 1</code>.  The same is true for
         one-bit subfields, e.g. <code>vlan.tci[12]</code>.  There is no
         technical limitation to implementing the same for ordinal fields of all
@@ -2639,7 +2639,7 @@ tcp.flags = RST;
             inport port security checks.  If the packet fails the port security
             checks, then <code>1</code> is stored in the destination register
             <var>R</var>.  Else 0 is stored.  The port security values to check
-            are retrieved from the the <code>inport</code> logical port.
+            are retrieved from the <code>inport</code> logical port.
           </p>
 
           <p>
@@ -2658,7 +2658,7 @@ tcp.flags = RST;
             outport port security checks.  If the packet fails the port
             security checks, then <code>1</code> is stored in the destination
             register <var>R</var>.  Else 0 is stored.  The port security
-            values to check are retrieved from the the <code>outport</code>
+            values to check are retrieved from the <code>outport</code>
             logical port.
           </p>
 
@@ -2684,7 +2684,7 @@ tcp.flags = RST;
 
           <ul>
             <li>
-              Match on the the 5-tuple and the expected next-hop mac address
+              Match on the 5-tuple and the expected next-hop mac address
               in table 76: <code>nw_src=ip0</code>, <code>nw_dst=ip1</code>,
               <code>ip_proto</code>,<code>tp_src=l4_port0</code>,
               <code>tp_dst=l4_port1</code>,<code>dl_src=ethaddr</code> and
@@ -2753,7 +2753,7 @@ tcp.flags = RST;
 
           <p>
             This action is applied for new connections received by a specific
-            load-balacer with affinity timeout configured.
+            load-balancer with affinity timeout configured.
           </p>
         </dd>
 
@@ -2838,7 +2838,7 @@ tcp.flags = RST;
             <dt><code>obs_point=</code><var>id</var></dt>
             <dd>
               An unsigned 32-bit integer to be used as
-              <code>ObsservationPointID</code> or the string
+              <code>ObservationPointID</code> or the string
               <code>@cookie</code> to indicate that the first 32 bits of the
               <code>Logical_Flow</code>'s UUID shall be used instead.
             </dd>
@@ -3675,7 +3675,7 @@ tcp.flags = RST;
         mapped to a local OVS bridge that provides access to that network.  An
         example of configuring <code>ovn-bridge-mappings</code> would be:
 
-        <pre>$ ovs-vsctl set open . external-ids:ovn-bridge-mappings=physnet1:br-eth0,physnet2:br-eth1</pre>
+        <pre>$ ovs-vsctl set open . external-ids:ovn-bridge-mappings=phynet1:br-eth0,phynet2:br-eth1</pre>
 
         <p>
           When a logical switch has a <code>localnet</code> port attached,
@@ -3713,7 +3713,7 @@ tcp.flags = RST;
         mapped to a local OVS bridge that provides access to that network.  An
         example of configuring <code>ovn-bridge-mappings</code> would be:
 
-        <pre>$ ovs-vsctl set open . external-ids:ovn-bridge-mappings=physnet1:br-eth0,physnet2:br-eth1</pre>
+        <pre>$ ovs-vsctl set open . external-ids:ovn-bridge-mappings=phynet1:br-eth0,phynet2:br-eth1</pre>
 
         <p>
           When a logical switch has a <code>l2gateway</code> port attached,
@@ -3836,7 +3836,7 @@ tcp.flags = RST;
     <group title="Distributed Gateway Port Options">
       <p>
         These options apply to the distributed parent ports of logical ports
-        with <ref column="type"/> of <code>chasssisredirect</code>.
+        with <ref column="type"/> of <code>chassisredirect</code>.
       </p>
 
       <column name="options" key="chassis-redirect-port">
@@ -5155,19 +5155,19 @@ tcp.flags = RST;
       and 'unknown' address set.  If port security is disabled on a
       <code>Logical_Switch_Port</code> record, OVN should allow traffic
       with any source mac from the VIF.  This table will be used to deliver
-      a packet to the VIF, If a packet's <code>eth.dst</code> is learnt.
+      a packet to the VIF, If a packet's <code>eth.dst</code> is learned.
     </p>
 
     <column name="mac">
-      The learnt mac address.
+      The learned mac address.
     </column>
 
     <column name="dp_key">
-      The key of the datapath on which this FDB was learnt.
+      The key of the datapath on which this FDB was learned.
     </column>
 
     <column name="port_key">
-      The key of the port binding on which this FDB was learnt.
+      The key of the port binding on which this FDB was learned.
     </column>
 
     <column name="timestamp">
@@ -5195,7 +5195,7 @@ tcp.flags = RST;
     </column>
 
     <column name="override_dynamic_mac">
-      Override dynamically learnt MACs.
+      Override dynamically learned MACs.
     </column>
 
     <column name="datapath">

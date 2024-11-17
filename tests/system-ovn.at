@@ -202,7 +202,7 @@ start_daemon ovn-controller
 
 # Logical network:
 # Two LRs - R1 and R2 that are connected to each other via LS "join"
-# in fd00::/64 network. R1 has switchess foo (fd11::/64) and
+# in fd00::/64 network. R1 has switches foo (fd11::/64) and
 # bar (fd12::/64) connected to it. R2 has alice (fd21::/64) connected
 # to it.  R2 is a gateway router on which we add NAT rules.
 #
@@ -382,7 +382,7 @@ start_daemon ovn-controller
 
 # Logical network:
 # Two LRs - R1 and R2 that are connected to each other via LS "join"
-# in 20.0.0.0/24 network. R1 has switchess foo (192.168.1.0/24) connected
+# in 20.0.0.0/24 network. R1 has switches foo (192.168.1.0/24) connected
 # to it.  R2 has alice (172.16.1.0/24) connected to it.
 # R2 is a gateway router on which we add NAT rules.
 #
@@ -494,7 +494,7 @@ start_daemon ovn-controller
 
 # Logical network:
 # Two LRs - R1 and R2 that are connected to each other via LS "join"
-# in fd20::/64 network. R1 has switchess foo (fd10::/64) connected
+# in fd20::/64 network. R1 has switches foo (fd10::/64) connected
 # to it.  R2 has alice (fd30::/64) connected to it.
 # R2 is a gateway router on which we add NAT rules.
 #
@@ -606,7 +606,7 @@ start_daemon ovn-controller
 
 # Logical network:
 # Three LRs - R1, R2 and R3 that are connected to each other via LS "join"
-# in 20.0.0.0/24 network. R1 has switchess foo (192.168.1.0/24) and
+# in 20.0.0.0/24 network. R1 has switches foo (192.168.1.0/24) and
 # bar (192.168.2.0/24) connected to it. R2 has alice (172.16.1.0/24) connected
 # to it.  R3 has bob (172.16.1.0/24) connected to it. Note how both alice and
 # bob have the same subnet behind it.  We are trying to simulate external
@@ -828,7 +828,7 @@ start_daemon ovn-controller
 
 # Logical network:
 # Three LRs - R1, R2 and R3 that are connected to each other via LS "join"
-# in fd20::/64 network. R1 has switchess foo (fd11::/64) and
+# in fd20::/64 network. R1 has switches foo (fd11::/64) and
 # bar (fd12::/64) connected to it. R2 has alice (fd30::/64) connected
 # to it.  R3 has bob (fd30::/64) connected to it. Note how both alice and
 # bob have the same subnet behind it.  We are trying to simulate external
@@ -1057,7 +1057,7 @@ start_daemon ovn-controller
 # in 20.0.0.0/24 and fd20::/64 networks. R1 has switches foo (192.168.1.0/24
 # and fd11::/64) and bar (192.168.2.0/24 and fd12::/64) connected to it. R2
 # has alice (172.16.1.0/24 and fd30::/64) connected to it.  R3 has bob
-# (172.16.1.0/24 andfd30::/64) connected to it. Note how both alice and bob
+# (172.16.1.0/24 and fd30::/64) connected to it. Note how both alice and bob
 # have the same subnets behind them.  We are trying to simulate external network
 # via those 2 switches. In real world the switch ports of these switches will
 # have addresses set as "unknown" to make them learning switches. Or those
@@ -2088,7 +2088,7 @@ start_daemon ovn-controller
 
 # Logical network:
 # Two LRs - R1 and R2 that are connected to each other via LS "join"
-# in 20.0.0.0/24 network. R1 has switchess foo (192.168.1.0/24) and
+# in 20.0.0.0/24 network. R1 has switches foo (192.168.1.0/24) and
 # bar (192.168.2.0/24) connected to it. R2 has alice (172.16.1.0/24) connected
 # to it.  R2 is a gateway router on which we add load-balancing rules.
 #
@@ -2434,7 +2434,7 @@ start_daemon ovn-controller
 
 # Logical network:
 # Two LRs - R1 and R2 that are connected to each other via LS "join"
-# in fd20::/64 network. R1 has switchess foo (fd11::/64) and
+# in fd20::/64 network. R1 has switches foo (fd11::/64) and
 # bar (fd12::/64) connected to it. R2 has alice (fd72::/64) connected
 # to it.  R2 is a gateway router on which we add load-balancing rules.
 #
@@ -2590,7 +2590,7 @@ start_daemon ovn-controller
 
 # Logical network:
 # Three LRs - R1, R2 and R3 that are connected to each other via LS "join"
-# in 20.0.0.0/24 network. R1 has switchess foo (192.168.1.0/24) and
+# in 20.0.0.0/24 network. R1 has switches foo (192.168.1.0/24) and
 # bar (192.168.2.0/24) connected to it. R2 has alice (172.16.1.0/24) connected
 # to it.  R3 has bob (172.16.1.0/24) connected to it. Note how both alice and
 # bob have the same subnet behind it.  We are trying to simulate external
@@ -2761,7 +2761,7 @@ start_daemon ovn-controller
 
 # Logical network:
 # Three LRs - R1, R2 and R3 that are connected to each other via LS "join"
-# in fd20::/64 network. R1 has switchess foo (fd11::/64) and
+# in fd20::/64 network. R1 has switches foo (fd11::/64) and
 # bar (fd12::/64) connected to it. R2 has alice (fd72::/64) connected
 # to it.  R3 has bob (fd72::/64) connected to it. Note how both alice and
 # bob have the same subnet behind it.  We are trying to simulate external
@@ -5106,8 +5106,8 @@ ADD_NAMESPACES(sw0-p2-rej)
 ADD_VETH(sw0-p2-rej, sw0-p2-rej, br-int, "10.0.0.4/24", "50:54:00:00:00:04", \
          "10.0.0.1")
 
-NS_CHECK_EXEC([sw0-p1-rej], [ip a a aef0::3/64 dev sw0-p1-rej nodad], [0])
-NS_CHECK_EXEC([sw0-p2-rej], [ip a a aef0::4/64 dev sw0-p2-rej nodad], [0])
+NS_CHECK_EXEC([sw0-p1-rej], [ip a aef0::3/64 dev sw0-p1-rej nodad], [0])
+NS_CHECK_EXEC([sw0-p2-rej], [ip a aef0::4/64 dev sw0-p2-rej nodad], [0])
 
 ADD_NAMESPACES(sw1-p1-rej)
 ADD_VETH(sw1-p1-rej, sw1-p1-rej, br-int, "20.0.0.3/24", "40:54:00:00:00:03", \
@@ -5340,8 +5340,8 @@ ADD_NAMESPACES(sw0-p2-rej)
 ADD_VETH(sw0-p2-rej, sw0-p2-rej, br-int, "10.0.0.4/24", "50:54:00:00:00:04", \
          "10.0.0.1")
 
-NS_CHECK_EXEC([sw0-p1-rej], [ip a a aef0::3/64 dev sw0-p1-rej nodad], [0])
-NS_CHECK_EXEC([sw0-p2-rej], [ip a a aef0::4/64 dev sw0-p2-rej nodad], [0])
+NS_CHECK_EXEC([sw0-p1-rej], [ip a aef0::3/64 dev sw0-p1-rej nodad], [0])
+NS_CHECK_EXEC([sw0-p2-rej], [ip a aef0::4/64 dev sw0-p2-rej nodad], [0])
 
 ADD_NAMESPACES(sw1-p1-rej)
 ADD_VETH(sw1-p1-rej, sw1-p1-rej, br-int, "20.0.0.3/24", "40:54:00:00:00:03", \
@@ -5769,7 +5769,7 @@ ovs-vsctl \
 start_daemon ovn-controller
 
 # Logical network:
-# 1 logical switch connetected to one logical router.
+# 1 logical switch connected to one logical router.
 # 2 VMs, one used as backend for a load balancer.
 
 check ovn-nbctl                                                  \
@@ -5878,7 +5878,7 @@ ovs-vsctl \
 start_daemon ovn-controller
 
 # Logical network:
-# 1 logical switch connetected to one logical router.
+# 1 logical switch connected to one logical router.
 # 2 VMs, one used as backend for a load balancer.
 
 check ovn-nbctl                                                  \
@@ -5964,7 +5964,7 @@ AT_CLEANUP
 ])
 
 # When a lport is released on a chassis, ovn-controller was
-# not clearing some of the flowss in the table 33 leading
+# not clearing some of the flows in the table 33 leading
 # to packet drops if ct() is hit.
 # Make sure that those flows are cleared properly.
 OVN_FOR_EACH_NORTHD([
@@ -5997,7 +5997,7 @@ ovn-nbctl lsp-set-addresses sw0-p2-f "10:54:00:00:00:04 10.0.0.4"
 ovn-nbctl lsp-add sw0 sw0-p3-f
 ovn-nbctl lsp-set-addresses sw0-p3-f "10:54:00:00:00:05 10.0.0.5"
 
-# Add ACL with allow-ralated so that conntrack is hit.
+# Add ACL with allow-related so that conntrack is hit.
 
 ovn-nbctl acl-add sw0 from-lport 1002 "ip" allow-related
 ovn-nbctl acl-add sw0 to-lport 1002 "ip" allow-related
@@ -6187,7 +6187,7 @@ AT_CHECK([ovs-appctl dpctl/dump-flows | grep 'ct_state(-new+est+trk).*ct_label(0
 
 # Flush conntrack entries for easier output parsing of next test.
 AT_CHECK([ovs-appctl dpctl/flush-conntrack])
-# Change bob1 L2 address anche check the reply is properly updated.
+# Change bob1 L2 address and check the reply is properly updated.
 ovn-nbctl set Logical_Router_Port R2_ext mac='"00:00:10:01:02:04"'
 ovn-nbctl set Logical_Switch_Port r2-ext \
      type=router options:router-port=R2_ext addresses='"00:00:10:01:02:04"'
@@ -6423,7 +6423,7 @@ tcp,orig=(src=fd07::1,dst=fd01::2,sport=<cleared>,dport=<cleared>),reply=(src=fd
 # Flush conntrack entries for easier output parsing of next test.
 AT_CHECK([ovs-appctl dpctl/flush-conntrack])
 
-# Change bob1 L2 address anche check the reply is properly updated.
+# Change bob1 L2 address and check the reply is properly updated.
 ovn-nbctl set Logical_Router_Port R2_ext mac='"00:00:10:01:02:04"'
 ovn-nbctl --wait=hv set Logical_Switch_Port r2-ext \
      type=router options:router-port=R2_ext addresses='"00:00:10:01:02:04"'
@@ -9878,7 +9878,7 @@ ovs-vsctl \
 start_daemon ovn-controller
 
 # Logical network:
-# One LR - R1 with switchess foo (fd11::/64) and
+# One LR - R1 with switches foo (fd11::/64) and
 # bar (fd12::/64) connected to it
 #
 #    foo -- R1 -- bar
@@ -11173,7 +11173,7 @@ wait_for_local_bindings() {
 ensure_controller_run() {
 # We want to make sure controller could run at least one full loop.
 # We can't use wait=hv as sb might be sleeping.
-# Use 2 ovn-appctl to guarentee that ovn-controller run the full loop, and not just the unixctl handling
+# Use 2 ovn-appctl to guarantee that ovn-controller run the full loop, and not just the unixctl handling
   OVS_WAIT_UNTIL([test x$(ovn-appctl -t ovn-controller debug/status) = "xrunning"])
   OVS_WAIT_UNTIL([test x$(ovn-appctl -t ovn-controller debug/status) = "xrunning"])
 }
@@ -11461,7 +11461,7 @@ ADD_VETH(bar1, bar1, br-int, "2002::2/64", "f0:00:00:01:02:05", \
 ovn-nbctl --wait=hv lsp-add bar bar1 \
 -- lsp-set-addresses bar1 "f0:00:00:01:02:05 192.168.2.2 2002::2"
 
-# Warm up the datapath (needed to make the DPDK datapth happy)
+# Warm up the datapath (needed to make the DPDK datapath happy)
 NS_CHECK_EXEC([foo1], [ping -q -c 3 -i 0.3 -w 2 192.168.2.2 | FORMAT_PING], \
 [0], [dnl
 3 packets transmitted, 3 received, 0% packet loss, time 0ms
@@ -12016,7 +12016,7 @@ start_daemon ovn-controller
 
 # Logical network:
 # Two LRs - R1 and R2 that are connected to each other via LS "join"
-# in 20.0.0.0/24 network. R1 has switchess foo (192.168.1.0/24) and
+# in 20.0.0.0/24 network. R1 has switches foo (192.168.1.0/24) and
 # bar (192.168.2.0/24) connected to it. R2 has alice (172.16.1.0/24) connected
 # to it.  R2 is a gateway router on which we add load-balancing rules.
 #
@@ -12281,7 +12281,7 @@ AT_CLEANUP
 ])
 
 OVN_FOR_EACH_NORTHD([
-AT_SETUP([load balancing affinity sessions - auto clear learnt flows])
+AT_SETUP([load balancing affinity sessions - auto clear learned flows])
 AT_SKIP_IF([test $HAVE_NC = no])
 AT_KEYWORDS([lb])
 
@@ -12347,7 +12347,7 @@ else
 fi
 check ovn-nbctl --wait=hv sync
 
-dnl The learnt flow should also be auto deleted.
+dnl The learned flow should also be auto deleted.
 AT_CHECK([ovs-ofctl dump-flows br-int | grep 'table=OFTABLE_CHK_LB_AFFINITY, n_packets' -c], [1], [dnl
 0
 ])
@@ -12765,7 +12765,7 @@ subnet 192.168.2.0 netmask 255.255.255.0 {
   max-lease-time 120;
 }
 EOF
-cat > $DHCP_TEST_DIR/dhclien.conf <<EOF
+cat > $DHCP_TEST_DIR/dhclient.conf <<EOF
 timeout 2
 EOF
 
@@ -12781,8 +12781,8 @@ NS_CHECK_EXEC([server], [tcpdump -l -nvv -i s1  udp > pkt.pcap 2>tcpdump_err &])
 OVS_WAIT_UNTIL([grep "listening" tcpdump_err])
 on_exit 'kill $(pidof tcpdump)'
 
-NS_CHECK_EXEC([sw01], [dhclient -1 -q -lf $DHCP_TEST_DIR/dhclient-sw01.lease -pf $DHCP_TEST_DIR/dhclient-sw01.pid -cf $DHCP_TEST_DIR/dhclien.conf sw01])
-NS_CHECK_EXEC([sw11], [dhclient -1 -q -lf $DHCP_TEST_DIR/dhclient-sw11.lease -pf $DHCP_TEST_DIR/dhclient-sw11.pid -cf $DHCP_TEST_DIR/dhclien.conf sw11])
+NS_CHECK_EXEC([sw01], [dhclient -1 -q -lf $DHCP_TEST_DIR/dhclient-sw01.lease -pf $DHCP_TEST_DIR/dhclient-sw01.pid -cf $DHCP_TEST_DIR/dhclient.conf sw01])
+NS_CHECK_EXEC([sw11], [dhclient -1 -q -lf $DHCP_TEST_DIR/dhclient-sw11.lease -pf $DHCP_TEST_DIR/dhclient-sw11.pid -cf $DHCP_TEST_DIR/dhclient.conf sw11])
 
 OVS_WAIT_UNTIL([
     total_pkts=$(cat pkt.pcap | wc -l)
@@ -13112,7 +13112,7 @@ dnl Start ovn-controller
 start_daemon ovn-controller
 
 dnl Logical network:
-dnl 1 logical switch connetected to one logical router
+dnl 1 logical switch connected to one logical router
 dnl 6 UDP load balancers (ports 1000, 1010, 2000, 2010, 3000, 3010)
 dnl 2 VIFs
 
@@ -13245,7 +13245,7 @@ dnl Check the IPFIX samples.
 kill $(cat collector.pid)
 OVS_WAIT_WHILE([kill -0 $(cat collector.pid) 2>/dev/null])
 
-dnl Can't match on observation domain ID due to the followig fix not being
+dnl Can't match on observation domain ID due to the following fix not being
 dnl available in any released version of nfdump:
 dnl https://github.com/phaag/nfdump/issues/544
 dnl
@@ -13402,7 +13402,7 @@ dnl Check the IPFIX samples.
 kill $(cat collector.pid)
 OVS_WAIT_WHILE([kill -0 $(cat collector.pid) 2>/dev/null])
 
-dnl Can't match on observation domain ID due to the followig fix not being
+dnl Can't match on observation domain ID due to the following fix not being
 dnl available in any released version of nfdump:
 dnl https://github.com/phaag/nfdump/issues/544
 dnl
@@ -13526,7 +13526,7 @@ dnl Check the IPFIX samples.
 kill $(cat collector.pid)
 OVS_WAIT_WHILE([kill -0 $(cat collector.pid) 2>/dev/null])
 
-dnl Can't match on observation domain ID due to the followig fix not being
+dnl Can't match on observation domain ID due to the following fix not being
 dnl available in any released version of nfdump:
 dnl https://github.com/phaag/nfdump/issues/544
 dnl
@@ -13965,7 +13965,7 @@ ovs-vsctl add-port br-int p1 -- \
 # Make sure ovn-controller runs and claims the port.
 ensure_controller_run
 
-# Wake up sb, so that it can handle lsp-set-address, but no the pb->chassis (as updates from controller stillblocked)
+# Wake up sb, so that it can handle lsp-set-address, but no the pb->chassis (as updates from controller are still blocked)
 wake_up_sb
 ensure_controller_run
 
@@ -14051,7 +14051,7 @@ check ovn-nbctl lsp-add public public-rp -- set Logical_Switch_Port public-rp \
     type=router options:router-port=rp-public \
     -- lsp-set-addresses public-rp router
 
-# Wait for a flow outputing to patch port, so we know ovn-controller handled the patch port creation in OVS.
+# Wait for a flow outputting to patch port, so we know ovn-controller handled the patch port creation in OVS.
 OVN_WAIT_PATCH_PORT_FLOWS(["ln1"], ["./"])
 
 check ovn-nbctl lrp-add R1 rp-sw0 00:00:01:01:02:03 192.168.1.1/24

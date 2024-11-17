@@ -986,7 +986,7 @@ if_status_mgr_ovs_interface_handler(struct engine_node *node, void *data)
  *
  * There are some special considerations of this engine node:
  * 1. It has a single input OVS_interface, and it transparently passes the
- *    input changes as its own output data to its dependants. So there is no
+ *    input changes as its own output data to its dependents. So there is no
  *    processing to OVS_interface changes but simply mark the node status as
  *    UPDATED (and so the run() and the change handler is the same).
  * 2. The iface_table_external_ids_old is computed/updated in the member
@@ -1161,7 +1161,7 @@ struct ed_type_runtime_data {
     struct sset local_lports;
 
     /* Port bindings that are relevant to the local chassis (VIFs bound
-     * localy, patch ports).
+     * locally, patch ports).
      */
     struct related_lports related_lports;
     struct sset active_tunnels;
@@ -1208,10 +1208,10 @@ struct ed_type_runtime_data {
  * |@local_lports_changed | captured in the @tracked_dp_bindings. So there  |
  * |                      | is no need to capture the changes in the        |
  * |                      | local_lports. If @local_lports_changed is true  |
- * |                      | but without anydata in the @tracked_dp_bindings,|
- * |                      | it means we needto only update the SB monitor   |
- * |                      | clauses and there isno need for any flow        |
- * |                      | (re)computations.                               |
+ * |                      | but without any data in the                     |
+ * |                      | @tracked_dp_bindings, it means we need to only  |
+ * |                      | update the SB monitor clauses and there is no   |
+ * |                      | need for any flow (re)computations.             |
  *  ------------------------------------------------------------------------
  * |                      | This represents if the data was tracked or not  |
  * |                      | by the runtime data handlers during the engine  |
@@ -1433,7 +1433,7 @@ en_runtime_data_run(struct engine_node *node, void *data)
     struct ed_type_ofctrl_is_connected *ed_ofctrl_is_connected =
         engine_get_input_data("ofctrl_is_connected", node);
     if (ed_ofctrl_is_connected->connected) {
-        /* Calculate the active tunnels only if have an an active
+        /* Calculate the active tunnels only if have an active
          * OpenFlow connection to br-int.
          * If we don't have a connection to br-int, it could mean
          * ovs-vswitchd is down for some reason and the BFD status
@@ -3577,7 +3577,7 @@ struct ed_type_lflow_output {
     struct ovn_extend_table meter_table;
     /* lflow <-> resource cross reference */
     struct objdep_mgr lflow_deps_mgr;;
-    /* conjunciton ID usage information of lflows */
+    /* conjunction ID usage information of lflows */
     struct conj_ids conj_ids;
 
     /* objects (lflows) processed in the current engine execution.
@@ -5191,7 +5191,7 @@ main(int argc, char *argv[])
      * added locally, i.e. reprocessing the lflow for the new DP only but not
      * for the other DPs in the group. If we handle en_addr_sets after this,
      * incrementally processing an updated address set for the added IPs may
-     * end up adding redundant flows/conjunctions for the lflow agaist the new
+     * end up adding redundant flows/conjunctions for the lflow against the new
      * DP because it has been processed on the DP already. */
     engine_add_input(&en_lflow_output, &en_addr_sets,
                      lflow_output_addr_sets_handler);
@@ -5636,7 +5636,7 @@ main(int argc, char *argv[])
                     * try to run the engine so that we can handle any
                     * incremental changes that don't require a recompute.
                     * If a recompute is required, the engine will cancel,
-                    * triggerring a full run in the next iteration.
+                    * triggering a full run in the next iteration.
                     */
                     /* 2. ofctrl_has_backlog */
                     /* When there are in-flight messages pending to
@@ -5650,7 +5650,7 @@ main(int argc, char *argv[])
                      * preserve tracked changes across iterations.  If
                      * change tracking is improved, we can simply skip
                      * this round of engine_run and continue processing
-                     * acculated changes incrementally later when
+                     * accumulated changes incrementally later when
                      * ofctrl_has_backlog() returns false. */
 
                     bool recompute_allowed = (ovnsb_idl_txn &&
@@ -5764,7 +5764,7 @@ main(int argc, char *argv[])
                                    br_int,
                                    &runtime_data->lbinding_data.bindings);
                         /* Updating monitor conditions if runtime data or
-                         * logical datapath goups changed. */
+                         * logical datapath groups changed. */
                         if (engine_node_changed(&en_runtime_data)
                             || engine_node_changed(&en_sb_logical_dp_group)) {
                             ovnsb_expected_cond_seqno =
@@ -5928,7 +5928,7 @@ main(int argc, char *argv[])
              * (or it did not change anything in the database). */
             ct_zones_data = engine_get_data(&en_ct_zones);
             if (ct_zones_data) {
-                ct_zones_pending_clear_commited(&ct_zones_data->ctx.pending);
+                ct_zones_pending_clear_committed(&ct_zones_data->ctx.pending);
             }
 
             vif_plug_finish_deleted(

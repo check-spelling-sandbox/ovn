@@ -106,7 +106,7 @@ Common commands:\n\
       Set log levels as detailed in SPEC, which may include:\n\
       A valid module name (all modules, by default)\n\
       'syslog', 'console', 'file' (all destinations, by default))\n\
-      'off', 'emer', 'err', 'warn', 'info', or 'dbg' ('dbg', bydefault)\n\
+      'off', 'emer', 'err', 'warn', 'info', or 'dbg' ('dbg', by default)\n\
   vlog/reopen        Make the program reopen its log file\n\
 Other options:\n\
   --timeout=SECS     wait at most SECS seconds for a response\n\
@@ -163,7 +163,7 @@ parse_command_line(int argc, char *argv[])
              * the command as non-option arguments and we say that -e has no
              * arguments, this just works in the common case. */
             if (e_options++) {
-                ovs_fatal(0, "-e or --execute may be speciifed only once");
+                ovs_fatal(0, "-e or --execute may be specified only once");
             }
             break;
 

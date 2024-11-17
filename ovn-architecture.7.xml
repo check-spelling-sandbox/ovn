@@ -330,7 +330,7 @@
       </code> for more information).  In both cases the conventions described
       in <code>Documentation/topics/integration.rst</code> in the Open vSwitch
       source tree is followed to ensure mapping between OVN logical port and
-      VIF.  (This is pre-existing integration work that has already been done
+      VIF.  (This is preexisting integration work that has already been done
       on hypervisors that support OVS.)
     </li>
 
@@ -934,7 +934,7 @@
       source tree) adds the VIF to the OVN integration bridge and stores
       <var>vif-id</var> in <code>external_ids</code>:<code>iface-id</code> to
       indicate that the interface is an instantiation of the new VIF.  (None of
-      this code is new in OVN; this is pre-existing integration work that has
+      this code is new in OVN; this is preexisting integration work that has
       already been done on hypervisors that support OVS.)
     </li>
 
@@ -2217,7 +2217,7 @@
   </ol>
 
   <p>
-    Some guidelines and expections with bridged redirection:
+    Some guidelines and expectations with bridged redirection:
   </p>
 
   <ol>
@@ -2516,7 +2516,7 @@
       ports and cannot serve the native services.
     </li>
     <li>
-      When CMS supports provisioning baremetal servers.
+      When CMS supports provisioning bare-metal servers.
     </li>
   </ul>
 
@@ -2582,7 +2582,7 @@
   <p>
     The implementation of role-based access controls (RBAC) requires the
     addition of two tables to an OVSDB schema: the <code>RBAC_Role</code>
-    table, which is indexed by role name and maps the the names of the various
+    table, which is indexed by role name and maps the names of the various
     tables that may be modifiable for a given role to individual rows in a
     permissions table containing detailed permission information for that role,
     and the permission table itself which consists of rows containing the
@@ -2747,7 +2747,7 @@
   <p>
     The tunnel traffic is encrypted with IPsec. The CMS sets the
     <code>ipsec</code> column in the northbound <code>NB_Global</code> table to
-    enable or disable IPsec encrytion. If <code>ipsec</code> is true, all OVN
+    enable or disable IPsec encryption. If <code>ipsec</code> is true, all OVN
     tunnels will be encrypted. If <code>ipsec</code> is false, no OVN tunnels
     will be encrypted.
   </p>

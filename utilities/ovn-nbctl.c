@@ -295,7 +295,7 @@ Mirror commands:\n\
                             specify TYPE 'gre', 'erspan', or 'local'\n\
                             specify the tunnel INDEX value\n\
                                 (indicates key if GRE\n\
-                                 erpsan_idx if ERSPAN)\n\
+                                 erspan_idx if ERSPAN)\n\
                             specify FILTER for mirroring selection\n\
                                 'to-lport' / 'from-lport' / 'both'\n\
                             specify Sink / Destination i.e. Remote IP, or a\n\
@@ -447,7 +447,7 @@ DHCP Options commands:\n\
                            lists the DHCP_Options rows\n\
   dhcp-options-set-options DHCP_OPTIONS_UUID  KEY=VALUE [KEY=VALUE]...\n\
                            set DHCP options for DHCP_OPTIONS_UUID\n\
-  dhcp-options-get-options DHCO_OPTIONS_UUID \n\
+  dhcp-options-get-options DHCP_OPTIONS_UUID \n\
                            displays the DHCP options for DHCP_OPTIONS_UUID\n\
 \n\
 Connection commands:\n\
@@ -5216,7 +5216,7 @@ nbctl_lr_nat_add(struct ctl_context *ctx)
         }
         if (num_l3dgw_ports > 1 && !dgw_port) {
             ctl_error(ctx, "logical router: %s has multiple distributed "
-                      "gateway ports and gateway_port can not be determined "
+                      "gateway ports and gateway_port cannot be determined "
                       "from external IP of NAT rule.", ctx->argv[1]);
             goto cleanup;
         }
@@ -6081,7 +6081,7 @@ nbctl_lrp_add(struct ctl_context *ctx)
             return;
         }
 
-        /* Special-case coherance-check of peer ports. */
+        /* Special-case coherence-check of peer ports. */
         const char *peer = NULL;
         for (int i = 0; i < n_settings; i++) {
             if (!strncmp(settings[i], "peer=", 5)) {

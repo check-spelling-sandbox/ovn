@@ -200,7 +200,7 @@ def create_network():
     if not network:
         abort(400)
 
-    # Limit subnet handling to ipv4 till ipv6 usecase is clear.
+    # Limit subnet handling to ipv4 till ipv6 use case is clear.
     ipv4_data = data.get("IPv4Data", "")
     if not ipv4_data:
         error = "create_network: No ipv4 subnet provided"

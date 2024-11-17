@@ -277,7 +277,7 @@
         <p>
           Note: This option is deprecated, the only behavior is to always
           combine logical flows by datapath groups.  Changing the value or
-          removing this option all toghether will have no effect.
+          removing this option all together will have no effect.
         </p>
         <p>
           <code>ovn-northd</code> combines logical flows that differs
@@ -407,7 +407,7 @@
           this option set, the traffic path will be a mix of tunnelling and
           localnet ports (since routing is distributed) resulting in the
           leakage of the router port mac address to the upstream switches
-          and undefined behavior if NATting is involed.  This option is
+          and undefined behavior if NATting is involved.  This option is
           disabled by default.
         </p>
       </column>
@@ -1061,7 +1061,7 @@
               </li>
 
               <li>
-                When CMS supports provisioning baremetal servers.
+                When CMS supports provisioning bare-metal servers.
               </li>
             </ul>
           </dd>
@@ -1183,7 +1183,7 @@
           SNAT and DNAT external IP addresses defined on the
           <ref column="options" key="router-port"/>'s logical router,
           using the <ref column="options" key="router-port"/>'s MAC address,
-          not cosidering configured load balancers.
+          not considering configured load balancers.
         </column>
 
         <column name="options" key="arp_proxy">
@@ -1372,7 +1372,7 @@
           <ref column="addresses"/> column contains <code>unknown</code>.
           If set to <code>true</code>, MAC addresses (if configured)
           are not installed in the l2 lookup table but the MAC addresses are
-          learnt and stored in the FDB table.
+          learned and stored in the FDB table.
           The default value is <code>false</code>.
         </column>
 
@@ -2129,10 +2129,10 @@
         <p>
           Maps from endpoint IP to a colon-separated pair of logical port name
           and source IP,
-          e.g. <code><var>port_name</var>:<var>sourc_ip</var></code> for IPv4.
+          e.g. <code><var>port_name</var>:<var>source_ip</var></code> for IPv4.
           Health checks are sent to this port with the specified source IP.
           For IPv6 square brackets must be used around IP address, e.g:
-          <code><var>port_name</var>:<var>[sourc_ip]</var></code>
+          <code><var>port_name</var>:<var>[source_ip]</var></code>
         </p>
 
         <p>
@@ -2456,7 +2456,7 @@ or
       </p>
 
       <p>
-        Note that you can not create an ACL matching on a port with
+        Note that you cannot create an ACL matching on a port with
         type=router or type=localnet.
       </p>
     </column>
@@ -2552,7 +2552,7 @@ or
           stages.  ACLs without this option <code>apply-after-lb</code>
           set, will be applied before the load balancer stage and ACLs
           with this option set will be applied after the load balancer
-          stage.  The priorities are indepedent between these stages and
+          stage.  The priorities are independent between these stages and
           may not be obvious to the CMS.  Hence CMS should be extra careful
           when using this option and should carefully evaluate the priorities
           of all the ACLs and the default deny/allow ACLs if any.
@@ -2778,7 +2778,7 @@ or
           gateway router (for unDNATing), the packet needs a SNAT in the first
           place. This can be achieved by setting the above option with a
           gateway specific set of IP addresses. This option may have exactly
-          one IPv4 and/or one IPv6 address on it, separated by a a space.
+          one IPv4 and/or one IPv6 address on it, separated by a space.
         </p>
       </column>
       <column name="options" key="lb_force_snat_ip">
@@ -2825,7 +2825,7 @@ or
           <code>true</code> when a large number of logical routers are
           connected to the same logical switch but most of them never need to
           send traffic between each other. By default, ovn-northd does not
-          create mappings to NAT and load balancer addresess. However, for NAT
+          create mappings to NAT and load balancer addresses. However, for NAT
           and load balancer addresses that have the <code>add_route</code>
           option added, ovn-northd will create logical flows that map NAT and
           load balancer IP addresses to the appropriate MAC address. Setting
@@ -2981,7 +2981,7 @@ or
 
     <column name="direction">
       <p>
-        The value of this field is similar to <ref colun="direction"
+        The value of this field is similar to <ref column="direction"
         table="ACL" db="OVN_Northbound"/> column in the OVN Northbound
         database's <ref table="ACL" db="OVN_Northbound"/> table.
       </p>
@@ -3317,7 +3317,7 @@ or
         the chassis where the <ref column="logical_port" table="NAT"/>
         resides.  In addition, the logical router's MAC address is
         automatically programmed in the peer logical switch's
-        destination lookup flow on the gateway chasssis.  If it is
+        destination lookup flow on the gateway chassis.  If it is
         desired to generate gratuitous ARPs for NAT addresses, then
         set the peer LSP's <ref column="options" key="nat-addresses"
         table="Logical_Switch_Port"/> to <code>router</code>.
@@ -4813,7 +4813,7 @@ or
               choose an available port.  If <var>host</var>, which can either
               be a DNS name (if built with unbound library) or an IP address,
               is specified, then connections are restricted to the resolved or
-              specified local IPaddress (either IPv4 or IPv6 address).  If
+              specified local IP address (either IPv4 or IPv6 address).  If
               <var>host</var> is an IPv6 address, wrap in square brackets,
               e.g. <code>pssl:6640:[::1]</code>.  If <var>host</var> is not
               specified then it listens only on IPv4 (but not IPv6) addresses.
@@ -5280,7 +5280,7 @@ or
       </column>
 
       <column name="override_dynamic_mac">
-        Override dynamically learnt MACs.
+        Override dynamically learned MACs.
       </column>
     </group>
   </table>

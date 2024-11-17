@@ -25,8 +25,8 @@
 OVN Interconnection
 ===================
 
-This document provides a guide for interconnecting multiple OVN deployements
-with OVN managed tunneling.  More details about the OVN Interconnectiong design
+This document provides a guide for interconnecting multiple OVN deployments
+with OVN managed tunneling.  More details about the OVN Interconnection design
 can be found in ``ovn-architecture``\(7) manpage.
 
 This document assumes two or more OVN deployments are setup and runs normally,
@@ -40,7 +40,7 @@ To interconnect different OVNs, you need to create global OVSDB databases that
 store interconnection data.  The databases can be setup on any nodes that are
 accessible from all the central nodes of each OVN deployment.  It is
 recommended that the global databases are setup with HA, with nodes in
-different avaialbility zones, to avoid single point of failure.
+different availability zones, to avoid single point of failure.
 
 1. Install OVN packages on each global database node.
 

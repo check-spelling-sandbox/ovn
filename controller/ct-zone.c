@@ -343,7 +343,7 @@ ct_zones_commit(const struct ovsrec_bridge *br_int,
 }
 
 void
-ct_zones_pending_clear_commited(struct shash *pending)
+ct_zones_pending_clear_committed(struct shash *pending)
 {
     struct shash_node *iter;
     SHASH_FOR_EACH_SAFE (iter, pending) {
@@ -376,7 +376,7 @@ ct_zone_handle_dp_update(struct ct_zone_ctx *ctx,
     if (req_snat_zone == -1) {
         /* datapath snat ct zone is not set.  This condition will also hit
          * when CMS clears the snat-ct-zone for the logical router.
-         * In this case there is no harm in using the previosly specified
+         * In this case there is no harm in using the previously specified
          * snat ct zone for this datapath.  Also it is hard to know
          * if this option was cleared or if this option is never set. */
         return true;

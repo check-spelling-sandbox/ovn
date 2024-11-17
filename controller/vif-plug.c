@@ -80,7 +80,7 @@ vif_plug_port_finish(const struct vif_plug_class *vif_plug_class,
     vif_plug_class->vif_plug_port_finish(ctx_in, ctx_out);
 }
 
-/* Free any data allocated to 'ctx_out' in a prevous call to
+/* Free any data allocated to 'ctx_out' in a previous call to
  * vif_plug_port_prepare. */
 void
 vif_plug_port_ctx_destroy(const struct vif_plug_class *vif_plug_class,
@@ -427,7 +427,7 @@ consider_plug_lport(const struct sbrec_port_binding *pb,
             {
                 VLOG_WARN_RL(&rl,
                              "CMS requested plugging of lport %s, but a port "
-                             "that is not maintained by OVN already exsist "
+                             "that is not maintained by OVN already exists "
                              "in local vSwitch: "UUID_FMT,
                              pb->logical_port,
                              UUID_ARGS(&lbinding->iface->header_.uuid));
@@ -539,7 +539,7 @@ vif_plug_handle_iface(const struct ovsrec_interface *iface_rec,
                    || !lport_can_bind_on_this_chassis(
                        vif_plug_ctx_in->chassis_rec, pb))) {
         /* No lport for this interface or it is destined for different chassis,
-         * consuder unplugging it */
+         * consider unplugging it */
         handled &= consider_unplug_iface(iface_rec, pb,
                                          vif_plug_ctx_in, vif_plug_ctx_out);
     }
@@ -551,7 +551,7 @@ vif_plug_handle_iface(const struct ovsrec_interface *iface_rec,
  * conditional monitoring status and other events that could trigger main loop
  * runs during this period.  Until we find a reliable way to determine the
  * completeness of the initial data downloading we need this counter so that we
- * do not erronously unplug ports because the data is just not loaded yet.
+ * do not erroneously unplug ports because the data is just not loaded yet.
  */
 void
 vif_plug_run(struct vif_plug_ctx_in *vif_plug_ctx_in,

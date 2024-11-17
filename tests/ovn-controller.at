@@ -56,7 +56,7 @@ check_bridge_mappings () {
 }
 
 # NOTE: This test originally ran with only the SB-DB and no northd. For the
-# test to be successfull with SSL+RBAC we need to initially run northd to get
+# test to be successful with SSL+RBAC we need to initially run northd to get
 # the RBAC rules programmed into the SB-DB. The test instruments the SB-DB
 # directly and we need to stop northd to avoid overwriting the instrumentation.
 kill `cat northd/ovn-northd.pid`
@@ -66,8 +66,8 @@ kill `cat ovn-nb/ovsdb-server.pid`
 check_patches
 
 # Configure two ovn-bridge mappings, but no patch ports should be created yet
-AT_CHECK([ovs-vsctl set Open_vSwitch . external-ids:ovn-bridge-mappings=physnet1:br-eth0,physnet2:br-eth1])
-check_bridge_mappings "physnet1:br-eth0,physnet2:br-eth1"
+AT_CHECK([ovs-vsctl set Open_vSwitch . external-ids:ovn-bridge-mappings=phynet1:br-eth0,phynet2:br-eth1])
+check_bridge_mappings "phynet1:br-eth0,phynet2:br-eth1"
 check_patches
 
 # Create a localnet port, but we should still have no patch ports, as they
@@ -76,7 +76,7 @@ check_patches
 ovn-sbctl \
     -- --id=@dp101 create Datapath_Binding tunnel_key=101 external_ids:name=dp101 \
     -- create Port_Binding datapath=@dp101 logical_port=localnet1 tunnel_key=1 \
-        type=localnet options:network_name=physnet1
+        type=localnet options:network_name=phynet1
 check_patches
 
 # Create a localnet port on a logical switch with a port bound to this chassis.
@@ -84,7 +84,7 @@ check_patches
 ovn-sbctl \
     -- --id=@dp102 create Datapath_Binding tunnel_key=102 external_ids:name=dp102 \
     -- create Port_Binding datapath=@dp102 logical_port=localnet2 tunnel_key=1 \
-        type=localnet options:network_name=physnet1 \
+        type=localnet options:network_name=phynet1 \
     -- create Port_Binding datapath=@dp102 logical_port=localvif2 tunnel_key=2
 ovs-vsctl add-port br-int localvif2 -- set Interface localvif2 external_ids:iface-id=localvif2
 check_patches \
@@ -216,7 +216,7 @@ if test X$HAVE_OPENSSL = Xyes; then
     # Make sure that the ovn-remote change is handled by ovn-controller.
     # Without this, ovn-controller could handle both this change and next ovn-remote change within the same loop,
     # resulting in no change.
-    # Use 2 ovn-appctl to guarentee that ovn-controller run the full loop, and not just the unixctl handling
+    # Use 2 ovn-appctl to guarantee that ovn-controller run the full loop, and not just the unixctl handling
     OVS_WAIT_UNTIL([test x$(ovn-appctl -t ovn-controller debug/status) = "xrunning"])
     OVS_WAIT_UNTIL([test x$(ovn-appctl -t ovn-controller debug/status) = "xrunning"])
 
@@ -429,7 +429,7 @@ ovn-nbctl set NB_Global ${nb_global_id} nb_cfg=999
 # ovn-controller should bump the nb_cfg in the chassis_private table
 OVS_WAIT_UNTIL([test x999 = x`ovn-sbctl --columns nb_cfg --bare find chassis_private`])
 
-# Assert that the the nb_cfg from the Chassis table was not incremented
+# Assert that the nb_cfg from the Chassis table was not incremented
 OVS_WAIT_UNTIL([test x0 = x`ovn-sbctl --columns nb_cfg --bare find chassis`])
 
 OVN_CLEANUP([hv])
@@ -453,7 +453,7 @@ check ovn-nbctl --wait=hv sync
 check ovn-nbctl set NB_Global . nb_cfg=9223372036854775806
 
 # nb_cfg must be set to zero if it exceed the value of LLONG_MAX
-# the command below will try incress the value of nb_cfg to be greater than LLONG_MAX and
+# the command below will try increase the value of nb_cfg to be greater than LLONG_MAX and
 # expect zero as a return value
 check ovn-nbctl --wait=hv sync
 check ovn-nbctl --wait=hv sync
@@ -560,7 +560,7 @@ OVN_CLEANUP([hv1])
 AT_CLEANUP
 ])
 
-# Test that changes of a port binding from one type to another doesn'that
+# Test that changes of a port binding from one type to another doesn't
 # result in any ovn-controller asserts or crashes.
 AT_SETUP([ovn-controller - port binding type change handling])
 AT_KEYWORDS([ovn])
@@ -1851,7 +1851,7 @@ AT_CHECK([echo $(($reprocess_count_new - $reprocess_count_old))], [0], [0
 OVN_CLEANUP([hv1])
 AT_CLEANUP
 
-AT_SETUP([ovn-controller - I-P for address set update: conjunctions overlaping with other lflows])
+AT_SETUP([ovn-controller - I-P for address set update: conjunctions overlapping with other lflows])
 AT_KEYWORDS([as-i-p])
 
 ovn_start
@@ -2298,7 +2298,7 @@ check ovn-nbctl --wait=sb lsp-set-addresses ls1-lp1 "f0:00:00:00:00:01 10.1.2.4"
 # until the wait time is completed.
 start_daemon ovn-controller
 
-# Wait for octrl to run - it will handle the wait-before-clear
+# Wait for ovn-controller to run - it will handle the wait-before-clear
 OVS_WAIT_UNTIL([grep -q 'wait-before-clear' hv1/ovn-controller.log])
 
 # Check that there is no flow using 10.1.2.4 except the lb one (using 2.2.2.2)
@@ -2427,7 +2427,7 @@ AT_CHECK([ovn-appctl inc-engine/recompute])
 # Check that localports physical flows are removed
 OVS_WAIT_UNTIL([test 0 = $(as hv1 ovs-ofctl dump-flows br-int | grep -c $(port_binding_cookie metadata))])
 
-# The order is impotant, if the port is removed first, the bug wouldn't be triggered
+# The order is important, if the port is removed first, the bug wouldn't be triggered
 AT_CHECK([ovn-nbctl lsp-del metadata])
 AT_CHECK([ovs-vsctl del-port br-int metadata])
 create_localport
@@ -2831,7 +2831,7 @@ sim_add hv1
 ovs-vsctl add-br br-phys
 ovn_attach n1 br-phys 192.168.0.20
 
-# Set cipher and and it should connect
+# Set cipher and it should connect
 OVS_APP_EXIT_AND_WAIT([ovn-controller])
 start_daemon ovn-controller --ssl-ciphers='HIGH:!aNULL:!MD5:@SECLEVEL=1' --ssl-protocols='TLSv1,TLSv1.1,TLSv1.2'
 

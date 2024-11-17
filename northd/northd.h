@@ -95,7 +95,7 @@ bool od_has_lb_vip(const struct ovn_datapath *od);
 
 /* List of routing and routing-related protocols which
  * OVN is capable of redirecting from LRP to specific LSP. */
-enum redirected_routing_protcol_flag_type {
+enum redirected_routing_protocol_flag_type {
     REDIRECT_BGP = (1 << 0),
     REDIRECT_BFD = (1 << 1),
 };
@@ -293,7 +293,7 @@ struct mcast_info {
 
     struct hmap group_tnlids;  /* Group tunnel IDs in use on this DP. */
     uint32_t group_tnlid_hint; /* Hint for allocating next group tunnel ID. */
-    struct ovs_list groups;    /* List of groups learnt on this DP. */
+    struct ovs_list groups;    /* List of groups learned on this DP. */
 
     union {
         struct mcast_switch_info sw;  /* Switch specific multicast info. */
@@ -580,7 +580,7 @@ ovn_stage_to_str(enum ovn_stage stage)
  * changes, join_logical_ports() may determine that there is a new LSP or LRP
  * that has no corresponding Port_Binding record (in which case build_ports())
  * will create the missing Port_Binding) or that a Port_Binding record exists
- * that has no coresponding LSP (in which case build_ports() will delete the
+ * that has no corresponding LSP (in which case build_ports() will delete the
  * spurious Port_Binding).  Thus, after build_ports() runs, any given ovn_port
  * will have 'sb' nonnull, and 'nbsp' xor 'nbrp' nonnull.
  *

@@ -167,7 +167,7 @@ ovn_lb_get_routable_mode(const struct nbrec_load_balancer *nbrec_lb,
 {
     if (template && routable) {
         static struct vlog_rate_limit rl = VLOG_RATE_LIMIT_INIT(1, 1);
-        VLOG_WARN_RL(&rl, "Template load balancer "UUID_FMT" does not suport "
+        VLOG_WARN_RL(&rl, "Template load balancer "UUID_FMT" does not support "
                            "option 'add_route'.  Forcing it to disabled.",
                      UUID_ARGS(&nbrec_lb->header_.uuid));
         return false;

@@ -173,7 +173,7 @@ ovn_dns_lookup(const char *query_name, uint64_t dp_key, bool *ovn_owned)
             for (size_t i = 0; i < d->n_dps; i++) {
             if (d->dps[i] == dp_key) {
                 /* DNS records in SBDB are stored in lowercase. Convert to
-                 * lowercase to perform case insensitive lookup
+                 * lowercase to perform case-insensitive lookup
                  */
                 char *query_name_lower = str_tolower(query_name);
                 answer_data = smap_get(&d->records, query_name_lower);

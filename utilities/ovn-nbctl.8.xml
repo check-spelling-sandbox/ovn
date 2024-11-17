@@ -90,7 +90,7 @@
       When using daemon mode, an alternative to the <env>OVN_NB_DAEMON</env>
       environment variable is to specify a path for the Unix socket. When
       starting the ovn-nbctl daemon, specify the <code>-u</code> option with a
-      full path to the location of the socket file. Here is an exmple:
+      full path to the location of the socket file. Here is an example:
     </p>
 
     <pre fixed="yes">
@@ -126,7 +126,7 @@
         commands. Accepts the <code>--no-wait</code>, <code>--wait</code>,
         <code>--timeout</code>, <code>--dry-run</code>, <code>--oneline</code>,
         and the options described under <code>Table Formatting Options</code>
-        in addition to the the command-specific options.
+        in addition to the command-specific options.
       </dd>
 
       <dt><code>exit</code></dt>

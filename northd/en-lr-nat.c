@@ -135,7 +135,7 @@ lr_nat_northd_handler(struct engine_node *node, void *data_)
         ovs_assert(lrnat_rec);
         lr_nat_record_reinit(lrnat_rec, od);
 
-        /* Add the lrnet rec to the tracking data. */
+        /* Add the lrnat rec to the tracking data. */
         hmapx_add(&data->trk_data.crupdated, lrnat_rec);
     }
 

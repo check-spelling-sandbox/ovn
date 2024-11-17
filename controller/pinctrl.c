@@ -153,7 +153,7 @@ VLOG_DEFINE_THIS_MODULE(pinctrl);
  *
  *  'pinctrl_main_seq' is used by pinctrl_handler() thread to wake up
  *  the main thread from poll_block() when mac bindings/igmp groups need to
- *  be updated in the Southboubd DB.
+ *  be updated in the Southbound DB.
  * */
 
 static struct ovs_mutex pinctrl_mutex = OVS_MUTEX_INITIALIZER;
@@ -2048,14 +2048,14 @@ dhcp_get_hdr_from_pkt(struct dp_packet *pkt_in, const char **in_dhcp_pptr,
 
     if (dhcp_hdr->htype != 0x1) {
         static struct vlog_rate_limit rl = VLOG_RATE_LIMIT_INIT(1, 5);
-        VLOG_WARN_RL(&rl, "DHCP: Packet is recieved with "
+        VLOG_WARN_RL(&rl, "DHCP: Packet is received with "
                      "unsupported hardware type");
         return NULL;
     }
 
     if (dhcp_hdr->hlen != 0x6) {
         static struct vlog_rate_limit rl = VLOG_RATE_LIMIT_INIT(1, 5);
-        VLOG_WARN_RL(&rl, "DHCP: Packet is recieved with "
+        VLOG_WARN_RL(&rl, "DHCP: Packet is received with "
                      "unsupported hardware length");
         return NULL;
     }
@@ -2404,7 +2404,7 @@ pinctrl_handle_dhcp_relay_resp_chk(
                 giaddr & dhcp_opts.netmask)) {
             static struct vlog_rate_limit rl = VLOG_RATE_LIMIT_INIT(1, 5);
             VLOG_INFO_RL(&rl, "DHCP_RELAY_RESP_CHK:: "
-                         "Allocated ip adress and giaddr are not in "
+                         "Allocated ip address and giaddr are not in "
                          "same subnet. MSG_TYPE:%s MAC:"ETH_ADDR_FMT
                          " XID:%u"
                          " YIADDR:"IP_FMT
@@ -2424,7 +2424,7 @@ pinctrl_handle_dhcp_relay_resp_chk(
              * processing. */
             static struct vlog_rate_limit rl = VLOG_RATE_LIMIT_INIT(1, 5);
             VLOG_INFO_RL(&rl, "DHCP_RELAY_RESP_CHK::"
-                         " Router ip adress and giaddr are not same."
+                         " Router ip address and giaddr are not same."
                          " MSG_TYPE:%s MAC:"ETH_ADDR_FMT
                          " XID:%u"
                          " YIADDR:"IP_FMT
@@ -5207,7 +5207,7 @@ struct ip_mcast_snoop_cfg {
     uint32_t idle_time_s;      /* Idle timeout for multicast groups. */
     uint32_t query_interval_s; /* Multicast query interval. */
     uint32_t query_max_resp_s; /* Multicast query max-response field. */
-    uint32_t seq_no;           /* Used for flushing learnt groups. */
+    uint32_t seq_no;           /* Used for flushing learned groups. */
 
     struct eth_addr query_eth_src;    /* Src ETH address used for queries. */
     struct eth_addr query_eth_v4_dst; /* Dst ETH address used for IGMP
@@ -7903,7 +7903,7 @@ pinctrl_handle_bfd_msg(struct rconn *swconn, const struct flow *ip_flow,
     }
 
 out:
-    /* let's try to bacth db updates */
+    /* let's try to batch db updates */
     if (change_state) {
         entry->change_state = true;
         bfd_pending_update++;

@@ -95,7 +95,7 @@ static bool sync_lflow_to_sb(struct ovn_lflow *,
                              const struct sbrec_logical_flow *sbflow,
                              const struct sbrec_logical_dp_group_table *);
 
-/* TODO:  Move the parallization logic to this module to avoid accessing
+/* TODO:  Move the parallelization logic to this module to avoid accessing
  * and modifying in both northd.c and lflow-mgr.c. */
 extern int parallelization_state;
 extern thread_local size_t thread_lflow_counter;
@@ -122,7 +122,7 @@ static bool lflow_hash_lock_initialized = false;
  * used, so that no two threads can add to the bucket at the same time.  It is
  * ok that the same lock is used to protect multiple buckets, so a fixed sized
  * mutex array is used instead of 1-1 mapping to the hash buckets. This
- * simplies the implementation while effectively reduces lock contention
+ * simplifies the implementation while effectively reduces lock contention
  * because the chance that different threads contending the same lock amongst
  * the big number of locks is very low. */
 #define LFLOW_HASH_LOCK_MASK 0xFFFF
@@ -498,7 +498,7 @@ lflow_table_sync_to_sb(struct lflow_table *lflow_table,
  *
  * One way to ensure thread safety is to maintain array of hash locks
  * in each lflow_ref just like how we have static variable lflow_hash_locks
- * of type ovs_mutex. This would mean that client has to reconsile the
+ * of type ovs_mutex. This would mean that client has to reconcile the
  * lflow_ref hmap lflow_ref_nodes (by calling hmap_expand()) after the
  * lflow generation is complete.  (See lflow_table_expand()).
  *
@@ -511,7 +511,7 @@ lflow_table_sync_to_sb(struct lflow_table *lflow_table,
  * scenario.
  */
 struct lflow_ref {
-    /* hmap of lfow ref nodes. hmap_node is 'struct lflow_ref_node *'. */
+    /* hmap of lflow ref nodes. hmap_node is 'struct lflow_ref_node *'. */
     struct hmap lflow_ref_nodes;
 };
 
@@ -646,7 +646,7 @@ lflow_ref_sync_lflows(struct lflow_ref *lflow_ref,
  *    - it first checks if the lflow is present in the lflow_ref or not
  *    - if present, then it does nothing
  *    - if not present, then it creates an lflow_ref_node object for
- *      the [L(M, A), dp index] and adds ito the lflow_ref hmap.
+ *      the [L(M, A), dp index] and adds it to the lflow_ref hmap.
  *
  * Note that this function is not thread safe for 'lflow_ref'.
  * If 2 or more threads calls this function for the same 'lflow_ref',

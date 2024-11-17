@@ -142,7 +142,7 @@ const char *expr_level_to_string(enum expr_level);
  *     A predicate is an arbitrary Boolean expression that can be used in an
  *     expression much like a 1-bit field.  'predicate' specifies the Boolean
  *     expression, e.g. "ip4" might expand to "eth.type == 0x800".  The
- *     epxression might refer to other predicates, e.g. "icmp4" might expand to
+ *     expression might refer to other predicates, e.g. "icmp4" might expand to
  *     "ip4 && ip4.proto == 1".
  *
  *     'field' and 'parent' are NULL, and 'parent_ofs' is 0.
@@ -208,8 +208,8 @@ const char *expr_level_to_string(enum expr_level);
  * suggested under "Types" above).
  *
  *
- * Crossproducting
- * ===============
+ * Crossproducts
+ * =============
  *
  * Ordinarily OVN is willing to consider using any field as a dimension in the
  * Open vSwitch "conjunctive match" extension (see ovs-ofctl(8)).  However,

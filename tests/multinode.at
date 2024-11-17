@@ -140,12 +140,12 @@ check multinode_nbctl lsp-set-options sw1-lr0 router-port=lr0-sw1
 
 m_as ovn-chassis-2 /data/create_fake_vm.sh sw1-port1 sw1p1 40:54:00:00:00:03 1342 20.0.0.3 24 20.0.0.1 2000::3/64 2000::a
 
-# create exteranl connection for N/S traffic
+# create external connection for N/S traffic
 check multinode_nbctl ls-add public
-check multinode_nbctl lsp-add public ln-lublic
-check multinode_nbctl lsp-set-type ln-lublic localnet
-check multinode_nbctl lsp-set-addresses ln-lublic unknown
-check multinode_nbctl lsp-set-options ln-lublic network_name=public
+check multinode_nbctl lsp-add public ln-public
+check multinode_nbctl lsp-set-type ln-public localnet
+check multinode_nbctl lsp-set-addresses ln-public unknown
+check multinode_nbctl lsp-set-options ln-public network_name=public
 
 check multinode_nbctl lrp-add lr0 lr0-public 00:11:22:00:ff:01 172.20.0.100/24
 check multinode_nbctl lsp-add public public-lr0
@@ -288,12 +288,12 @@ check multinode_nbctl lsp-set-options sw1-lr0 router-port=lr0-sw1
 
 m_as ovn-chassis-2 /data/create_fake_vm.sh sw1-port1 sw1p1 40:54:00:00:00:03 1342 20.0.0.3 24 20.0.0.1 2000::3/64 2000::a
 
-# create exteranl connection for N/S traffic
+# create external connection for N/S traffic
 check multinode_nbctl ls-add public
-check multinode_nbctl lsp-add public ln-lublic
-check multinode_nbctl lsp-set-type ln-lublic localnet
-check multinode_nbctl lsp-set-addresses ln-lublic unknown
-check multinode_nbctl lsp-set-options ln-lublic network_name=public
+check multinode_nbctl lsp-add public ln-public
+check multinode_nbctl lsp-set-type ln-public localnet
+check multinode_nbctl lsp-set-addresses ln-public unknown
+check multinode_nbctl lsp-set-options ln-public network_name=public
 
 check multinode_nbctl lrp-add lr0 lr0-public 00:11:22:00:ff:01 172.20.0.100/24
 check multinode_nbctl lsp-add public public-lr0
@@ -417,12 +417,12 @@ check multinode_nbctl lsp-set-options sw1-lr0 router-port=lr0-sw1
 
 m_as ovn-chassis-2 /data/create_fake_vm.sh sw1-port1 sw1p1 40:54:00:00:00:03 1342 20.0.0.3 24 20.0.0.1 2000::3/64 2000::a
 
-# create exteranl connection for N/S traffic
+# create external connection for N/S traffic
 check multinode_nbctl ls-add public
-check multinode_nbctl lsp-add public ln-lublic
-check multinode_nbctl lsp-set-type ln-lublic localnet
-check multinode_nbctl lsp-set-addresses ln-lublic unknown
-check multinode_nbctl lsp-set-options ln-lublic network_name=public
+check multinode_nbctl lsp-add public ln-public
+check multinode_nbctl lsp-set-type ln-public localnet
+check multinode_nbctl lsp-set-addresses ln-public unknown
+check multinode_nbctl lsp-set-options ln-public network_name=public
 
 check multinode_nbctl lrp-add lr0 lr0-public 00:11:22:00:ff:01 172.20.0.100/24
 check multinode_nbctl lsp-add public public-lr0
@@ -559,12 +559,12 @@ check multinode_nbctl lsp-set-options sw1-lr0 router-port=lr0-sw1
 
 m_as ovn-chassis-2 /data/create_fake_vm.sh sw1-port1 sw1p1 40:54:00:00:00:03 1342 20.0.0.3 24 20.0.0.1 2000::3/64 2000::a
 
-# create exteranl connection for N/S traffic
+# create external connection for N/S traffic
 check multinode_nbctl ls-add public
-check multinode_nbctl lsp-add public ln-lublic
-check multinode_nbctl lsp-set-type ln-lublic localnet
-check multinode_nbctl lsp-set-addresses ln-lublic unknown
-check multinode_nbctl lsp-set-options ln-lublic network_name=public
+check multinode_nbctl lsp-add public ln-public
+check multinode_nbctl lsp-set-type ln-public localnet
+check multinode_nbctl lsp-set-addresses ln-public unknown
+check multinode_nbctl lsp-set-options ln-public network_name=public
 
 check multinode_nbctl lrp-add lr0 lr0-public 00:11:22:00:ff:01 172.20.0.100/24
 check multinode_nbctl lsp-add public public-lr0
@@ -694,12 +694,12 @@ check multinode_nbctl lsp-set-options sw1-lr0 router-port=lr0-sw1
 
 m_as ovn-chassis-2 /data/create_fake_vm.sh sw1-port1 sw1p1 40:54:00:00:00:03 1342 20.0.0.3 24 20.0.0.1 2000::3/64 2000::a
 
-# create exteranl connection for N/S traffic
+# create external connection for N/S traffic
 check multinode_nbctl ls-add public
-check multinode_nbctl lsp-add public ln-lublic
-check multinode_nbctl lsp-set-type ln-lublic localnet
-check multinode_nbctl lsp-set-addresses ln-lublic unknown
-check multinode_nbctl lsp-set-options ln-lublic network_name=public
+check multinode_nbctl lsp-add public ln-public
+check multinode_nbctl lsp-set-type ln-public localnet
+check multinode_nbctl lsp-set-addresses ln-public unknown
+check multinode_nbctl lsp-set-options ln-public network_name=public
 
 check multinode_nbctl lrp-add lr0 lr0-public 00:11:22:00:ff:01 172.20.0.100/24
 check multinode_nbctl lsp-add public public-lr0
@@ -847,12 +847,12 @@ check multinode_nbctl lsp-set-options sw1-lr0 router-port=lr0-sw1
 
 m_as ovn-chassis-2 /data/create_fake_vm.sh sw1-port1 sw1p1 40:54:00:00:00:03 1342 20.0.0.3 24 20.0.0.1 2000::3/64 2000::a
 
-# create exteranl connection for N/S traffic
+# create external connection for N/S traffic
 check multinode_nbctl ls-add public
-check multinode_nbctl lsp-add public ln-lublic
-check multinode_nbctl lsp-set-type ln-lublic localnet
-check multinode_nbctl lsp-set-addresses ln-lublic unknown
-check multinode_nbctl lsp-set-options ln-lublic network_name=public
+check multinode_nbctl lsp-add public ln-public
+check multinode_nbctl lsp-set-type ln-public localnet
+check multinode_nbctl lsp-set-addresses ln-public unknown
+check multinode_nbctl lsp-set-options ln-public network_name=public
 
 check multinode_nbctl lrp-add lr0 lr0-public 00:11:22:00:ff:01 172.20.0.100/24
 check multinode_nbctl lsp-add public public-lr0
@@ -1103,7 +1103,7 @@ check multinode_nbctl lsp-set-options sw1-lr0 router-port=lr0-sw1
 
 m_as ovn-chassis-2 /data/create_fake_vm.sh sw1-port1 sw1p1 40:54:00:00:00:03 1342 20.0.0.3 24 20.0.0.1 2000::3/64 2000::a
 
-# create exteranl connection for N/S traffic
+# create external connection for N/S traffic
 check multinode_nbctl ls-add public
 check multinode_nbctl lsp-add public ln-public
 check multinode_nbctl lsp-set-type ln-public localnet
@@ -1298,12 +1298,12 @@ check multinode_nbctl lsp-set-options sw1-lr0 router-port=lr0-sw1
 
 m_as ovn-chassis-2 /data/create_fake_vm.sh sw1-port1 sw1p1 40:54:00:00:00:03 1342 20.0.0.3 24 20.0.0.1 2000::3/64 2000::a
 
-# create exteranl connection for N/S traffic
+# create external connection for N/S traffic
 check multinode_nbctl ls-add public
-check multinode_nbctl lsp-add public ln-lublic
-check multinode_nbctl lsp-set-type ln-lublic localnet
-check multinode_nbctl lsp-set-addresses ln-lublic unknown
-check multinode_nbctl lsp-set-options ln-lublic network_name=public
+check multinode_nbctl lsp-add public ln-public
+check multinode_nbctl lsp-set-type ln-public localnet
+check multinode_nbctl lsp-set-addresses ln-public unknown
+check multinode_nbctl lsp-set-options ln-public network_name=public
 
 check multinode_nbctl lrp-add lr0 lr0-public 00:11:22:00:ff:01 172.20.0.100/24
 check multinode_nbctl lsp-add public public-lr0

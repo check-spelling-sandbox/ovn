@@ -1412,7 +1412,7 @@ claim_lport(const struct sbrec_port_binding *pb,
 /* Returns false if lport is not released due to 'sb_readonly'.
  * Returns true otherwise.
  *
- * This function assumes that the the 'pb' was claimed
+ * This function assumes that the 'pb' was claimed
  * earlier i.e port binding's chassis is set to this chassis.
  * Caller should make sure that this is the case.
  */
@@ -2456,7 +2456,7 @@ consider_iface_claim(const struct ovsrec_interface *iface_rec,
  * The 'iface_id' could be cleared from the 'iface_rec'
  * and hence it is passed separately.
  *
- * This fuction should be called if
+ * This function should be called if
  *   - OVS interface 'iface_rec' is deleted.
  *   - OVS interface 'iface_rec' external_ids:iface-id is updated
  *     (with the old value being 'iface_id'.)
@@ -2688,7 +2688,7 @@ binding_handle_ovs_interface_changes(struct binding_ctx_in *b_ctx_in,
             if (iface_id) {
                 /* Check if iface_id is changed. If so we need to
                  * release the old port binding and associate this
-                 * inteface to new port binding. */
+                 * interface to new port binding. */
                 if (old_iface_id && strcmp(iface_id, old_iface_id)) {
                     cleared_iface_id = old_iface_id;
                 } else if (ofport <= 0) {
@@ -3311,7 +3311,7 @@ delete_done:
     return handled;
 }
 
-/* Static functions for local_lbindind and binding_lport. */
+/* Static functions for local_lbinding and binding_lport. */
 static struct local_binding *
 local_binding_create(const char *name, const struct ovsrec_interface *iface)
 {

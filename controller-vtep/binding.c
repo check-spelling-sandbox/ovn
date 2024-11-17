@@ -144,7 +144,7 @@ binding_run(struct controller_vtep_ctx *ctx)
     struct shash ls_to_db = SHASH_INITIALIZER(&ls_to_db);
 
     /* Stores the 'chassis' and the 'ls_to_pb' map related to
-     * a vtep physcial switch. */
+     * a vtep physical switch. */
     struct ps {
         const struct sbrec_chassis *chassis_rec;
         struct shash ls_to_pb;
@@ -241,7 +241,7 @@ binding_cleanup(struct controller_vtep_ctx *ctx)
     struct shash ch_to_pb = SHASH_INITIALIZER(&ch_to_pb);
     const struct sbrec_port_binding *port_binding_rec;
     bool all_done = true;
-    /* Hashs all port binding entries using the associated chassis name. */
+    /* Hashes all port binding entries using the associated chassis name. */
     SBREC_PORT_BINDING_FOR_EACH(port_binding_rec, ctx->ovnsb_idl) {
         if (port_binding_rec->chassis) {
             shash_add(&ch_to_pb, port_binding_rec->chassis->name,

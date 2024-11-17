@@ -561,8 +561,8 @@ dnl ---------------------------------------------------------------------
 
 OVN_NBCTL_TEST([ovn_nbctl_nats], [NATs], [
 AT_CHECK([ovn-nbctl lr-add lr0])
-AT_CHECK([ovn-nbctl lr-nat-add lr0 snatt 30.0.0.2 192.168.1.2], [1], [],
-[ovn-nbctl: snatt: type must be one of "dnat", "snat" and "dnat_and_snat".
+AT_CHECK([ovn-nbctl lr-nat-add lr0 snat_ 30.0.0.2 192.168.1.2], [1], [],
+[ovn-nbctl: snat_: type must be one of "dnat", "snat" and "dnat_and_snat".
 ])
 AT_CHECK([ovn-nbctl lr-nat-add lr0 snat 30.0.0.2a 192.168.1.2], [1], [],
 [ovn-nbctl: 30.0.0.2a: Not a valid IPv4 or IPv6 address.
@@ -892,7 +892,7 @@ AT_CHECK([ovn-nbctl lrp-set-gateway-chassis lrp01 chassis2])
 AT_CHECK([ovn-nbctl --gateway-port=lrp00 lr-nat-add lr0 snat 172.64.0.10 20.0.0.10])
 AT_CHECK([ovn-nbctl lr-nat-add lr0 snat 172.64.1.10 20.0.0.10])
 AT_CHECK([ovn-nbctl lr-nat-add lr0 dnat 30.0.0.10 20.0.0.10], [1], [],
-[ovn-nbctl: logical router: lr0 has multiple distributed gateway ports and gateway_port can not be determined from external IP of NAT rule.
+[ovn-nbctl: logical router: lr0 has multiple distributed gateway ports and gateway_port cannot be determined from external IP of NAT rule.
 ])
 AT_CHECK([ovn-nbctl --gateway-port=lrp00 lr-nat-add lr0 dnat 30.0.0.10 20.0.0.10])
 AT_CHECK([ovn-nbctl --gateway-port=lrp01 lr-nat-add lr0 snat 172.64.1.10 20.0.0.10], [1], [],
@@ -1735,7 +1735,7 @@ AT_CHECK([ovn-nbctl --may-exist lrp-add lr0 lrp1 00:00:00:01:02:03 10.0.0.1/24 1
 
 dnl ---------------------------------------------------------------------
 
-OVN_NBCTL_TEST([ovn_nbctl_lrp_gw_chassi], [logical router port gateway chassis], [
+OVN_NBCTL_TEST([ovn_nbctl_lrp_gw_chassis], [logical router port gateway chassis], [
 AT_CHECK([ovn-nbctl lr-add lr0])
 AT_CHECK([ovn-nbctl lrp-add lr0 lrp0 00:00:00:01:02:03 192.168.1.1/24])
 AT_CHECK([ovn-nbctl lrp-get-gateway-chassis lrp0], [0], [])
@@ -1939,7 +1939,7 @@ Route Table <main>:
 AT_CHECK([ovn-nbctl --policy=src-ip lr-route-del lr0 20.0.0.0/24])
 AT_CHECK([ovn-nbctl lr-route-del lr0 20.0.0.0/24 discard])
 
-dnl Delete non-existent prefix
+dnl Delete nonexistent prefix
 AT_CHECK([ovn-nbctl lr-route-del lr0 10.0.2.1/24], [1], [],
   [ovn-nbctl: no matching route: policy 'any', prefix '10.0.2.0/24', nexthop 'any', output_port 'any'.
 ])
@@ -1963,7 +1963,7 @@ Route Table <main>:
                 0.0.0.0/0               192.168.0.1 dst-ip
 ])
 
-dnl Delete route by explicitely specifying --policy
+dnl Delete route by explicitly specifying --policy
 AT_CHECK([ovn-nbctl --policy=dst-ip lr-route-del lr0 10.0.0.0/24])
 AT_CHECK([ovn-nbctl --policy=src-ip lr-route-del lr0 10.0.0.0/24])
 AT_CHECK([ovn-nbctl lr-route-list lr0], [0], [dnl
@@ -2611,14 +2611,14 @@ dnl ---------------------------------------------------------------------
 
 OVN_NBCTL_TEST([ovn_nbctl_fwd_groups], [fwd groups], [
 
-dnl Add fwd-group to a non-existent logical switch
+dnl Add fwd-group to a nonexistent logical switch
 AT_CHECK([ovn-nbctl fwd-group-add fwd_grp1 ls0 10.1.1.11 00:11:22:33:44:55 lsp1 lsp2], [1], [],
   [ovn-nbctl: ls0: switch name not found
 ])
 
 AT_CHECK([ovn-nbctl ls-add ls0])
 
-dnl Add fwd-group with non-existent logical switch ports
+dnl Add fwd-group with nonexistent logical switch ports
 AT_CHECK([ovn-nbctl fwd-group-add fwd_grp1 ls0 10.1.1.11 00:11:22:33:44:55 lsp1 lsp2], [1], [],
   [ovn-nbctl: lsp1: logical switch port does not exist
 ])

@@ -78,7 +78,7 @@ Total 12 IDs used.
 ])
 
 # Realloc for the same lflow should get the same id, with the old allocations
-# freeed (this is not supposed to be used but implemented for safety)
+# freed (this is not supposed to be used but implemented for safety)
 AT_CHECK(
     [ovstest test-lflow-conj-ids operations 3 \
         alloc aaaaaaaa-1111-1111-1111-111111111111 16 \

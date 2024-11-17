@@ -418,7 +418,7 @@ OVS_APP_EXIT_AND_WAIT_BY_TARGET(["$ovs_base"/northd/ovn-northd.ctl], ["$ovs_base
 # Check no port_binding entry for new port as ovn-northd is not running
 #
 # 142 is 128+14, the exit status that the shell reports when a
-# process exits due to SIGARLM (signal 14).
+# process exits due to SIGALRM (signal 14).
 ovn-nbctl lsp-add sw p2
 AT_CHECK([ovn-nbctl --timeout=10 --wait=sb sync], [142], [], [ignore])
 check_row_count Port_Binding 0 logical_port=p2
@@ -493,7 +493,7 @@ check_row_count HA_Chassis 2 'chassis=[[]]'
 # We should have 1 ha chassis with 'chassis' column set for hv1
 check_row_count HA_Chassis 1 'chassis!=[[]]'
 
-# Create another logical router port and associate to the same ha_chasis_group
+# Create another logical router port and associate to the same ha_chassis_group
 check ovn-nbctl lr-add lr1
 check ovn-nbctl lrp-add lr1 lr1-public 00:00:20:20:12:14 182.168.0.100/24
 
@@ -636,7 +636,7 @@ exp_ref_ch_list="$comp1_ch_uuid $comp2_ch_uuid"
 
 wait_column "$exp_ref_ch_list" HA_Chassis_Group ref_chassis
 
-# Unind sw1-p1. comp2 should not be in the ref_chassis.
+# Unbind sw1-p1. comp2 should not be in the ref_chassis.
 ovn-sbctl lsp-unbind sw1-p1
 wait_row_count nb:Logical_Switch_Port 1 name=sw1-p1 up=false
 wait_column "$comp2_ch_uuid" HA_Chassis_Group ref_chassis
@@ -851,7 +851,7 @@ check sleep 5
 check_row_count Datapath_Binding 0
 
 # Do not resume both main and backup right after each other
-# as there would be no guarentee of which one would become active
+# as there would be no guarantee of which one would become active
 AS_BOX([Resume the main northd])
 check as northd ovs-appctl -t ovn-northd resume
 OVS_WAIT_FOR_OUTPUT([get_northd_status], [0], [false
@@ -4092,7 +4092,7 @@ AT_CHECK([ovn-nbctl copp-list copp0], [0], [dnl
 
 AT_CHECK([ovn-sbctl list logical_flow | grep trigger_event -A 2 | grep -q meter0],[1])
 
-# let's try to add an usupported protocol "dhcp"
+# let's try to add an unsupported protocol "dhcp"
 AT_CHECK([ovn-nbctl --wait=hv copp-add copp5 dhcp meter1],[1],[],[dnl
 ovn-nbctl: Invalid control protocol. Allowed values: arp, arp-resolve, dhcpv4-opts, dhcpv6-opts, dns, event-elb, icmp4-error, icmp6-error, igmp, nd-na, nd-ns, nd-ns-resolve, nd-ra-opts, tcp-reset, bfd, reject, svc-monitor.
 ])
@@ -5419,7 +5419,7 @@ check ovn-nbctl --wait=sb set logical_router_port ro2-sw ha_chassis_group="$grp2
 
 check_lflows 1
 
-AS_BOX([Checking that Load Balancer VIP flows are not iinstalled for routers with HA_Chassis_Group removed])
+AS_BOX([Checking that Load Balancer VIP flows are not installed for routers with HA_Chassis_Group removed])
 
 check ovn-nbctl clear logical_router_port ro1-sw ha_chassis_group
 check ovn-nbctl --wait=sb clear logical_router_port ro2-sw ha_chassis_group
@@ -7244,7 +7244,7 @@ ovn_start
 check ovn-nbctl --wait=sb ls-add ls1
 ls1_uuid=$(fetch_column nb:Logical_Switch _uuid)
 
-# create a duplicated sb datapath (and an IP_Mulicast record that references
+# create a duplicated sb datapath (and an IP_Multicast record that references
 # it) on purpose.
 AT_CHECK([ovn-sbctl --id=@dp create Datapath_Binding external_ids:logical-switch=$ls1_uuid external_ids:name=ls1 tunnel_key=123 -- create IP_Multicast datapath=@dp], [0], [ignore])
 
@@ -7408,7 +7408,7 @@ check ovn-nbctl lsp-set-type S1-R1 router
 check ovn-nbctl lsp-set-addresses S1-R1 "02:ac:10:01:00:01 172.16.1.1"
 check ovn-nbctl --wait=sb lsp-set-options S1-R1 router-port=R1-S1 nat-addresses="router"
 check ovn-nbctl lsp-add S1 S1-VIF
-check ovn-nbctl lsp-set-addresses S1-VIF "02:ac:10:01:00:02 unkown"
+check ovn-nbctl lsp-set-addresses S1-VIF "02:ac:10:01:00:02 unknown"
 check ovn-nbctl --wait=sb sync
 
 AT_CHECK([ovn-sbctl lflow-list S1 | grep ls_in_l2_lkup | grep -q 'match=(eth.mcast && (arp.op == 1 || nd_ns)), action=(outport = "_MC_flood_l2"; output;)'], [1])
@@ -7531,7 +7531,7 @@ ovn-nbctl --wait=sb sync
 record_log_flows
 
 # The count should now be 2 since the allow_related ACL will not have special
-# log flows created. But since there there is an allow-related ACL present, the
+# log flows created. But since there is an allow-related ACL present, the
 # allow ACL will be stateful and have special log flows created.
 check_log_flows_count 2 out
 check_log_flows_count 0 in
@@ -7636,7 +7636,7 @@ ovn-nbctl --wait=sb sync
 record_log_flows
 
 # The count should now be 2 since the allow_related ACL will not have special
-# log flows created. But since there there is an allow-related ACL present, the
+# log flows created. But since there is an allow-related ACL present, the
 # allow ACL will be stateful and have special log flows created.
 check_log_flows_count 2 in
 check_log_flows_count 0 out
@@ -8965,7 +8965,7 @@ check ovn-nbctl --wait=sb sync
 ovn-sbctl dump-flows | DUMP_FLOWS_SORTED > flows2
 AT_CHECK([diff flows1 flows2])
 
-# Restart with with 8 threads
+# Restart with 8 threads
 check as northd ovn-appctl -t ovn-northd parallel-build/set-n-threads 8
 delete_switch_ports 1 250
 add_switch_ports 1 250
@@ -10045,7 +10045,7 @@ AT_KEYWORDS([drop])
 
 ovn_start
 
-# Check that there is an explicit drop lflow in for spoecified DP and table.
+# Check that there is an explicit drop lflow in for specified DP and table.
 check_default_lflow() {
     dp=$1
     pipeline=$2
@@ -10153,7 +10153,7 @@ AT_CHECK([ovn-sbctl dump-flows | grep "ls_in_acl" | grep "match=(1)"  | ovn_stri
 
 check ovn-nbctl --wait=sb acl-del S1
 
-# Check LB + statelful ACL
+# Check LB + stateful ACL
 check ovn-nbctl --wait=sb \
                 -- acl-add S1 from-lport 2 "udp" allow-related
 
@@ -10206,7 +10206,7 @@ AT_CLEANUP
 ])
 
 OVN_FOR_EACH_NORTHD_NO_HV([
-AT_SETUP([Chassis-feature compatibitility - remote chassis])
+AT_SETUP([Chassis-feature compatibility - remote chassis])
 ovn_start
 
 AS_BOX([Local chassis])
@@ -10678,7 +10678,7 @@ check_recompute_counter 0 0 0 0 0 0
 
 # Delete and re-add a LSP for several times continuously, to ensure
 # frequent operations do not trigger recompute when there are in-flight
-# transcations.
+# transactions.
 for i in $(seq 10); do
     # wait for sb but not wait for hv
     check ovn-nbctl --wait=sb lsp-del lsp0-2
@@ -11261,7 +11261,7 @@ check_engine_stats sync_to_sb_lb recompute compute
 CHECK_NO_CHANGE_AFTER_RECOMPUTE(1)
 
 # Associate lb1 to sw0 and also create a port sw0p1.  This should not result in
-# full recompute of northd, but should rsult in full recompute of lflow node.
+# full recompute of northd, but should result in full recompute of lflow node.
 check as northd ovn-appctl -t ovn-northd inc-engine/clear-stats
 check ovn-nbctl --wait=sb ls-lb-add sw0 lb1 -- lsp-add sw0 sw0p1
 check_engine_stats lb_data norecompute compute
@@ -12768,7 +12768,7 @@ AT_CHECK_UNQUOTED([ovn_trace --ct new ls "$flow" | TRACE_FILTER], [0], [dnl
     sample(probability=65535,collector_set=200,obs_domain=42,obs_point=4301);
 ])
 
-dnl Trace estasblished connections.
+dnl Trace established connections.
 flow="$base_flow && ct_label.obs_point_id == 4302"
 AT_CHECK_UNQUOTED([ovn_trace --ct est ls "$flow" | TRACE_FILTER], [0], [dnl
     reg9 = 4302;
@@ -12830,7 +12830,7 @@ AT_CHECK_UNQUOTED([ovn_trace --ct new ls "$flow" | TRACE_FILTER], [0], [dnl
     sample(probability=65535,collector_set=200,obs_domain=42,obs_point=4301);
 ])
 
-dnl Trace estasblished connections.
+dnl Trace established connections.
 flow="$base_flow && ct_label.obs_point_id == 4302"
 AT_CHECK_UNQUOTED([ovn_trace --ct est ls "$flow" | TRACE_FILTER], [0], [dnl
     reg9 = 4302;
@@ -12893,7 +12893,7 @@ AT_CHECK_UNQUOTED([ovn_trace --ct new --ct new ls "$flow" | TRACE_FILTER], [0], 
     sample(probability=65535,collector_set=200,obs_domain=42,obs_point=4301);
 ])
 
-dnl Trace estasblished connections.
+dnl Trace established connections.
 flow="$base_flow && ct_label.obs_point_id == 4302"
 AT_CHECK_UNQUOTED([ovn_trace --ct est --ct est ls "$flow" | TRACE_FILTER], [0], [dnl
     reg9 = 4302;
@@ -12987,7 +12987,7 @@ AT_CHECK_UNQUOTED([ovn_trace --ct new ls "$flow" | TRACE_FILTER], [0], [dnl
     sample(probability=65535,collector_set=100,obs_domain=42,obs_point=4301);
 ])
 
-dnl Trace estasblished connections.
+dnl Trace established connections.
 flow="$base_flow && ct_label.obs_point_id == 4302"
 AT_CHECK_UNQUOTED([ovn_trace --ct est ls "$flow" | TRACE_FILTER], [0], [dnl
     reg8[[0..7]] = 1;
@@ -13024,7 +13024,7 @@ AT_CHECK_UNQUOTED([ovn_trace --ct new ls "$flow" | TRACE_FILTER], [0], [dnl
     sample(probability=65535,collector_set=100,obs_domain=42,obs_point=reg3);
 ])
 
-dnl Trace estasblished connections.
+dnl Trace established connections.
 flow="$base_flow && ct_label.obs_point_id == 4302 && ct_mark.obs_stage == 0 && ct_mark.obs_collector_id == 1"
 AT_CHECK_UNQUOTED([ovn_trace --ct est ls "$flow" | TRACE_FILTER], [0], [dnl
     reg8[[0..7]] = 1;
@@ -13091,7 +13091,7 @@ AT_CHECK_UNQUOTED([ovn_trace --ct new ls "$flow" | TRACE_FILTER], [0], [dnl
     sample(probability=65535,collector_set=100,obs_domain=42,obs_point=reg3);
 ])
 
-dnl Trace estasblished connections.
+dnl Trace established connections.
 flow="$base_flow && ct_label.obs_point_id == 4302 && ct_mark.obs_stage == 1 && ct_mark.obs_collector_id == 1"
 AT_CHECK_UNQUOTED([ovn_trace --ct est ls "$flow" | TRACE_FILTER], [0], [dnl
     reg8[[0..7]] = 1;
@@ -13159,7 +13159,7 @@ AT_CHECK_UNQUOTED([ovn_trace --ct new --ct new ls "$flow" | TRACE_FILTER], [0], 
     sample(probability=65535,collector_set=100,obs_domain=42,obs_point=reg3);
 ])
 
-dnl Trace estasblished connections.
+dnl Trace established connections.
 flow="$base_flow && ct_label.obs_point_id == 4302 && ct_mark.obs_stage == 2 && ct_mark.obs_collector_id == 1"
 AT_CHECK_UNQUOTED([ovn_trace --ct est --ct est ls "$flow" | TRACE_FILTER], [0], [dnl
     reg8[[0..7]] = 1;
@@ -13783,7 +13783,7 @@ check ovn-nbctl --wait=sb lsp-del ln-public
 # Check that the lflows are as expected when public has no localnet port.
 check_flows_cr_port_for_public_lr0
 
-# Create multiple gateway ports.  chassisresident port should not be
+# Create multiple gateway ports.  chassis resident port should not be
 # created for 'public-lr0' even if there is no localnet port on 'public'
 # logical switch.
 check ovn-nbctl --wait=sb lrp-set-gateway-chassis lr0-sw0 gw1
@@ -13913,7 +13913,7 @@ check ovn-nbctl --wait=sb remove logical_router_port lr-ls options routing-proto
 check ovn-nbctl --wait=sb remove logical_router_port lr-ls options routing-protocols
 check_no_redirect
 
-# Set non-existent LSP as target of 'bgp-redirect' and check that no rules are added
+# Set nonexistent LSP as target of 'bgp-redirect' and check that no rules are added
 check ovn-nbctl --wait=sb set logical_router_port lr-ls options:routing-protocol-redirect=lsp-foo
 check ovn-nbctl --wait=sb set logical_router_port lr-ls options:routing-protocols=BGP,BFD
 check_no_redirect

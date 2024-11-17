@@ -92,7 +92,7 @@ def open_spell_check_dict():
                           'decap', 'tlv', 'tlvs', 'decapsulation', 'fd',
                           'cacheline', 'xlate', 'skiplist', 'idl',
                           'comparator', 'natting', 'alg', 'pasv', 'epasv',
-                          'wildcard', 'nated', 'amd64', 'x86_64',
+                          'wildcard', 'amd64', 'x86_64',
                           'recirculation', 'linux', 'afxdp', 'promisc', 'goto',
                           'misconfigured', 'misconfiguration', 'checkpatch',
                           'debian', 'travis', 'cirrus', 'appveyor', 'faq',
@@ -318,7 +318,7 @@ def if_and_for_end_with_bracket_check(line):
 
 def pointer_whitespace_check(line):
     """Return TRUE if there is no space between a pointer name and the
-       asterisk that denotes this is a apionter type, ie: 'struct foo*'"""
+       asterisk that denotes this is a pointer type, ie: 'struct foo*'"""
     return __regex_ptr_declaration_missing_whitespace.search(line) is not None
 
 
@@ -359,7 +359,7 @@ def has_c99_comment(line):
 
 
 def trailing_operator(line):
-    """Returns TRUE if the current line ends with an operatorsuch as ? or :"""
+    """Returns TRUE if the current line ends with an operator such as ? or :"""
     return __regex_trailing_operator.match(line) is not None
 
 

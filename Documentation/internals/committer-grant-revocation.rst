@@ -31,7 +31,7 @@ affect the progress of the project as presented by its most important artifact,
 the code and related resources that produce working binaries of OVN
 As such it represents a significant level of trust in an individual's
 commitment to working with other committers and the community at large for the
-benefit of the project. It can not be granted lightly and, in the worst case,
+benefit of the project. It cannot be granted lightly and, in the worst case,
 must be revocable if the trust placed in an individual was inappropriate.
 
 This document suggests guidelines for granting and revoking commit access. It

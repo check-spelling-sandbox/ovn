@@ -536,9 +536,9 @@ OVS_WAIT_UNTIL([ovn_as az2 ovn-nbctl lr-route-list lr2 | grep learned | grep 192
 OVS_WAIT_UNTIL([ovn_as az1 ovn-nbctl lr-route-list lr1 | grep learned | grep 10.11])
 # Now black list 10.11.0.0/16 and 192.168.0.0/16 in AZ2.
 ovn_as az2 ovn-nbctl set nb_global . options:ic-route-denylist="10.11.0.0/16,192.168.0.0/16"
-# AZ2 shouldn't learn 192.168 route any more.
+# AZ2 shouldn't learn 192.168 route anymore.
 OVS_WAIT_WHILE([ovn_as az2 ovn-nbctl lr-route-list lr2 | grep learned | grep 192.168])
-# AZ1 shouldn't learn 10.11 any more.
+# AZ1 shouldn't learn 10.11 anymore.
 OVS_WAIT_WHILE([ovn_as az1 ovn-nbctl lr-route-list lr1 | grep learned | grep 10.11])
 
 # cleanup
@@ -873,9 +873,9 @@ ovn_as az1 ovn-nbctl lrp-add lr1 lrp-lr1-ls1 aa:aa:aa:aa:bb:01 "192.168.0.1/24"
 OVS_WAIT_UNTIL([ovn_as az2 ovn-nbctl lr-route-list lr2 | grep learned | grep 192.168])
 # Now add 10.11.0.0/16 and 192.168.0.0/16 to denylist in AZ2.
 check ovn_as az2 ovn-nbctl set nb_global . options:ic-route-denylist="10.11.0.0/16,192.168.0.0/16"
-# AZ2 shouldn't learn 192.168 route any more.
+# AZ2 shouldn't learn 192.168 route anymore.
 OVS_WAIT_WHILE([ovn_as az2 ovn-nbctl lr-route-list lr2 | grep learned | grep 192.168])
-# AZ1 shouldn't learn 10.11 any more.
+# AZ1 shouldn't learn 10.11 anymore.
 OVS_WAIT_WHILE([ovn_as az1 ovn-nbctl lr-route-list lr1 | grep learned | grep 10.11])
 AT_CHECK([ovn_as az2 ovn-nbctl lr-route-list lr2], [0], [dnl
 IPv4 Routes
@@ -1514,7 +1514,7 @@ for az in `seq 1 $n_az`; do
     wait_for_ports_up
 done
 
-# Pre-populate the hypervisors' ARP tables so that we don't lose any
+# Prepopulate the hypervisors' ARP tables so that we don't lose any
 # packets for ARP resolution (native tunneling doesn't queue packets
 # for ARP resolution).
 OVN_POPULATE_ARP
@@ -1791,7 +1791,7 @@ check ovn-nbctl set logical_router_port lr3-ls3 options:mcast_flood="true"
 check ovn_as az1 ovn-nbctl --wait=hv sync
 check ovn_as az2 ovn-nbctl --wait=hv sync
 
-# Pre-populate the hypervisors' ARP tables so that we don't lose any
+# Prepopulate the hypervisors' ARP tables so that we don't lose any
 # packets for ARP resolution (native tunneling doesn't queue packets
 # for ARP resolution).
 OVN_POPULATE_ARP
@@ -2020,7 +2020,7 @@ check ovn-nbctl set logical_switch_port ts-lr3 options:mcast_flood_reports="true
 check ovn_as az1 ovn-nbctl --wait=hv sync
 check ovn_as az2 ovn-nbctl --wait=hv sync
 
-# Pre-populate the hypervisors' ARP tables so that we don't lose any
+# Prepopulate the hypervisors' ARP tables so that we don't lose any
 # packets for ARP resolution (native tunneling doesn't queue packets
 # for ARP resolution).
 OVN_POPULATE_ARP
@@ -2267,7 +2267,7 @@ check ovn-nbctl set logical_switch ts other_config:mcast_flood_unregistered="tru
 check ovn_as az1 ovn-nbctl --wait=hv sync
 check ovn_as az2 ovn-nbctl --wait=hv sync
 
-# Pre-populate the hypervisors' ARP tables so that we don't lose any
+# Prepopulate the hypervisors' ARP tables so that we don't lose any
 # packets for ARP resolution (native tunneling doesn't queue packets
 # for ARP resolution).
 OVN_POPULATE_ARP

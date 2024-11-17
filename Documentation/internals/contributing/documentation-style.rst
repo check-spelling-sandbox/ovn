@@ -130,7 +130,7 @@ Code
 - Prefix commands with ``$``.
 
 - Where possible, include fully-working snippets of code. If there
-  pre-requisites, explain what they are and how to achieve them.
+  prerequisites, explain what they are and how to achieve them.
 
 Admonitions
 ~~~~~~~~~~~
@@ -416,10 +416,6 @@ Helpful Tools
 
 There are a number of tools, online and offline, which can be used to preview
 documents are you edit them:
-
-- `rst.ninjs.org <http://rst.ninjs.org/>`__
-
-  An online rST editor/previewer
 
 - `ReText <https://github.com/retext-project/retext>`__
 

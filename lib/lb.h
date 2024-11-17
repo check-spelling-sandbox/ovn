@@ -51,7 +51,7 @@ struct ovn_lb_backend {
                           * ovn-northd.
                           */
     uint16_t port;       /* Mostly used in ovn-controller but also for
-                          * healthcheck in ovn-northd.
+                          * health check in ovn-northd.
                           */
     char *port_str;      /* Actual port string representation. To be used
                           * in ovn-northd.

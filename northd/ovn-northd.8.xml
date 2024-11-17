@@ -304,7 +304,7 @@
         </ul>
         <p>
           Since this port shares IP and MAC addresses with the Logical Router
-          Port, we wan't to prevent duplicate replies and advertisements. This
+          Port, we want to prevent duplicate replies and advertisements. This
           is achieved by a rule with priority 80 that sets
           <code>REGBIT_PORT_SEC_DROP" = 1; next;"</code>.
         </p>
@@ -403,10 +403,10 @@
     <p>
       This table looks up the MAC learning table of the logical switch
       datapath to check if the <code>port-mac</code> pair is present
-      or not. MAC is learnt for logical switch VIF ports whose
+      or not. MAC is learned for logical switch VIF ports whose
       port security is disabled and 'unknown' address setn as well as
       for localnet ports with option localnet_learn_fdb. A localnet
-      port entry does not overwrite a VIF port entry.
+      port entry does not override a VIF port entry.
     </p>
 
     <ul>
@@ -497,7 +497,7 @@
       before eventually advancing to ingress table <code>ACLs</code>. If
       special ports such as route ports or localnet ports can't use ct(), a
       priority-110 flow is added to skip over stateful ACLs.  This
-      priority-110 flow is not addd for router ports if the option
+      priority-110 flow is not added for router ports if the option
       enable_router_port_acl is set to true in
       <ref column="options:enable_router_port_acl"
       table="Logical_Switch_Port" db="OVN_Northbound"/> column of
@@ -1239,7 +1239,7 @@
       indicate the ACL verdict by setting <code>reg8[16]</code> for
       <code>allow-type</code> ACLs, <code>reg8[17]</code> for <code>drop</code>
       ACLs, and <code>reg8[17]</code> for <code>reject</code> ACLs, and then
-      advancing the packet to the next table. These will be reffered to as the
+      advancing the packet to the next table. These will be referred to as the
       allow bit, drop bit, and reject bit throughout the documentation for this
       table and the next one.
     </p>
@@ -1471,7 +1471,7 @@
       <li>
         If packet was received from HW VTEP (ramp switch), and this packet is
         ARP or Neighbor Solicitation, such packet is passed to next table with
-        max proirity.  ARP/ND requests from HW VTEP must be handled in logical
+        max priority.  ARP/ND requests from HW VTEP must be handled in logical
         router ingress pipeline.
       </li>
       <li>
@@ -2033,7 +2033,7 @@ output;
           For any logical port that's defined as a target of routing protocol
           redirecting (via <code>routing-protocol-redirect</code> option set on
           Logical Router Port), we redirect the traffic related to protocols
-          specified in <code>routing-protocols</code> option. It's acoomplished
+          specified in <code>routing-protocols</code> option. It's accomplished
           with following priority-100 flows:
         </p>
         <ul>
@@ -2059,17 +2059,17 @@ output;
       <li>
         Priority-90 flows for transit switches that forward registered
         IP multicast traffic to their corresponding multicast group , which
-        <code>ovn-northd</code> creates based on learnt
+        <code>ovn-northd</code> creates based on learned
         <ref table="IGMP_Group" db="OVN_Southbound"/> entries.
       </li>
 
       <li>
         Priority-90 flows that forward registered IP multicast traffic to
         their corresponding multicast group, which <code>ovn-northd</code>
-        creates based on learnt <ref table="IGMP_Group" db="OVN_Southbound"/>
+        creates based on learned <ref table="IGMP_Group" db="OVN_Southbound"/>
         entries.  The flows also forward packets to the
         <code>MC_MROUTER_FLOOD</code> multicast group, which
-        <code>ovn-nortdh</code> populates with all the logical ports that
+        <code>ovn-northd</code> populates with all the logical ports that
         are connected to logical routers with
         <ref column="options" table="Logical_Router"/>:mcast_relay='true'.
       </li>
@@ -2273,7 +2273,7 @@ output;
 
       <li>
         One priority-0 fallback flow that outputs the packet to the egress
-        stage with the outport learnt from <code>get_fdb</code> action.
+        stage with the outport learned from <code>get_fdb</code> action.
       </li>
     </ul>
 
@@ -3323,7 +3323,7 @@ arp.sha = <var>external_mac</var>;
             </pre>
 
             <p>
-              or in the case of IPv6 neighbor solicition:
+              or in the case of IPv6 neighbor solicitation:
             </p>
 
             <pre>
@@ -4446,7 +4446,7 @@ reg8[16..31] = select(1,..n);
 
       <li>
         <p>
-          If the policy action is <code>reroute</code> with just one nexhop,
+          If the policy action is <code>reroute</code> with just one nexthop,
           then the logical flow is added with the following actions:
         </p>
 
@@ -5328,7 +5328,7 @@ nd_ns {
           corresponding NAT rule. The flow matches if destination ip
           is an <code>exempted_ext_ip</code> and the action is <code>next;
           </code>. This flow is used to bypass the ct_snat action for a packet
-          which is destinted to <code>exempted_ext_ips</code>.
+          which is destined to <code>exempted_ext_ips</code>.
         </p>
       </li>
 
@@ -5396,7 +5396,7 @@ nd_ns {
           corresponding NAT rule. The flow matches if destination ip
           is an <code>exempted_ext_ip</code> and the action is <code>next;
           </code>. This flow is used to bypass the ct_snat action for a flow
-          which is destinted to <code>exempted_ext_ips</code>.
+          which is destined to <code>exempted_ext_ips</code>.
         </p>
 
       </li>
@@ -5543,7 +5543,7 @@ clone {
     </p>
 
     <p>
-      When debug drop-sampling has been cofigured in the OVN Northbound
+      When debug drop-sampling has been configured in the OVN Northbound
       database, the ovn-northd will replace all the <code>drop;</code>
       actions with a <code>sample(priority=65535, collector_set=<var>id</var>,
       obs_domain=<var>obs_id</var>, obs_point=@cookie)</code> action, where:

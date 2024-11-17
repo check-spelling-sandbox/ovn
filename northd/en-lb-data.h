@@ -72,13 +72,13 @@ struct tracked_lb_data {
 
     /* Indicates if any lb got disassociated from a lb group
      * but not deleted. */
-    bool has_dissassoc_lbs_from_lbgrps;
+    bool has_disassoc_lbs_from_lbgrps;
 
     /* Indicates if a lb was disassociated from a logical switch. */
-    bool has_dissassoc_lbs_from_od;
+    bool has_disassoc_lbs_from_od;
 
     /* Indicates if a lb group was disassociated from a logical switch. */
-    bool has_dissassoc_lbgrps_from_od;
+    bool has_disassoc_lbgrps_from_od;
 
     /* Indicates if any lb (in the tracked data) has 'routable' flag set. */
     bool has_routable_lb;

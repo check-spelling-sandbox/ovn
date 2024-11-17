@@ -360,7 +360,7 @@ $cluster_remote_port
         # we want to run ovsdb-server in background rather than running it in
         # foreground so that the OVN dbs are upgraded for the cluster mode.
         # Otherwise, CMS has to take the responsibility of upgrading the dbs.
-        # Note: We run only the ovsdb-server in backgroud which created the
+        # Note: We run only the ovsdb-server in background which created the
         # cluster (i.e cluster_remote_addr is not set.).
         run_ovsdb_in_bg="yes"
         "$@" &
@@ -395,7 +395,7 @@ start_sb_relay_ovsdb() {
 start_sb_ovsdb() {
     # Increase the limit on the number of open file descriptors, because
     # SB DB may connect to large number of chassises, on top of connections
-    # for cluster members, northd, and serveral local unix sockets.
+    # for cluster members, northd, and several local unix sockets.
     MAXFD=8192
     if [ $(ulimit -n) -lt $MAXFD ]; then
         ulimit -n $MAXFD
@@ -1119,7 +1119,7 @@ Options:
                                  More details in ovsdb(7).  (default: no)
   --db-sb-relay-remote           Specifies upstream cluster/server remote for ovsdb relay
   --db-sb-relay-use-remote-in-db=no|yes
-                                 OVN_Sorthbound db listen on target connection table (default: $DB_SB_RELAY_USE_REMOTE_IN_DB)
+                                 OVN_Southbound db listen on target connection table (default: $DB_SB_RELAY_USE_REMOTE_IN_DB)
   -h, --help                     display this help message
 
 File location options:

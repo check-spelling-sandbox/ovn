@@ -91,7 +91,7 @@ m4_divert_text([PREPARE_TESTS],
          OVS_WAIT_UNTIL([
              test 1 = $(as $hv ovs-vsctl show | grep "Port \b$patch_port\b" | wc -l)
          ])
-         # Wait for a flow outputing to patch port
+         # Wait for a flow outputting to patch port
          OVS_WAIT_UNTIL([
              hv_patch_ofport=$(as $hv ovs-vsctl --bare --columns ofport find Interface name=$patch_port)
              echo "$patch_port=$hv_patch_ofport"
@@ -105,7 +105,7 @@ m4_divert_text([PREPARE_TESTS],
      hv1=$1
      hv2=$2
      echo "$3: waiting for flows for remote output on $hv1"
-     # Wait for a flow outputing  to remote output
+     # Wait for a flow outputting  to remote output
      OVS_WAIT_UNTIL([
          ofport=$(as $hv1 ovs-vsctl --bare --columns ofport find Interface name=ovn-${hv2}-0)
          echo "tunnel port=$ofport"
@@ -117,7 +117,7 @@ m4_divert_text([PREPARE_TESTS],
      hv1=$1
      hv2=$2
      echo "$3: waiting for flows for remote input on $hv1"
-     # Wait for a flow outputing  to remote input
+     # Wait for a flow outputting  to remote input
      OVS_WAIT_UNTIL([
          ofport=$(as $hv1 ovs-vsctl --bare --columns ofport find Interface name=ovn-${hv2}-0)
          echo "tunnel port=$ofport"
@@ -133,7 +133,7 @@ m4_divert_text([PREPARE_TESTS],
        as $hv
        for chassis; do
          if test $hv != $chassis; then
-             echo "checking bdf_status for $hv -> $chassis"
+             echo "checking bfd_status for $hv -> $chassis"
              OVS_WAIT_UNTIL([
                  bfd_status=$(as $hv ovs-vsctl get interface ovn-$chassis-0 bfd_status:state)
                  echo "bfd status = $bfd_status"
@@ -219,7 +219,7 @@ m4_define([DUMP_RELATED_PORTS], [
 m4_define([CHECK_FLOWS_AFTER_RECOMPUTE], [
     hv=$1
     sbox=$2
-    # Make sure I+P has finalized his job before getting flows and comparing them after recompte.
+    # Make sure I+P has finalized his job before getting flows and comparing them after recompute.
     # Some tests have northd and ovn-nb ovsdb stopped, so avoid ovn-nbctl for those.
     if [[ -e ovn-nb/ovn-nb.sock ]] && [[ -e northd/ovn-northd.pid ]]; then
         # Do wait twice to handle some potential race conditions
@@ -249,7 +249,7 @@ m4_define([CHECK_RELATED_PORTS_AFTER_RECOMPUTE], [
     sbox=$2
     related_ports=$3
     AT_CAPTURE_FILE([related-ports-diff])
-    # Make sure I+P has finalized the job before getting flows and comparing them after recompte.
+    # Make sure I+P has finalized the job before getting flows and comparing them after recompute.
     # Some tests have northd and ovn-nb ovsdb stopped, so avoid ovn-nbctl for those.
     if [[ -e ovn-nb/ovn-nb.sock ]] && [[ -e northd/ovn-northd.pid ]]; then
         # Do wait twice to handle some potential race conditions
@@ -280,7 +280,7 @@ m4_define([CHECK_AFTER_RECOMPUTE], [
     sbox=$2
     related_ports=$3
     AT_CAPTURE_FILE([related-ports-diff])
-    # Make sure I+P has finalized his job before getting flows and comparing them after recompte.
+    # Make sure I+P has finalized his job before getting flows and comparing them after recompute.
     # Some tests have northd and ovn-nb ovsdb stopped, so avoid ovn-nbctl for those.
     if [[ -e ovn-nb/ovn-nb.sock ]] && [[ -e northd/ovn-northd.pid ]]; then
         # Do wait twice to handle some potential race conditions
@@ -347,7 +347,7 @@ m4_define([OVN_CLEANUP_SBOX],[
     OVN_CLEANUP_VSWITCH([$sbox])
 
     # Check for errors in logs. Ignore following errors:
-    # "connection failed (No such file or directory)" as happens everytime we restart ovs-vswitchd.
+    # "connection failed (No such file or directory)" as happens every time we restart ovs-vswitchd.
     # "has no network name*" as localnet network_name is often set "after" creating localnet.
     # "receive tunnel port not found*" happening when closing other hv.
     # "Failed to locate tunnel to reach main chassis" happening when controller started e.g. before ovn-bridge-mappings is set
@@ -768,7 +768,7 @@ ovn_as() {
 
 # OVN_POPULATE_ARP
 #
-# This pre-populates the ARP tables of all of the OVN instances that have been
+# This prepopulates the ARP tables of all of the OVN instances that have been
 # started with ovn_attach().  That means that packets sent from one hypervisor
 # to another never get dropped or delayed by ARP resolution, which makes
 # testing easier.

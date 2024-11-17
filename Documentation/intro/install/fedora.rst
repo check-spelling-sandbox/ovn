@@ -80,8 +80,8 @@ YUM::
 
 Once that is completed, remove the file ``/tmp/ovn.spec``.
 
-Bootstraping
-------------
+Bootstrapping
+-------------
 
 Refer to :ref:`general-bootstrapping`.
 
@@ -97,7 +97,7 @@ OVN RPMs
 ~~~~~~~~~~~~~~~
 
 To build OVN RPMs, first generate openvswitch source tarball in
-your openvwitch source directory by running
+your openvswitch source directory by running
 
 ::
 

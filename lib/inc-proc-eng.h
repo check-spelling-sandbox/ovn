@@ -311,7 +311,7 @@ void engine_set_force_recompute_immediate(void);
  * usual processing without forced full recompute. */
 void engine_clear_force_recompute(void);
 
-/* Returns whether next engine_run() is forced to rempute. */
+/* Returns whether next engine_run() is forced to recompute. */
 bool engine_get_force_recompute(void);
 
 /* Return the current engine_context. The values in the context can be NULL
@@ -353,7 +353,7 @@ bool engine_canceled(void);
  */
 void *engine_get_data(struct engine_node *node);
 
-/* Return a pointer to node data *without* performing any coherance checks on
+/* Return a pointer to node data *without* performing any coherence checks on
  * the state of the node. This may be used only in specific cases when data
  * is guaranteed to be valid, e.g., immediately after initialization and
  * before the first engine_run().

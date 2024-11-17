@@ -81,7 +81,7 @@ lflow_conj_ids_set_test_mode(bool mode)
     test_mode = mode;
 }
 
-/* Allocate n_conjs continuous conjuction ids from the conj_ids for the given
+/* Allocate n_conjs continuous conjunction ids from the conj_ids for the given
  * lflow_uuid and dp_uuid. (0 is never included in an allocated range)
  *
  * The first conjunction id is returned. If no conjunction ids available, or if
@@ -310,7 +310,7 @@ lflow_to_dps_find(struct conj_ids *conj_ids, const struct uuid *lflow_uuid)
     return NULL;
 }
 
-/* Insert n_conjs conjuntion ids starting from start_conj_id into the conj_ids,
+/* Insert n_conjs conjunction ids starting from start_conj_id into the conj_ids,
  * assuming the ids are confirmed to be available. */
 static void
 lflow_conj_ids_insert_(struct conj_ids *conj_ids,

@@ -76,7 +76,7 @@ extern "C" {
 
 struct worker_control {
     int id; /* Used as a modulo when iterating over a hash. */
-    atomic_bool finished; /* Set to true after achunk of work is complete. */
+    atomic_bool finished; /* Set to true after a chunk of work is complete. */
     sem_t *fire; /* Work start semaphore - sem_post starts the worker. */
     sem_t *done; /* Work completion semaphore - sem_post on completion. */
     struct ovs_mutex mutex; /* Guards the data. */
@@ -89,7 +89,7 @@ struct worker_pool {
     size_t size;   /* Number of threads in the pool. */
     struct ovs_list list_node; /* List of pools - used in cleanup/exit. */
     struct worker_control *controls; /* "Handles" in this pool. */
-    sem_t *done; /* Work completion semaphorew. */
+    sem_t *done; /* Work completion semaphore. */
 };
 
 /* Return pool size; bigger than 1 means parallelization has been enabled. */
@@ -115,7 +115,7 @@ bool ovn_stop_parallel_processing(void);
 
 void ovn_fast_hmap_size_for(struct hmap *hmap, int size);
 
-/* Build a hmap with a mask equals to size */
+/* Build a hmap with a mask equal to size */
 
 void ovn_fast_hmap_init(struct hmap *hmap, ssize_t size);
 

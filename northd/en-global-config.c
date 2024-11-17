@@ -573,7 +573,7 @@ update_sb_config_options_to_sbrec(struct ed_type_global_config *config_data,
     smap_destroy(options);
     smap_clone(options, &config_data->nb_options);
 
-    /* Hackaround SB_global.options overwrite by NB_Global.options for
+    /* Hack around SB_global.options overwrite by NB_Global.options for
      * 'sbctl_probe_interval' option.
      */
     const char *sip = smap_get(&sb->options, "sbctl_probe_interval");
