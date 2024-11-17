@@ -646,7 +646,7 @@ lflow_ref_sync_lflows(struct lflow_ref *lflow_ref,
  *    - it first checks if the lflow is present in the lflow_ref or not
  *    - if present, then it does nothing
  *    - if not present, then it creates an lflow_ref_node object for
- *      the [L(M, A), dp index] and adds ito the lflow_ref hmap.
+ *      the [L(M, A), dp index] and adds it to the lflow_ref hmap.
  *
  * Note that this function is not thread safe for 'lflow_ref'.
  * If 2 or more threads calls this function for the same 'lflow_ref',
